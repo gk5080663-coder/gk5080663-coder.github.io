@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume.RK - पॉवरफुल AI रेझ्युमे बिल्डर</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts Support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Baloo 2', 'Noto Sans Devanagari', 'Noto Sans Kannada', 'Inter', sans-serif;
+        }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        @media print {
+            @page { size: A4 portrait; margin: 0mm; }
+            body { background: white !important; color: black !important; }
+            .no-print { display: none !important; }
+            #resume-preview-container {
+                box-shadow: none !important;
+                border: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                transform: scale(1) !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <div>
+        <!-- TOP NAVBAR -->
+        <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md no-print">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+                
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="showMainApp()">
+                    <div class="w-10 h-10 bg-gradient-to-tr from-green-500 to-emerald-400 rounded-xl flex items-center justify-center font-black text-xl text-white shadow-lg">
+                        RK
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-extrabold tracking-tight flex items-center gap-2">
+                            Resume.RK <span class="bg-green-500/20 text-green-400 text-xs px-2 py-0.5 rounded-full font-medium border border-green-500/30">PRO AI</span>
+                        </h1>
+                        <p class="text-xs text-slate-400" id="ui-tagline">स्मार्ट व बहुभाषिक रेझ्युमे बिल्डर</p>
+                    </div>
+                </div>
+
+                <!-- Pre-filled Sample Selector -->
+                <div class="flex items-center gap-2 bg-slate-800 p-1 rounded-lg border border-slate-700" id="sample-box">
+                    <span class="text-xs text-slate-400 pl-2 hidden sm:inline" id="lbl-sample">सॅम्पल:</span>
+                    <select id="sample-profile-select" class="bg-slate-900 text-xs text-slate-200 border-none rounded px-2 py-1.5 focus:ring-1 focus:ring-green-500">
+                        <option value="software">💻 सॉफ्टवेअर इंजिनिअर</option>
+                        <option value="marketing">📢 मार्केटिंग मॅनेजर</option>
+                        <option value="fresher">🎓 फ्रेशर / पदवीधर</option>
+                        <option value="sales">💼 सेल्स एक्झिक्युटिव्ह</option>
+                        <option value="finance">📊 फायनान्स अकाऊंटंट</option>
+                    </select>
+                    <button onclick="loadSelectedSample()" class="bg-slate-700 hover:bg-slate-600 text-xs text-white px-2.5 py-1.5 rounded transition" id="btn-load">
+                        लोड करा
+                    </button>
+                </div>
+
+                <!-- Language & Download -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-slate-800 p-1 rounded-lg border border-slate-700 flex items-center space-x-1" id="lang-box">
+                        <button onclick="changeLanguage('mr')" id="lang-mr" class="px-2.5 py-1 text-xs rounded font-semibold transition bg-green-600 text-white">मराठी</button>
+                        <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 text-xs rounded font-semibold transition text-slate-300 hover:bg-slate-700">English</button>
+                        <button onclick="changeLanguage('hi')" id="lang-hi" class="px-2.5 py-1 text-xs rounded font-semibold transition text-slate-300 hover:bg-slate-700">हिंदी</button>
+                        <button onclick="changeLanguage('kn')" id="lang-kn" class="px-2.5 py-1 text-xs rounded font-semibold transition text-slate-300 hover:bg-slate-700">ಕನ್ನಡ</button>
+                    </div>
+
+                    <button onclick="triggerPrint()" class="bg-green-600 hover:bg-green-500 text-white font-semibold text-xs px-4 py-2 rounded-lg shadow-md transition flex items-center space-x-1.5" id="download-btn-wrapper">
+                        <i class="fa-solid fa-file-pdf text-sm"></i>
+                        <span id="btn-download-pdf">PDF डाऊनलोड</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- DYNAMIC CONTAINER -->
+        <div id="app-view-container">
+            <main class="max-w-7xl w-full mx-auto p-4 grid grid-cols-1 lg:grid-cols-12 gap-6 mt-2">
+                <div class="lg:col-span-6 xl:col-span-5 space-y-6 no-print">
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <h2 class="font-bold text-slate-800 text-sm flex items-center gap-2" id="ui-heading-templates">
+                                <i class="fa-solid fa-palette text-green-600"></i> टेम्पलेट गॅलरी (५० डिझाईन्स)
+                            </h2>
+                            <span class="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-600" id="active-template-badge">1 / 50 Selected</span>
+                        </div>
+                        <div class="flex gap-1 overflow-x-auto pb-2 mb-3 text-xs">
+                            <button onclick="filterTemplates('all')" class="px-2.5 py-1 rounded bg-slate-800 text-white whitespace-nowrap">सर्व (50)</button>
+                            <button onclick="filterTemplates('modern')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">मॉडर्न</button>
+                            <button onclick="filterTemplates('classic')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">क्लासिक</button>
+                            <button onclick="filterTemplates('sidebar')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">साइडबार</button>
+                            <button onclick="filterTemplates('minimal')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">मिनिमल</button>
+                        </div>
+                        <div id="template-gallery-container" class="grid grid-cols-5 gap-2 max-h-40 overflow-y-auto p-1 border rounded-lg bg-slate-50"></div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="flex border-b border-slate-200 bg-slate-50 text-xs overflow-x-auto">
+                            <button onclick="switchFormTab('personal')" id="tab-btn-personal" class="px-3 py-3 font-semibold border-b-2 border-green-600 text-green-600 whitespace-nowrap"><i class="fa-solid fa-user mr-1"></i> <span id="t-tab-personal">व्यक्तिगत माहिती</span></button>
+                            <button onclick="switchFormTab('experience')" id="tab-btn-experience" class="px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap"><i class="fa-solid fa-briefcase mr-1"></i> <span id="t-tab-exp">अनुभव</span></button>
+                            <button onclick="switchFormTab('education')" id="tab-btn-education" class="px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap"><i class="fa-solid fa-graduation-cap mr-1"></i> <span id="t-tab-edu">शिक्षण</span></button>
+                            <button onclick="switchFormTab('skills')" id="tab-btn-skills" class="px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap"><i class="fa-solid fa-code mr-1"></i> <span id="t-tab-skills">कौशल्ये</span></button>
+                            <button onclick="switchFormTab('more')" id="tab-btn-more" class="px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap"><i class="fa-solid fa-plus-circle mr-1"></i> <span id="t-tab-proj">प्रोजेक्ट्स</span></button>
+                        </div>
+
+                        <div class="p-5 space-y-4">
+                            <div id="form-tab-personal" class="space-y-4">
+                                <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-lg border border-dashed border-slate-300">
+                                    <div class="w-14 h-14 rounded-full bg-slate-200 border flex items-center justify-center overflow-hidden shrink-0 relative">
+                                        <img id="photo-preview" class="w-full h-full object-cover hidden" alt="Photo">
+                                        <i id="photo-placeholder" class="fa-solid fa-user text-xl text-slate-400"></i>
+                                    </div>
+                                    <div class="flex-grow space-y-1">
+                                        <label class="block text-xs font-semibold text-slate-700" id="lbl-photo">प्रोफाइल फोटो</label>
+                                        <div class="flex gap-2">
+                                            <input type="file" id="photo-input" accept="image/*" onchange="handlePhotoUpload(event)" class="hidden">
+                                            <button onclick="document.getElementById('photo-input').click()" class="bg-slate-800 hover:bg-slate-700 text-white text-xs px-3 py-1 rounded" id="btn-upload">फोटो निवडा</button>
+                                            <button onclick="removePhoto()" class="text-xs text-red-600 hover:underline px-1" id="btn-remove">काढून टाका</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-fullname">पूर्ण नाव</label><input type="text" id="inp-fullname" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-jobtitle">पदनाम</label><input type="text" id="inp-jobtitle" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-email">ईमेल</label><input type="email" id="inp-email" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-phone">मोबाईल क्रमांक</label><input type="text" id="inp-phone" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-location">पत्ता / शहर</label><input type="text" id="inp-location" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-linkedin">LinkedIn</label><input type="text" id="inp-linkedin" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between items-center mb-1"><label class="block text-xs font-semibold text-slate-700" id="lbl-summary">प्रोफाइल सारांश</label><button onclick="generateAISummary()" class="text-xs text-green-700 font-bold hover:underline" id="btn-ai"><i class="fa-solid fa-wand-magic-sparkles"></i> AI सुझेशन</button></div>
+                                    <textarea id="inp-summary" rows="3" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></textarea>
+                                </div>
+                            </div>
+
+                            <div id="form-tab-experience" class="space-y-4 hidden">
+                                <div class="flex justify-between items-center"><h3 class="font-bold text-xs text-slate-800" id="lbl-exp-heading">कार्य अनुभव</h3><button onclick="addExperience()" class="bg-green-600 text-white text-xs px-2.5 py-1 rounded font-semibold">+ जोडा</button></div>
+                                <div id="experience-list" class="space-y-3"></div>
+                            </div>
+
+                            <div id="form-tab-education" class="space-y-4 hidden">
+                                <div class="flex justify-between items-center"><h3 class="font-bold text-xs text-slate-800" id="lbl-edu-heading">शिक्षण</h3><button onclick="addEducation()" class="bg-green-600 text-white text-xs px-2.5 py-1 rounded font-semibold">+ जोडा</button></div>
+                                <div id="education-list" class="space-y-3"></div>
+                            </div>
+
+                            <div id="form-tab-skills" class="space-y-4 hidden">
+                                <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-skills-heading">कौशल्ये</label><input type="text" id="inp-skills" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg"></div>
+                                <div class="pt-3 border-t"><label class="block text-xs font-semibold text-slate-700 mb-2" id="lbl-lang-heading">भाषा</label><div class="grid grid-cols-2 gap-2" id="languages-checkbox-group">
+                                    <label class="flex items-center gap-2 text-xs bg-slate-50 p-2 rounded border cursor-pointer"><input type="checkbox" value="मराठी" checked onchange="updateResume()" class="lang-chk"> मराठी</label>
+                                    <label class="flex items-center gap-2 text-xs bg-slate-50 p-2 rounded border cursor-pointer"><input type="checkbox" value="English" checked onchange="updateResume()" class="lang-chk"> English</label>
+                                    <label class="flex items-center gap-2 text-xs bg-slate-50 p-2 rounded border cursor-pointer"><input type="checkbox" value="हिंदी" checked onchange="updateResume()" class="lang-chk"> हिंदी</label>
+                                    <label class="flex items-center gap-2 text-xs bg-slate-50 p-2 rounded border cursor-pointer"><input type="checkbox" value="ಕನ್ನಡ" onchange="updateResume()" class="lang-chk"> ಕನ್ನಡ</label>
+                                </div></div>
+                            </div>
+
+                            <div id="form-tab-more" class="space-y-4 hidden">
+                                <div class="flex justify-between items-center"><h3 class="font-bold text-xs text-slate-800" id="lbl-proj-heading">प्रोजेक्ट्स</h3><button onclick="addProject()" class="bg-green-600 text-white text-xs px-2.5 py-1 rounded font-semibold">+ जोडा</button></div>
+                                <div id="projects-list" class="space-y-3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 text-white rounded-xl p-4 shadow-sm border border-slate-800">
+                        <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold flex items-center gap-1.5" id="lbl-ats-title"><i class="fa-solid fa-chart-line text-green-400"></i> ATS स्कोर</span><span id="ats-score-badge" class="bg-green-500 text-slate-950 font-black text-xs px-2 py-0.5 rounded-full">85%</span></div>
+                        <div class="w-full bg-slate-800 rounded-full h-2"><div id="ats-progress-bar" class="bg-green-500 h-2 rounded-full transition-all duration-500" style="width: 85%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 xl:col-span-7 flex flex-col items-center">
+                    <div class="w-full max-w-[210mm] bg-white rounded-xl shadow-sm border border-slate-200 p-3 mb-4 flex justify-between items-center text-xs no-print">
+                        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span><span class="font-bold text-slate-700" id="lbl-live-preview">लाइव्ह प्रीव्ह्यू</span></div>
+                        <div class="flex items-center gap-3">
+                            <button onclick="zoomResume(1)" class="hover:text-green-600"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                            <button onclick="zoomResume(-1)" class="hover:text-green-600"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+                            <button onclick="resetZoom()" class="hover:text-green-600"><i class="fa-solid fa-rotate-left"></i></button>
+                        </div>
+                    </div>
+                    <div class="w-full overflow-x-auto flex justify-center pb-10">
+                        <div id="resume-preview-container" class="bg-white shadow-2xl transition-all duration-300 transform origin-top" style="width: 210mm; min-height: 297mm;">
+                            <div id="resume-render-target" class="w-full min-h-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER WITH LEGAL LINKS & KOLHAPUR / GMAIL INFO -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 mt-10 no-print">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <p>© 2026 Resume.RK (कोल्हापूर, महाराष्ट्र). सर्व हक्क सुरक्षित.</p>
+            <div class="flex flex-wrap justify-center gap-4 text-slate-300">
+                <button onclick="openLegalPage('privacy')" class="hover:text-green-400 transition">Privacy Policy</button>
+                <button onclick="openLegalPage('terms')" class="hover:text-green-400 transition">Terms & Conditions</button>
+                <button onclick="openLegalPage('about')" class="hover:text-green-400 transition">About Us</button>
+                <button onclick="openLegalPage('contact')" class="hover:text-green-400 transition">Contact Us</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT ENGINE -->
+    <script>
+        let currentLang = 'mr';
+        let currentTemplateId = 1;
+        let zoomLevel = 1;
+
+        let resumeData = {
+            photo: '',
+            fullname: 'राहुल सचिन पाटील',
+            jobtitle: 'सिनिअर सॉफ्टवेअर डेव्हलपर',
+            email: 'rahul.patil@example.com',
+            phone: '+91 9876543210',
+            location: 'कोल्हापूर, महाराष्ट्र',
+            linkedin: 'linkedin.com/in/rahul-patil',
+            summary: 'सॉफ्टवेअर डेव्हलपमेंटमध्ये ४+ वर्षांचा अनुभव असलेला प्रोफेशनल्स डेव्हलपर. वेब ॲप्लिकेशन्स आणि क्लाउड आर्किटेक्चरमध्ये विशेष प्राविण्य.',
+            skills: ['React', 'Node.js', 'Python', 'Tailwind CSS', 'PostgreSQL', 'Git'],
+            languages: ['मराठी', 'English', 'हिंदी'],
+            experiences: [
+                { role: 'सिनिअर वेब डेव्हलपर', company: 'टेक सोल्युशन्स लि.', duration: '२०२० - सध्या', details: 'हाय-ट्रॅफिक वेब ॲप्लिकेशन्स डिझाईन व डेव्हलप केले.' }
+            ],
+            education: [
+                { degree: 'बी.ई. (कॉम्प्युटर सायन्स)', school: 'शिवाजी युनिव्हर्सिटी, कोल्हापूर', year: '२०१६ - २०२०' }
+            ],
+            projects: [
+                { title: 'ई-कॉमर्स प्लॅटफॉर्म', desc: 'React आणि Node.js वापरून शॉपिंग पोर्टल विकसित केले.' }
+            ]
+        };
+
+        const i18n = {
+            mr: {
+                tagline: "स्मार्ट व बहुभाषिक रेझ्युमे बिल्डर",
+                sample: "सॅम्पल:",
+                load: "लोड करा",
+                downloadPdf: "PDF डाऊनलोड",
+                templates: "टेम्पलेट गॅलरी (५० डिझाईन्स)",
+                tabPersonal: "व्यक्तिगत माहिती",
+                tabExp: "अनुभव",
+                tabEdu: "शिक्षण",
+                tabSkills: "कौशल्ये",
+                tabProj: "प्रोजेक्ट्स",
+                lblPhoto: "प्रोफाइल फोटो",
+                btnUpload: "फोटो निवडा",
+                btnRemove: "काढून टाका",
+                lblFullname: "पूर्ण नाव",
+                lblJobtitle: "पदनाम / Job Title",
+                lblEmail: "ईमेल",
+                lblPhone: "मोबाईल क्रमांक",
+                lblLocation: "पत्ता / शहर",
+                lblSummary: "प्रोफाइल सारांश (Summary)",
+                lblExpHeading: "कार्य अनुभव (Work Experience)",
+                lblEduHeading: "शैक्षणिक पात्रता (Education)",
+                lblSkillsHeading: "कौशल्ये (Skills - कॉमा देऊन टाका)",
+                lblLangHeading: "अवगत असलेल्या भाषा (Languages Known)",
+                lblProjHeading: "प्रोजेक्ट्स (Key Projects)",
+                atsTitle: "ATS सुसंगतता स्कोर",
+                livePreview: "लाइव्ह प्रीव्ह्यू (A4 Format)",
+                secSummary: "प्रोफाइल सारांश",
+                secExp: "कार्य अनुभव",
+                secEdu: "शिक्षण",
+                secSkills: "कौशल्ये",
+                secLang: "भाषा ज्ञान",
+                secProj: "महत्त्वाचे प्रोजेक्ट्स"
+            },
+            en: {
+                tagline: "Smart Multi-Language Resume Builder",
+                sample: "Sample:",
+                load: "Load",
+                downloadPdf: "Download PDF",
+                templates: "Template Gallery (50 Presets)",
+                tabPersonal: "Personal Info",
+                tabExp: "Experience",
+                tabEdu: "Education",
+                tabSkills: "Skills",
+                tabProj: "Projects",
+                lblPhoto: "Profile Photo",
+                btnUpload: "Upload Photo",
+                btnRemove: "Remove",
+                lblFullname: "Full Name",
+                lblJobtitle: "Job Title",
+                lblEmail: "Email Address",
+                lblPhone: "Phone Number",
+                lblLocation: "Location / City",
+                lblSummary: "Professional Summary",
+                lblExpHeading: "Work Experience",
+                lblEduHeading: "Education Qualification",
+                lblSkillsHeading: "Key Skills (comma separated)",
+                lblLangHeading: "Languages Known",
+                lblProjHeading: "Key Projects",
+                atsTitle: "ATS Compatibility Score",
+                livePreview: "Live Preview (A4 Format)",
+                secSummary: "Professional Summary",
+                secExp: "Work Experience",
+                secEdu: "Education",
+                secSkills: "Key Skills",
+                secLang: "Languages Known",
+                secProj: "Key Projects"
+            },
+            hi: {
+                tagline: "स्मार्ट एवं बहुभाषी रिज्यूमे बिल्डर",
+                sample: "सैंपल:",
+                load: "लोड करें",
+                downloadPdf: "PDF डाउनलोड",
+                templates: "टैम्प्लेट गैलरी (50 डिज़ाइन)",
+                tabPersonal: "व्यक्तिगत जानकारी",
+                tabExp: "अनुभव",
+                tabEdu: "शिक्षा",
+                tabSkills: "कौशल",
+                tabProj: "प्रोजेक्ट्स",
+                lblPhoto: "प्रोफाइल फोटो",
+                btnUpload: "फोटो चुनें",
+                btnRemove: "हटाएं",
+                lblFullname: "पूरा नाम",
+                lblJobtitle: "पदनाम / Job Title",
+                lblEmail: "ईमेल",
+                lblPhone: "मोबाइल नंबर",
+                lblLocation: "पता / शहर",
+                lblSummary: "प्रोफाइल सारांश",
+                lblExpHeading: "कार्य अनुभव",
+                lblEduHeading: "शैक्षणिक योग्यता",
+                lblSkillsHeading: "कौशल (कॉमा लगाकर लिखें)",
+                lblLangHeading: "भाषा ज्ञान",
+                lblProjHeading: "प्रमुख प्रोजेक्ट्स",
+                atsTitle: "ATS स्कोर",
+                livePreview: "लाइव पूर्वावलोकन (A4 Format)",
+                secSummary: "प्रोफाइल सारांश",
+                secExp: "कार्य अनुभव",
+                secEdu: "शिक्षा",
+                secSkills: "कौशल",
+                secLang: "भाषाएँ",
+                secProj: "प्रमुख प्रोजेक्ट्स"
+            },
+            kn: {
+                tagline: "ಸ್ಮಾರ್ಟ್ ಮಲ್ಟಿ-ಲ್ಯಾಂಗ್ವೇಜ್ ರೆಸ್ಯೂಮ್ ಬಿಲ್ಡರ್",
+                sample: "ಮಾದರಿ:",
+                load: "ಲೋಡ್ ಮಾಡಿ",
+                downloadPdf: "PDF ಡೌನ್‌ಲೋಡ್",
+                templates: "ಟೆಂಪ್ಲೇಟ್ ಗ್ಯಾಲರಿ",
+                tabPersonal: "ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ",
+                tabExp: "ಅನುಭವ",
+                tabEdu: "ಶಿಕ್ಷಣ",
+                tabSkills: "ಕೌಶಲ್ಯಗಳು",
+                tabProj: "ಪ್ರಾಜೆಕ್ಟ್‌ಗಳು",
+                lblPhoto: "ಪ್ರೊಫೈಲ್ ಫೋಟೋ",
+                btnUpload: "ಫೋಟೋ ಆಯ್ಕೆ",
+                btnRemove: "ತೆಗೆದುಹಾಕಿ",
+                lblFullname: "ಪೂರ್ಣ ಹೆಸರು",
+                lblJobtitle: "ಹುದ್ದೆಯ ಹೆಸರು",
+                lblEmail: "ಇಮೇಲ್",
+                lblPhone: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+                lblLocation: "ಸ್ಥಳ / ನಗರ",
+                lblSummary: "ಪ್ರೊಫೈಲ್ ಸಾರಾಂಶ",
+                lblExpHeading: "ಕಾರ್ಯ ಅನುಭವ",
+                lblEduHeading: "ಶೈಕ್ಷಣಿಕ ಅರ್ಹತೆ",
+                lblSkillsHeading: "ಕೌಶಲ್ಯಗಳು",
+                lblLangHeading: "ತಿಳಿದಿರುವ ಭಾಷೆಗಳು",
+                lblProjHeading: "ಪ್ರಮುಖ ಪ್ರಾಜೆಕ್ಟ್‌ಗಳು",
+                atsTitle: "ATS ಸ್ಕೋರ್",
+                livePreview: "ಲೈವ್ ಪೂರ್ವವೀಕ್ಷಣೆ (A4 Format)",
+                secSummary: "ಪ್ರೊಫೈಲ್ ಸಾರಾಂಶ",
+                secExp: "ಕಾರ್ಯ ಅನುಭವ",
+                secEdu: "ಶಿಕ್ಷಣ",
+                secSkills: "ಕೌಶಲ್ಯಗಳು",
+                secLang: "ಭಾಷೆಗಳು",
+                secProj: "ಪ್ರಾಜೆಕ್ಟ್‌ಗಳು"
+            }
+        };
+
+        const sampleProfiles = {
+            software: { fullname: "राहुल सचिन पाटील", jobtitle: "सिनिअर सॉफ्टवेअर इंजिनिअर", location: "कोल्हापूर, महाराष्ट्र", summary: "वेब ॲप्लिकेशन्स आणि क्लाउड आर्किटेक्चरमध्ये ४+ वर्षांचा अनुभव." },
+            marketing: { fullname: "प्रिया आनंद शर्मा", jobtitle: "डिजिटल मार्केटिंग मॅनेजर", location: "कोल्हापूर, महाराष्ट्र", summary: "ब्रांड ग्रोथ आणि ROI वाढवण्यात ६+ वर्षांचा अनुभव." },
+            fresher: { fullname: "अमित मारुती मोरे", jobtitle: "कॉम्प्युटर ग्रॅज्युएट / फ्रेशर", location: "कोल्हापूर, महाराष्ट्र", summary: "कॉम्प्युटर सायन्समध्ये बी.ई. पदवी पूर्ण. नवीन तंत्रज्ञान शिकण्याची आवड." },
+            sales: { fullname: "विक्रम विजय देशमुख", jobtitle: "सिनिअर सेल्स एक्झिक्युटिव्ह", location: "कोल्हापूर, महाराष्ट्र", summary: "B2B आणि B2C सेल्समध्ये ५ वर्षांचा यशस्वी अनुभव." },
+            finance: { fullname: "स्नेहल प्रकाश कुलकर्णी", jobtitle: "सिनिअर फायनान्स अकाऊंटंट", location: "कोल्हापूर, महाराष्ट्र", summary: "टॅक्सेशन, जीएसटी, आणि फायनान्शियल ऑडिटिंगमध्ये ५+ वर्षांचा अनुभव." }
+        };
+
+        const templatePresets = Array.from({ length: 50 }, (_, i) => {
+            const engines = ['sidebar', 'modern', 'classic', 'minimal'];
+            const colors = ['#16a34a', '#2563eb', '#d97706', '#dc2626', '#4f46e5', '#0891b2', '#059669', '#7c3aed', '#0f172a'];
+            return { id: i + 1, engine: engines[i % engines.length], color: colors[i % colors.length], category: engines[i % engines.length] };
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderTemplateGallery('all');
+            populateFormInputs();
+            renderExperiences();
+            renderEducation();
+            renderProjects();
+            updateLanguageUI();
+            updateResume();
+        });
+
+        function renderTemplateGallery(filterCategory) {
+            const container = document.getElementById('template-gallery-container');
+            container.innerHTML = '';
+            templatePresets.forEach(tpl => {
+                if (filterCategory !== 'all' && tpl.category !== filterCategory) return;
+                const card = document.createElement('button');
+                card.onclick = () => selectTemplate(tpl.id);
+                card.className = `p-1.5 text-center rounded border flex flex-col items-center gap-1 ${currentTemplateId === tpl.id ? 'border-green-600 bg-green-50 ring-2 ring-green-500' : 'bg-white border-slate-200'}`;
+                card.innerHTML = `<div class="w-full h-8 rounded text-[9px] font-bold text-white flex items-center justify-center" style="background-color: ${tpl.color}">T-${tpl.id}</div><span class="text-[9px] text-slate-700 font-medium">T-${tpl.id}</span>`;
+                container.appendChild(card);
+            });
+            document.getElementById('active-template-badge').innerText = `${currentTemplateId} / 50 Selected`;
+        }
+
+        function filterTemplates(cat) { renderTemplateGallery(cat); }
+
+        function selectTemplate(id) {
+            currentTemplateId = id;
+            renderTemplateGallery('all');
+            updateResume();
+        }
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            ['mr', 'en', 'hi', 'kn'].forEach(l => {
+                document.getElementById(`lang-${l}`).className = l === lang ? "px-2.5 py-1 text-xs rounded font-semibold bg-green-600 text-white" : "px-2.5 py-1 text-xs rounded font-semibold text-slate-300 hover:bg-slate-700";
+            });
+            updateLanguageUI();
+            updateResume();
+        }
+
+        function updateLanguageUI() {
+            const d = i18n[currentLang];
+            document.getElementById('ui-tagline').innerText = d.tagline;
+            document.getElementById('lbl-sample').innerText = d.sample;
+            document.getElementById('btn-load').innerText = d.load;
+            document.getElementById('btn-download-pdf').innerText = d.downloadPdf;
+            document.getElementById('ui-heading-templates').innerHTML = `<i class="fa-solid fa-palette text-green-600"></i> ${d.templates}`;
+            document.getElementById('t-tab-personal').innerText = d.tabPersonal;
+            document.getElementById('t-tab-exp').innerText = d.tabExp;
+            document.getElementById('t-tab-edu').innerText = d.tabEdu;
+            document.getElementById('t-tab-skills').innerText = d.tabSkills;
+            document.getElementById('t-tab-proj').innerText = d.tabProj;
+            document.getElementById('lbl-photo').innerText = d.lblPhoto;
+            document.getElementById('btn-upload').innerText = d.btnUpload;
+            document.getElementById('btn-remove').innerText = d.btnRemove;
+            document.getElementById('lbl-fullname').innerText = d.lblFullname;
+            document.getElementById('lbl-jobtitle').innerText = d.lblJobtitle;
+            document.getElementById('lbl-email').innerText = d.lblEmail;
+            document.getElementById('lbl-phone').innerText = d.lblPhone;
+            document.getElementById('lbl-location').innerText = d.lblLocation;
+            document.getElementById('lbl-summary').innerText = d.lblSummary;
+            document.getElementById('lbl-exp-heading').innerText = d.lblExpHeading;
+            document.getElementById('lbl-edu-heading').innerText = d.lblEduHeading;
+            document.getElementById('lbl-skills-heading').innerText = d.lblSkillsHeading;
+            document.getElementById('lbl-lang-heading').innerText = d.lblLangHeading;
+            document.getElementById('lbl-proj-heading').innerText = d.lblProjHeading;
+            document.getElementById('lbl-ats-title').innerHTML = `<i class="fa-solid fa-chart-line text-green-400"></i> ${d.atsTitle}`;
+            document.getElementById('lbl-live-preview').innerText = d.livePreview;
+        }
+
+        function populateFormInputs() {
+            document.getElementById('inp-fullname').value = resumeData.fullname;
+            document.getElementById('inp-jobtitle').value = resumeData.jobtitle;
+            document.getElementById('inp-email').value = resumeData.email;
+            document.getElementById('inp-phone').value = resumeData.phone;
+            document.getElementById('inp-location').value = resumeData.location;
+            document.getElementById('inp-linkedin').value = resumeData.linkedin;
+            document.getElementById('inp-summary').value = resumeData.summary;
+            document.getElementById('inp-skills').value = resumeData.skills.join(', ');
+        }
+
+        function handlePhotoUpload(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    resumeData.photo = evt.target.result;
+                    document.getElementById('photo-preview').src = resumeData.photo;
+                    document.getElementById('photo-preview').classList.remove('hidden');
+                    document.getElementById('photo-placeholder').classList.add('hidden');
+                    updateResume();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function removePhoto() {
+            resumeData.photo = '';
+            document.getElementById('photo-preview').classList.add('hidden');
+            document.getElementById('photo-placeholder').classList.remove('hidden');
+            updateResume();
+        }
+
+        function loadSelectedSample() {
+            const key = document.getElementById('sample-profile-select').value;
+            const sample = sampleProfiles[key] || sampleProfiles.software;
+            resumeData.fullname = sample.fullname;
+            resumeData.jobtitle = sample.jobtitle;
+            resumeData.location = sample.location;
+            resumeData.summary = sample.summary;
+            populateFormInputs();
+            updateResume();
+        }
+
+        function switchFormTab(tab) {
+            ['personal', 'experience', 'education', 'skills', 'more'].forEach(t => {
+                document.getElementById(`form-tab-${t}`).classList.add('hidden');
+                document.getElementById(`tab-btn-${t}`).className = "px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap";
+            });
+            document.getElementById(`form-tab-${tab}`).classList.remove('hidden');
+            document.getElementById(`tab-btn-${tab}`).className = "px-3 py-3 font-semibold border-b-2 border-green-600 text-green-600 whitespace-nowrap";
+        }
+
+        function renderExperiences() {
+            const container = document.getElementById('experience-list');
+            container.innerHTML = '';
+            resumeData.experiences.forEach((exp, idx) => {
+                const item = document.createElement('div');
+                item.className = "p-3 bg-slate-50 border rounded-lg space-y-2 text-xs relative";
+                item.innerHTML = `
+                    <button onclick="removeExp(${idx})" class="absolute top-2 right-2 text-red-600 hover:text-red-800"><i class="fa-solid fa-trash"></i></button>
+                    <div class="grid grid-cols-2 gap-2">
+                        <input type="text" placeholder="पद / Role" value="${exp.role}" oninput="resumeData.experiences[${idx}].role = this.value; updateResume();" class="p-1.5 border rounded">
+                        <input type="text" placeholder="कंपनी / Company" value="${exp.company}" oninput="resumeData.experiences[${idx}].company = this.value; updateResume();" class="p-1.5 border rounded">
+                    </div>
+                    <input type="text" placeholder="कालावधी" value="${exp.duration}" oninput="resumeData.experiences[${idx}].duration = this.value; updateResume();" class="p-1.5 border rounded w-full">
+                    <textarea placeholder="वर्णन" oninput="resumeData.experiences[${idx}].details = this.value; updateResume();" class="p-1.5 border rounded w-full" rows="2">${exp.details}</textarea>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function addExperience() {
+            resumeData.experiences.push({ role: '', company: '', duration: '', details: '' });
+            renderExperiences();
+            updateResume();
+        }
+
+        function removeExp(idx) {
+            resumeData.experiences.splice(idx, 1);
+            renderExperiences();
+            updateResume();
+        }
+
+        function renderEducation() {
+            const container = document.getElementById('education-list');
+            container.innerHTML = '';
+            resumeData.education.forEach((edu, idx) => {
+                const item = document.createElement('div');
+                item.className = "p-3 bg-slate-50 border rounded-lg space-y-2 text-xs relative";
+                item.innerHTML = `
+                    <button onclick="removeEdu(${idx})" class="absolute top-2 right-2 text-red-600 hover:text-red-800"><i class="fa-solid fa-trash"></i></button>
+                    <input type="text" placeholder="पदवी" value="${edu.degree}" oninput="resumeData.education[${idx}].degree = this.value; updateResume();" class="p-1.5 border rounded w-full">
+                    <div class="grid grid-cols-2 gap-2">
+                        <input type="text" placeholder="कॉलेज" value="${edu.school}" oninput="resumeData.education[${idx}].school = this.value; updateResume();" class="p-1.5 border rounded">
+                        <input type="text" placeholder="वर्ष" value="${edu.year}" oninput="resumeData.education[${idx}].year = this.value; updateResume();" class="p-1.5 border rounded">
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function addEducation() {
+            resumeData.education.push({ degree: '', school: '', year: '' });
+            renderEducation();
+            updateResume();
+        }
+
+        function removeEdu(idx) {
+            resumeData.education.splice(idx, 1);
+            renderEducation();
+            updateResume();
+        }
+
+        function renderProjects() {
+            const container = document.getElementById('projects-list');
+            container.innerHTML = '';
+            resumeData.projects.forEach((proj, idx) => {
+                const item = document.createElement('div');
+                item.className = "p-3 bg-slate-50 border rounded-lg space-y-2 text-xs relative";
+                item.innerHTML = `
+                    <button onclick="removeProject(${idx})" class="absolute top-2 right-2 text-red-600 hover:text-red-800"><i class="fa-solid fa-trash"></i></button>
+                    <input type="text" placeholder="प्रोजेक्ट नाव" value="${proj.title}" oninput="resumeData.projects[${idx}].title = this.value; updateResume();" class="p-1.5 border rounded w-full">
+                    <textarea placeholder="वर्णन" oninput="resumeData.projects[${idx}].desc = this.value; updateResume();" class="p-1.5 border rounded w-full" rows="2">${proj.desc}</textarea>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function addProject() {
+            resumeData.projects.push({ title: '', desc: '' });
+            renderProjects();
+            updateResume();
+        }
+
+        function removeProject(idx) {
+            resumeData.projects.splice(idx, 1);
+            renderProjects();
+            updateResume();
+        }
+
+        function generateAISummary() {
+            const title = document.getElementById('inp-jobtitle').value || "Professional";
+            let aiText = `${title} म्हणून कामाचा दांडगा अनुभव. इनोव्हेटिव्ह प्रोजेक्ट्स वेळेत पूर्ण करण्यात प्राविण्य.`;
+            document.getElementById('inp-summary').value = aiText;
+            resumeData.summary = aiText;
+            updateResume();
+        }
+
+        function updateResume() {
+            resumeData.fullname = document.getElementById('inp-fullname').value;
+            resumeData.jobtitle = document.getElementById('inp-jobtitle').value;
+            resumeData.email = document.getElementById('inp-email').value;
+            resumeData.phone = document.getElementById('inp-phone').value;
+            resumeData.location = document.getElementById('inp-location').value;
+            resumeData.linkedin = document.getElementById('inp-linkedin').value;
+            resumeData.summary = document.getElementById('inp-summary').value;
+
+            const rawSkills = document.getElementById('inp-skills').value;
+            resumeData.skills = rawSkills ? rawSkills.split(',').map(s => s.trim()).filter(s => s) : [];
+
+            const langChks = document.querySelectorAll('.lang-chk:checked');
+            resumeData.languages = Array.from(langChks).map(c => c.value);
+
+            const tplConfig = templatePresets.find(t => t.id === currentTemplateId) || templatePresets[0];
+            const dict = i18n[currentLang];
+            const target = document.getElementById('resume-render-target');
+            if(!target) return;
+
+            if (tplConfig.engine === 'sidebar') {
+                target.innerHTML = `
+                    <div class="flex min-h-[297mm]">
+                        <div class="w-1/3 text-white p-6 space-y-6" style="background-color: ${tplConfig.color}">
+                            ${resumeData.photo ? `<div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-white mb-4"><img src="${resumeData.photo}" class="w-full h-full object-cover"></div>` : ''}
+                            <div>
+                                <h1 class="text-lg font-bold">${resumeData.fullname || 'तुमचे नाव'}</h1>
+                                <p class="text-xs opacity-90">${resumeData.jobtitle || 'पदनाम'}</p>
+                            </div>
+                            <div class="space-y-1 text-xs opacity-90 pt-3 border-t border-white/20">
+                                ${resumeData.email ? `<p>${resumeData.email}</p>` : ''}
+                                ${resumeData.phone ? `<p>${resumeData.phone}</p>` : ''}
+                                ${resumeData.location ? `<p>${resumeData.location}</p>` : ''}
+                            </div>
+                            ${resumeData.skills.length ? `<div class="pt-3 border-t border-white/20"><h3 class="text-xs font-bold uppercase mb-1">${dict.secSkills}</h3><p class="text-xs">${resumeData.skills.join(', ')}</p></div>` : ''}
+                            ${resumeData.languages.length ? `<div class="pt-3 border-t border-white/20"><h3 class="text-xs font-bold uppercase mb-1">${dict.secLang}</h3><p class="text-xs">${resumeData.languages.join(', ')}</p></div>` : ''}
+                        </div>
+                        <div class="w-2/3 p-8 bg-white space-y-6">
+                            ${resumeData.summary ? `<div><h3 class="text-xs font-bold uppercase mb-1" style="color:${tplConfig.color}">${dict.secSummary}</h3><p class="text-xs text-slate-600">${resumeData.summary}</p></div>` : ''}
+                            ${resumeData.experiences.length ? `<div><h3 class="text-xs font-bold uppercase mb-2" style="color:${tplConfig.color}">${dict.secExp}</h3>${resumeData.experiences.map(e => `<div class="mb-3"><div class="flex justify-between text-xs font-bold"><span>${e.role}</span><span>${e.duration}</span></div><p class="text-xs text-slate-500">${e.company}</p><p class="text-xs text-slate-600">${e.details}</p></div>`).join('')}</div>` : ''}
+                            ${resumeData.education.length ? `<div><h3 class="text-xs font-bold uppercase mb-2" style="color:${tplConfig.color}">${dict.secEdu}</h3>${resumeData.education.map(ed => `<div class="text-xs mb-1"><span class="font-bold">${ed.degree}</span> - <span>${ed.school}</span> (${ed.year})</div>`).join('')}</div>` : ''}
+                            ${resumeData.projects.length ? `<div><h3 class="text-xs font-bold uppercase mb-2" style="color:${tplConfig.color}">${dict.secProj}</h3>${resumeData.projects.map(p => `<div class="text-xs mb-1"><span class="font-bold">${p.title}</span>: <span>${p.desc}</span></div>`).join('')}</div>` : ''}
+                        </div>
+                    </div>
+                `;
+            } else {
+                target.innerHTML = `
+                    <div class="p-8 min-h-[297mm] bg-white space-y-6">
+                        <div class="flex items-center justify-between pb-4 border-b-2" style="border-color:${tplConfig.color}">
+                            <div>
+                                <h1 class="text-2xl font-bold" style="color:${tplConfig.color}">${resumeData.fullname || 'तुमचे नाव'}</h1>
+                                <p class="text-xs font-bold text-slate-600">${resumeData.jobtitle || 'पदनाम'}</p>
+                                <div class="flex gap-3 text-xs text-slate-500 mt-2">
+                                    <span>${resumeData.email}</span> | <span>${resumeData.phone}</span> | <span>${resumeData.location}</span>
+                                </div>
+                            </div>
+                            ${resumeData.photo ? `<div class="w-20 h-20 rounded border overflow-hidden shrink-0"><img src="${resumeData.photo}" class="w-full h-full object-cover"></div>` : ''}
+                        </div>
+                        ${resumeData.summary ? `<div><h3 class="text-xs font-bold uppercase mb-1" style="color:${tplConfig.color}">${dict.secSummary}</h3><p class="text-xs text-slate-600">${resumeData.summary}</p></div>` : ''}
+                        ${resumeData.experiences.length ? `<div><h3 class="text-xs font-bold uppercase mb-2" style="color:${tplConfig.color}">${dict.secExp}</h3>${resumeData.experiences.map(e => `<div class="mb-3 border-l-2 pl-3" style="border-color:${tplConfig.color}"><div class="flex justify-between text-xs font-bold"><span>${e.role}</span><span>${e.duration}</span></div><p class="text-xs text-slate-500">${e.company}</p><p class="text-xs text-slate-600">${e.details}</p></div>`).join('')}</div>` : ''}
+                        <div class="grid grid-cols-2 gap-4">
+                            ${resumeData.education.length ? `<div><h3 class="text-xs font-bold uppercase mb-2" style="color:${tplConfig.color}">${dict.secEdu}</h3>${resumeData.education.map(ed => `<div class="text-xs mb-1"><p class="font-bold">${ed.degree}</p><p class="text-slate-500">${ed.school} (${ed.year})</p></div>`).join('')}</div>` : ''}
+                            ${resumeData.skills.length ? `<div><h3 class="text-xs font-bold uppercase mb-2" style="color:${tplConfig.color}">${dict.secSkills}</h3><p class="text-xs">${resumeData.skills.join(', ')}</p></div>` : ''}
+                        </div>
+                        ${resumeData.projects.length ? `<div><h3 class="text-xs font-bold uppercase mb-2" style="color:${tplConfig.color}">${dict.secProj}</h3>${resumeData.projects.map(p => `<div class="text-xs mb-1"><span class="font-bold">${p.title}</span>: <span>${p.desc}</span></div>`).join('')}</div>` : ''}
+                    </div>
+                `;
+            }
+        }
+
+        function zoomResume(dir) {
+            if (dir === 1 && zoomLevel < 1.3) zoomLevel += 0.1;
+            if (dir === -1 && zoomLevel > 0.7) zoomLevel -= 0.1;
+            const container = document.getElementById('resume-preview-container');
+            if(container) container.style.transform = `scale(${zoomLevel})`;
+        }
+
+        function resetZoom() {
+            zoomLevel = 1;
+            const container = document.getElementById('resume-preview-container');
+            if(container) container.style.transform = `scale(1)`;
+        }
+
+        function triggerPrint() {
+            window.print();
+        }
+
+        function showMainApp() {
+            document.getElementById('sample-box').style.display = 'flex';
+            document.getElementById('lang-box').style.display = 'flex';
+            document.getElementById('download-btn-wrapper').style.display = 'flex';
+            
+            document.getElementById('app-view-container').innerHTML = `
+                <main class="max-w-7xl w-full mx-auto p-4 grid grid-cols-1 lg:grid-cols-12 gap-6 mt-2">
+                    <div class="lg:col-span-6 xl:col-span-5 space-y-6 no-print">
+                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h2 class="font-bold text-slate-800 text-sm flex items-center gap-2" id="ui-heading-templates">
+                                    <i class="fa-solid fa-palette text-green-600"></i> टेम्पलेट गॅलरी (५० डिझाईन्स)
+                                </h2>
+                                <span class="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-600" id="active-template-badge">1 / 50 Selected</span>
+                            </div>
+                            <div class="flex gap-1 overflow-x-auto pb-2 mb-3 text-xs">
+                                <button onclick="filterTemplates('all')" class="px-2.5 py-1 rounded bg-slate-800 text-white whitespace-nowrap">सर्व (50)</button>
+                                <button onclick="filterTemplates('modern')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">मॉडर्न</button>
+                                <button onclick="filterTemplates('classic')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">क्लासिक</button>
+                                <button onclick="filterTemplates('sidebar')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">साइडबार</button>
+                                <button onclick="filterTemplates('minimal')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">मिनिमल</button>
+                            </div>
+                            <div id="template-gallery-container" class="grid grid-cols-5 gap-2 max-h-40 overflow-y-auto p-1 border rounded-lg bg-slate-50"></div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                            <div class="flex border-b border-slate-200 bg-slate-50 text-xs overflow-x-auto">
+                                <button onclick="switchFormTab('personal')" id="tab-btn-personal" class="px-3 py-3 font-semibold border-b-2 border-green-600 text-green-600 whitespace-nowrap"><i class="fa-solid fa-user mr-1"></i> <span id="t-tab-personal">व्यक्तिगत माहिती</span></button>
+                                <button onclick="switchFormTab('experience')" id="tab-btn-experience" class="px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap"><i class="fa-solid fa-briefcase mr-1"></i> <span id="t-tab-exp">अनुभव</span></button>
+                                <button onclick="switchFormTab('education')" id="tab-btn-education" class="px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap"><i class="fa-solid fa-graduation-cap mr-1"></i> <span id="t-tab-edu">शिक्षण</span></button>
+                                <button onclick="switchFormTab('skills')" id="tab-btn-skills" class="px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap"><i class="fa-solid fa-code mr-1"></i> <span id="t-tab-skills">कौशल्ये</span></button>
+                                <button onclick="switchFormTab('more')" id="tab-btn-more" class="px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap"><i class="fa-solid fa-plus-circle mr-1"></i> <span id="t-tab-proj">प्रोजेक्ट्स</span></button>
+                            </div>
+
+                            <div class="p-5 space-y-4">
+                                <div id="form-tab-personal" class="space-y-4">
+                                    <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-lg border border-dashed border-slate-300">
+                                        <div class="w-14 h-14 rounded-full bg-slate-200 border flex items-center justify-center overflow-hidden shrink-0 relative">
+                                            <img id="photo-preview" class="w-full h-full object-cover hidden" alt="Photo">
+                                            <i id="photo-placeholder" class="fa-solid fa-user text-xl text-slate-400"></i>
+                                        </div>
+                                        <div class="flex-grow space-y-1">
+                                            <label class="block text-xs font-semibold text-slate-700" id="lbl-photo">प्रोफाइल फोटो</label>
+                                            <div class="flex gap-2">
+                                                <input type="file" id="photo-input" accept="image/*" onchange="handlePhotoUpload(event)" class="hidden">
+                                                <button onclick="document.getElementById('photo-input').click()" class="bg-slate-800 hover:bg-slate-700 text-white text-xs px-3 py-1 rounded" id="btn-upload">फोटो निवडा</button>
+                                                <button onclick="removePhoto()" class="text-xs text-red-600 hover:underline px-1" id="btn-remove">काढून टाका</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-fullname">पूर्ण नाव</label><input type="text" id="inp-fullname" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                        <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-jobtitle">पदनाम</label><input type="text" id="inp-jobtitle" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-email">ईमेल</label><input type="email" id="inp-email" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                        <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-phone">मोबाईल क्रमांक</label><input type="text" id="inp-phone" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-location">पत्ता / शहर</label><input type="text" id="inp-location" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                        <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-linkedin">LinkedIn</label><input type="text" id="inp-linkedin" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between items-center mb-1"><label class="block text-xs font-semibold text-slate-700" id="lbl-summary">प्रोफाइल सारांश</label><button onclick="generateAISummary()" class="text-xs text-green-700 font-bold hover:underline" id="btn-ai"><i class="fa-solid fa-wand-magic-sparkles"></i> AI सुझेशन</button></div>
+                                        <textarea id="inp-summary" rows="3" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></textarea>
+                                    </div>
+                                </div>
+
+                                <div id="form-tab-experience" class="space-y-4 hidden">
+                                    <div class="flex justify-between items-center"><h3 class="font-bold text-xs text-slate-800" id="lbl-exp-heading">कार्य अनुभव</h3><button onclick="addExperience()" class="bg-green-600 text-white text-xs px-2.5 py-1 rounded font-semibold">+ जोडा</button></div>
+                                    <div id="experience-list" class="space-y-3"></div>
+                                </div>
+
+                                <div id="form-tab-education" class="space-y-4 hidden">
+                                    <div class="flex justify-between items-center"><h3 class="font-bold text-xs text-slate-800" id="lbl-edu-heading">शिक्षण</h3><button onclick="addEducation()" class="bg-green-600 text-white text-xs px-2.5 py-1 rounded font-semibold">+ जोडा</button></div>
+                                    <div id="education-list" class="space-y-3"></div>
+                                </div>
+
+                                <div id="form-tab-skills" class="space-y-4 hidden">
+                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-skills-heading">कौशल्ये</label><input type="text" id="inp-skills" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg"></div>
+                                    <div class="pt-3 border-t"><label class="block text-xs font-semibold text-slate-700 mb-2" id="lbl-lang-heading">भाषा</label><div class="grid grid-cols-2 gap-2" id="languages-checkbox-group">
+                                        <label class="flex items-center gap-2 text-xs bg-slate-50 p-2 rounded border cursor-pointer"><input type="checkbox" value="मराठी" checked onchange="updateResume()" class="lang-chk"> मराठी</label>
+                                        <label class="flex items-center gap-2 text-xs bg-slate-50 p-2 rounded border cursor-pointer"><input type="checkbox" value="English" checked onchange="updateResume()" class="lang-chk"> English</label>
+                                        <label class="flex items-center gap-2 text-xs bg-slate-50 p-2 rounded border cursor-pointer"><input type="checkbox" value="हिंदी" checked onchange="updateResume()" class="lang-chk"> हिंदी</label>
+                                        <label class="flex items-center gap-2 text-xs bg-slate-50 p-2 rounded border cursor-pointer"><input type="checkbox" value="ಕನ್ನಡ" onchange="updateResume()" class="lang-chk"> ಕನ್ನಡ</label>
+                                    </div></div>
+                                </div>
+
+                                <div id="form-tab-more" class="space-y-4 hidden">
+                                    <div class="flex justify-between items-center"><h3 class="font-bold text-xs text-slate-800" id="lbl-proj-heading">प्रोजेक्ट्स</h3><button onclick="addProject()" class="bg-green-600 text-white text-xs px-2.5 py-1 rounded font-semibold">+ जोडा</button></div>
+                                    <div id="projects-list" class="space-y-3"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900 text-white rounded-xl p-4 shadow-sm border border-slate-800">
+                            <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold flex items-center gap-1.5" id="lbl-ats-title"><i class="fa-solid fa-chart-line text-green-400"></i> ATS स्कोर</span><span id="ats-score-badge" class="bg-green-500 text-slate-950 font-black text-xs px-2 py-0.5 rounded-full">85%</span></div>
+                            <div class="w-full bg-slate-800 rounded-full h-2"><div id="ats-progress-bar" class="bg-green-500 h-2 rounded-full transition-all duration-500" style="width: 85%;"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6 xl:col-span-7 flex flex-col items-center">
+                        <div class="w-full max-w-[210mm] bg-white rounded-xl shadow-sm border border-slate-200 p-3 mb-4 flex justify-between items-center text-xs no-print">
+                            <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span><span class="font-bold text-slate-700" id="lbl-live-preview">लाइव्ह प्रीव्ह्यू</span></div>
+                            <div class="flex items-center gap-3">
+                                <button onclick="zoomResume(1)" class="hover:text-green-600"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                                <button onclick="zoomResume(-1)" class="hover:text-green-600"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+                                <button onclick="resetZoom()" class="hover:text-green-600"><i class="fa-solid fa-rotate-left"></i></button>
+                            </div>
+                        </div>
+                        <div class="w-full overflow-x-auto flex justify-center pb-10">
+                            <div id="resume-preview-container" class="bg-white shadow-2xl transition-all duration-300 transform origin-top" style="width: 210mm; min-height: 297mm;">
+                                <div id="resume-render-target" class="w-full min-h-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            `;
+            renderTemplateGallery('all');
+            populateFormInputs();
+            renderExperiences();
+            renderEducation();
+            renderProjects();
+            updateLanguageUI();
+            updateResume();
+        }
+
+        function openLegalPage(pageType) {
+            document.getElementById('sample-box').style.display = 'none';
+            document.getElementById('lang-box').style.display = 'none';
+            document.getElementById('download-btn-wrapper').style.display = 'none';
+
+            let contentHTML = "";
+            if(pageType === 'privacy') {
+                contentHTML = `
+                    <h2 class="text-2xl font-black text-slate-900 mb-4">Privacy Policy for Resume.RK</h2>
+                    <p class="mb-3">At <strong>Resume.RK</strong> (Kolhapur, Maharashtra), accessible from our website, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Resume.RK and how we use it.</p>
+                    <h3 class="text-lg font-bold text-slate-800 mt-4 mb-2">1. Local Data Processing (No Server Storage)</h3>
+                    <p class="mb-3">We respect your privacy. All information you enter into the resume builder is processed <strong>strictly on your local device (Browser LocalStorage)</strong>. We do not store or transfer your personal resume data to any external server.</p>
+                    <h3 class="text-lg font-bold text-slate-800 mt-4 mb-2">2. Advertisements & Cookies</h3>
+                    <p>We may use third-party advertising partners (such as Google AdSense) to serve ads. You can contact us at gk5080663@gmail.com for any privacy concerns.</p>
+                `;
+            } else if(pageType === 'terms') {
+                contentHTML = `
+                    <h2 class="text-2xl font-black text-slate-900 mb-4">Terms and Conditions</h2>
+                    <p class="mb-3">Welcome to <strong>Resume.RK</strong>, based in Kolhapur, Maharashtra. These terms and conditions outline the rules and regulations for the use of our Website.</p>
+                    <h3 class="text-lg font-bold text-slate-800 mt-4 mb-2">1. Use License</h3>
+                    <p>Permission is granted to temporarily download and print resumes generated through Resume.RK for personal, non-commercial use.</p>
+                `;
+            } else if(pageType === 'about') {
+                contentHTML = `
+                    <h2 class="text-2xl font-black text-slate-900 mb-4">About Resume.RK</h2>
+                    <p class="mb-3"><strong>Resume.RK</strong> is a professional web-based AI Resume Builder developed in Kolhapur, Maharashtra. Our mission is to empower job seekers in Marathi, English, Hindi, and Kannada to create ATS-friendly resumes instantly.</p>
+                `;
+            } else if(pageType === 'contact') {
+                contentHTML = `
+                    <h2 class="text-2xl font-black text-slate-900 mb-4">Contact Us</h2>
+                    <p class="mb-3">If you have any questions or suggestions about our Privacy Policy, feel free to reach out to us:</p>
+                    <div class="bg-slate-50 p-4 rounded-xl border mt-4">
+                        <p class="font-semibold text-slate-800 mb-1"><i class="fa-solid fa-envelope text-green-600 mr-2"></i> Email: gk5080663@gmail.com</p>
+                        <p class="font-semibold text-slate-800"><i class="fa-solid fa-location-dot text-green-600 mr-2"></i> Location: Kolhapur, Maharashtra, India</p>
+                    </div>
+                `;
+            }
+
+            document.getElementById('app-view-container').innerHTML = `
+                <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 p-8 my-8 text-slate-700 text-sm leading-relaxed">
+                    <button onclick="showMainApp()" class="bg-slate-800 text-white text-xs px-4 py-2 rounded-lg mb-6 hover:bg-slate-700 transition"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Resume Builder</button>
+                    ${contentHTML}
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
