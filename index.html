@@ -47,9 +47,9 @@
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
-        @media print {
+       @media print {
             @page { size: A4 portrait; margin: 0mm; }
-            body { background: white !important; color: black !important; }
+            body { background: white !important; color: black !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
             .no-print { display: none !important; }
             #resume-preview-container {
                 box-shadow: none !important;
@@ -60,6 +60,8 @@
                 padding: 0 !important;
                 transform: scale(1) !important;
             }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
         }
     </style>
 </head>
@@ -82,26 +84,26 @@
                     </div>
                 </div>
 
-                <!-- Pre-filled Sample Selector -->
+             <!-- Pre-filled Sample Selector -->
                 <div class="flex items-center gap-2 bg-slate-800 p-1 rounded-lg border border-slate-700" id="sample-box">
-                    <span class="text-xs text-slate-400 pl-2 hidden sm:inline" id="lbl-sample">सॅम्पल:</span>
+                    <span class="text-xs text-slate-400 pl-2 hidden sm:inline" id="lbl-sample">Sample:</span>
                     <select id="sample-profile-select" class="bg-slate-900 text-xs text-slate-200 border-none rounded px-2 py-1.5 focus:ring-1 focus:ring-green-500">
-                        <option value="software">💻 सॉफ्टवेअर इंजिनिअर</option>
-                        <option value="marketing">📢 मार्केटिंग मॅनेजर</option>
-                        <option value="fresher">🎓 फ्रेशर / पदवीधर</option>
-                        <option value="sales">💼 सेल्स एक्झिक्युटिव्ह</option>
-                        <option value="finance">📊 फायनान्स अकाऊंटंट</option>
+                        <option value="software">💻 Software Engineer</option>
+                        <option value="marketing">📢 Marketing Manager</option>
+                        <option value="fresher">🎓 Fresher / Graduate</option>
+                        <option value="sales">💼 Sales Executive</option>
+                        <option value="finance">📊 Finance Accountant</option>
                     </select>
                     <button onclick="loadSelectedSample()" class="bg-slate-700 hover:bg-slate-600 text-xs text-white px-2.5 py-1.5 rounded transition" id="btn-load">
-                        लोड करा
+                        Load
                     </button>
                 </div>
 
                 <!-- Language & Download -->
                 <div class="flex items-center space-x-3">
                     <div class="bg-slate-800 p-1 rounded-lg border border-slate-700 flex items-center space-x-1" id="lang-box">
-                        <button onclick="changeLanguage('mr')" id="lang-mr" class="px-2.5 py-1 text-xs rounded font-semibold transition bg-green-600 text-white">मराठी</button>
-                        <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 text-xs rounded font-semibold transition text-slate-300 hover:bg-slate-700">English</button>
+                        <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 text-xs rounded font-semibold transition bg-green-600 text-white">English</button>
+                        <button onclick="changeLanguage('mr')" id="lang-mr" class="px-2.5 py-1 text-xs rounded font-semibold transition text-slate-300 hover:bg-slate-700">मराठी</button>
                         <button onclick="changeLanguage('hi')" id="lang-hi" class="px-2.5 py-1 text-xs rounded font-semibold transition text-slate-300 hover:bg-slate-700">हिंदी</button>
                         <button onclick="changeLanguage('kn')" id="lang-kn" class="px-2.5 py-1 text-xs rounded font-semibold transition text-slate-300 hover:bg-slate-700">ಕನ್ನಡ</button>
                     </div>
@@ -113,24 +115,24 @@
                 </div>
             </div>
         </header>
-
-        <!-- DYNAMIC CONTAINER -->
+<!-- DYNAMIC CONTAINER -->
         <div id="app-view-container">
             <main class="max-w-7xl w-full mx-auto p-4 grid grid-cols-1 lg:grid-cols-12 gap-6 mt-2">
                 <div class="lg:col-span-6 xl:col-span-5 space-y-6 no-print">
                     <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
                         <div class="flex items-center justify-between mb-3">
                             <h2 class="font-bold text-slate-800 text-sm flex items-center gap-2" id="ui-heading-templates">
-                                <i class="fa-solid fa-palette text-green-600"></i> टेम्पलेट गॅलरी (५० डिझाईन्स)
+                                <i class="fa-solid fa-palette text-green-600"></i> Template Gallery (101 Designs)
                             </h2>
-                            <span class="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-600" id="active-template-badge">1 / 50 Selected</span>
+                            <span class="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-600" id="active-template-badge">1 / 101 Selected</span>
                         </div>
                         <div class="flex gap-1 overflow-x-auto pb-2 mb-3 text-xs">
-                            <button onclick="filterTemplates('all')" class="px-2.5 py-1 rounded bg-slate-800 text-white whitespace-nowrap">सर्व (50)</button>
-                            <button onclick="filterTemplates('modern')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">मॉडर्न</button>
-                            <button onclick="filterTemplates('classic')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">क्लासिक</button>
-                            <button onclick="filterTemplates('sidebar')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">साइडबार</button>
-                            <button onclick="filterTemplates('minimal')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">मिनिमल</button>
+                            <button onclick="filterTemplates('all')" class="px-2.5 py-1 rounded bg-slate-800 text-white whitespace-nowrap">All (101)</button>
+                            <button onclick="filterTemplates('modern')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">Modern</button>
+                            <button onclick="filterTemplates('classic')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">Classic</button>
+                            <button onclick="filterTemplates('sidebar')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">Sidebar</button>
+                            <button onclick="filterTemplates('minimal')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">Minimal</button>
+                            <button onclick="filterTemplates('compact')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 whitespace-nowrap">Compact</button>
                         </div>
                         <div id="template-gallery-container" class="grid grid-cols-5 gap-2 max-h-40 overflow-y-auto p-1 border rounded-lg bg-slate-50"></div>
                     </div>
@@ -246,7 +248,7 @@
 
     <!-- SCRIPT ENGINE -->
     <script>
-        let currentLang = 'mr';
+        let currentLang = 'en';
         let currentTemplateId = 1;
         let zoomLevel = 1;
 
