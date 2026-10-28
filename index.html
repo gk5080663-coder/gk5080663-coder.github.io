@@ -84,7 +84,7 @@
                     </div>
                 </div>
 
-             <!-- Pre-filled Sample Selector -->
+            <!-- Pre-filled Sample Selector -->
                 <div class="flex items-center gap-2 bg-slate-800 p-1 rounded-lg border border-slate-700" id="sample-box">
                     <span class="text-xs text-slate-400 pl-2 hidden sm:inline" id="lbl-sample">Sample:</span>
                     <select id="sample-profile-select" class="bg-slate-900 text-xs text-slate-200 border-none rounded px-2 py-1.5 focus:ring-1 focus:ring-green-500">
@@ -421,10 +421,11 @@
             finance: { fullname: "स्नेहल प्रकाश कुलकर्णी", jobtitle: "सिनिअर फायनान्स अकाऊंटंट", location: "कोल्हापूर, महाराष्ट्र", summary: "टॅक्सेशन, जीएसटी, आणि फायनान्शियल ऑडिटिंगमध्ये ५+ वर्षांचा अनुभव." }
         };
 
-        const templatePresets = Array.from({ length: 50 }, (_, i) => {
-            const engines = ['sidebar', 'modern', 'classic', 'minimal'];
-            const colors = ['#16a34a', '#2563eb', '#d97706', '#dc2626', '#4f46e5', '#0891b2', '#059669', '#7c3aed', '#0f172a'];
-            return { id: i + 1, engine: engines[i % engines.length], color: colors[i % colors.length], category: engines[i % engines.length] };
+        const templatePresets = Array.from({ length: 101 }, (_, i) => {
+            const engines = ['sidebar', 'modern', 'classic', 'minimal', 'compact'];
+            const colors = ['#16a34a', '#2563eb', '#d97706', '#dc2626', '#4f46e5', '#0891b2', '#059669', '#7c3aed', '#0f172a', '#db2777', '#ca8a04', '#0d9488'];
+            const engine = engines[i % engines.length];
+            return { id: i + 1, engine: engine, color: colors[i % colors.length], category: engine };
         });
 
         window.addEventListener('DOMContentLoaded', () => {
