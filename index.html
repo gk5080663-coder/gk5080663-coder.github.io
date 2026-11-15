@@ -1,26 +1,17 @@
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="mr" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags & Captions for Google Ranking -->
+    <!-- SEO Meta Tags -->
     <title>Resume.RK - Free AI Multi-Language Resume Builder | ATS Friendly CV Maker</title>
-    <meta name="description" content="Create a professional, ATS-friendly resume for free with Resume.RK. Choose from 101+ templates for Finance, Software, Freshers, and Marketing in English, Marathi, Hindi, and Kannada with instant A4 PDF export.">
+    <meta name="description" content="Create a professional, ATS-friendly resume for free with Resume.RK. Choose from 8 distinct Pro Layouts for Finance, Software, Freshers, and Marketing in English, Marathi, Hindi, and Kannada with instant A4 PDF export.">
     <meta name="keywords" content="Resume Builder, Free Resume, ATS Resume, Marathi Resume Builder, Hindi Resume, Resume.RK, Online CV Maker, AI Resume Generator, Free CV Template">
-    <meta name="author" content="Resume.RK">
     
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="U-TV8X7rnACKty5AZAt7tafkK_2mhA4S2E4TvMJL5-w" />
     
-    <!-- Monetag Ads & Optimization Tag -->
-    <meta name="monetag" content="b422dae30c5c847e10a0130d6e7b1af8">
-
-    <!-- Open Graph / Social Sharing Captions for Better Click-Through Rate -->
-    <meta property="og:title" content="Resume.RK - Free AI Multi-Language Resume Builder">
-    <meta property="og:description" content="Build your professional, ATS-friendly resume in minutes with Resume.RK. Free multi-language templates for all industries and freshers.">
-    <meta property="og:type" content="website">
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -43,323 +34,231 @@
         }
     </script>
 
-    <!-- Google Fonts Support -->
+    <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        body {
-            font-family: 'Inter', 'Baloo 2', 'Noto Sans Devanagari', 'Noto Sans Kannada', sans-serif;
-        }
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        body { font-family: 'Inter', 'Baloo 2', 'Noto Sans Devanagari', 'Noto Sans Kannada', sans-serif; }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
-        /* Direct Click-to-Edit Styling */
-        [contenteditable="true"] {
-            outline: none;
-            border-radius: 4px;
-            transition: background-color 0.2s, box-shadow 0.2s;
-            cursor: text;
-        }
-        [contenteditable="true"]:hover {
-            background-color: rgba(34, 197, 94, 0.08);
-            box-shadow: 0 0 0 1px dashed #22c55e;
-        }
-        [contenteditable="true"]:focus {
-            background-color: rgba(34, 197, 94, 0.12);
-            box-shadow: 0 0 0 2px #16a34a;
-            padding: 0 4px;
-        }
+        [contenteditable="true"] { outline: none; border-radius: 4px; transition: background-color 0.2s, box-shadow 0.2s; cursor: text; }
+        [contenteditable="true"]:hover { background-color: rgba(34, 197, 94, 0.08); box-shadow: 0 0 0 1px dashed #22c55e; }
+        [contenteditable="true"]:focus { background-color: rgba(34, 197, 94, 0.12); box-shadow: 0 0 0 2px #16a34a; padding: 0 4px; }
 
         @media print {
             @page { size: A4 portrait; margin: 0mm; }
             body { background: white !important; color: black !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
             .no-print { display: none !important; }
-            [contenteditable="true"]:hover, [contenteditable="true"]:focus {
-                background-color: transparent !important;
-                box-shadow: none !important;
-            }
-            #resume-preview-container {
-                box-shadow: none !important;
-                border: none !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                transform: scale(1) !important;
-            }
-            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            [contenteditable="true"]:hover, [contenteditable="true"]:focus { background-color: transparent !important; box-shadow: none !important; }
+            #resume-preview-container { box-shadow: none !important; border: none !important; width: 100% !important; max-width: 100% !important; margin: 0 !important; padding: 0 !important; transform: scale(1) !important; }
         }
     </style>
 </head>
 <body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- 1. LANDING PAGE / WELCOME VIEW -->
+    <!-- 1. LANDING PAGE -->
     <div id="landing-page-view" class="w-full min-h-screen flex flex-col justify-between bg-gradient-to-br from-slate-900 via-slate-800 to-green-950 text-white">
-        <!-- Landing Navbar -->
-        <header class="max-w-7xl w-full mx-auto p-6 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 bg-gradient-to-tr from-green-500 to-emerald-400 rounded-2xl flex items-center justify-center font-black text-2xl text-white shadow-xl">
-                    RK
-                </div>
+        <header class="max-w-7xl w-full mx-auto p-5 flex justify-between items-center">
+            <div class="flex items-center space-x-2.5">
+                <div class="w-10 h-10 bg-gradient-to-tr from-green-500 to-emerald-400 rounded-xl flex items-center justify-center font-black text-xl text-white shadow-lg">RK</div>
                 <div>
-                    <h1 class="text-2xl font-extrabold tracking-tight">Resume.RK</h1>
-                    <p class="text-xs text-green-400 font-medium">Smart AI Resume Builder</p>
+                    <h1 class="text-xl font-extrabold tracking-tight">Resume.RK</h1>
+                    <p class="text-[11px] text-green-400 font-medium">Smart AI Resume Builder</p>
                 </div>
             </div>
-            <div class="flex items-center gap-3">
-                <button onclick="startApp()" class="bg-green-600 hover:bg-green-500 text-white font-bold text-sm px-6 py-2.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
-                    <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Create New Resume
-                </button>
-            </div>
+            <button onclick="startApp()" class="bg-green-600 hover:bg-green-500 text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-xl shadow-lg transition">
+                <i class="fa-solid fa-wand-magic-sparkles mr-1.5"></i> Create Resume
+            </button>
         </header>
 
-        <!-- Landing Hero Section -->
-        <main class="max-w-6xl mx-auto px-6 py-12 text-center space-y-8">
-            <div class="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 px-4 py-1.5 rounded-full text-green-400 text-xs font-semibold">
-                <i class="fa-solid fa-circle-check"></i> 100% Free • All Industries & Freshers • Multi-Language Support
+        <main class="max-w-5xl mx-auto px-5 py-10 text-center space-y-6">
+            <div class="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 px-3.5 py-1 rounded-full text-green-400 text-xs font-semibold">
+                <i class="fa-solid fa-circle-check"></i> 100% Free • 8 Pro Layouts • Multi-Language
             </div>
-            <h2 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
                 Build Your Professional Resume in <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300">Minutes</span>
             </h2>
-            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-                Choose from 8 Pro Formats and 101+ template variations. Universal templates suitable for All Categories, Finance, Software, Freshers, and Professionals with live click-to-edit and instant A4 PDF export.
+            <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+                Choose from 8 unique structural Pro Formats with live click-to-edit and instant A4 PDF export.
             </p>
-
-            <div class="pt-4 flex flex-wrap justify-center gap-4">
-                <button onclick="startApp()" class="bg-green-600 hover:bg-green-500 text-white font-bold text-base px-8 py-4 rounded-xl shadow-2xl transition flex items-center gap-2">
-                    <i class="fa-solid fa-rocket"></i> Get Started - Create New Resume
+            <div class="pt-2">
+                <button onclick="startApp()" class="bg-green-600 hover:bg-green-500 text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-2xl transition inline-flex items-center gap-2">
+                    <i class="fa-solid fa-rocket"></i> Get Started Free
                 </button>
-            </div>
-
-            <!-- Features Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12 text-left max-w-4xl mx-auto">
-                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl space-y-2 backdrop-blur">
-                    <div class="w-10 h-10 rounded-xl bg-green-500/20 text-green-400 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-briefcase"></i></div>
-                    <h3 class="font-bold text-white text-base">All Industry Templates</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Pre-built samples for Finance, IT, Healthcare, HR, Marketing, Freshers, and Leadership roles.</p>
-                </div>
-                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl space-y-2 backdrop-blur">
-                    <div class="w-10 h-10 rounded-xl bg-green-500/20 text-green-400 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-language"></i></div>
-                    <h3 class="font-bold text-white text-base">Multi-Language</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Create resumes seamlessly in English, मराठी, हिंदी, and ಕನ್ನಡ.</p>
-                </div>
-                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl space-y-2 backdrop-blur">
-                    <div class="w-10 h-10 rounded-xl bg-green-500/20 text-green-400 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-file-pdf"></i></div>
-                    <h3 class="font-bold text-white text-base">Instant A4 PDF Export</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">One-click professional print and PDF download optimized for ATS scanners.</p>
-                </div>
             </div>
         </main>
 
-        <!-- Landing Footer -->
-        <footer class="text-center py-6 text-xs text-slate-500 border-t border-slate-800">
-            <p>© 2026 Resume.RK. All rights reserved. 100% Free AI Resume Builder.</p>
+        <footer class="text-center py-5 text-xs text-slate-500 border-t border-slate-800">
+            <p>© 2026 Resume.RK. All rights reserved.</p>
         </footer>
     </div>
-
 
     <!-- 2. MAIN APP WORKSPACE -->
     <div id="app-workspace-view" class="hidden min-h-screen flex flex-col justify-between">
         <div>
-            <!-- TOP NAVBAR -->
+            <!-- NAVBAR -->
             <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md no-print">
-                <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
-                    
-                    <div class="flex items-center space-x-3 cursor-pointer" onclick="goToHome()">
-                        <div class="w-10 h-10 bg-gradient-to-tr from-green-500 to-emerald-400 rounded-xl flex items-center justify-center font-black text-xl text-white shadow-lg">
-                            RK
-                        </div>
-                        <div>
-                            <h1 class="text-xl font-extrabold tracking-tight flex items-center gap-2">
-                                Resume.RK <span class="bg-green-500/20 text-green-400 text-xs px-2 py-0.5 rounded-full font-medium border border-green-500/30">PRO AI</span>
-                            </h1>
-                            <p class="text-xs text-slate-400" id="ui-tagline">Smart Multi-Language AI Resume Builder</p>
-                        </div>
+                <div class="max-w-7xl mx-auto px-3 py-2.5 flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center space-x-2 cursor-pointer" onclick="goToHome()">
+                        <div class="w-8 h-8 bg-gradient-to-tr from-green-500 to-emerald-400 rounded-lg flex items-center justify-center font-black text-base text-white">RK</div>
+                        <div><h1 class="text-base font-extrabold tracking-tight flex items-center gap-1.5">Resume.RK <span class="bg-green-500/20 text-green-400 text-[10px] px-1.5 py-0.5 rounded-full border border-green-500/30">PRO</span></h1></div>
                     </div>
 
-                    <!-- Comprehensive Category / Industry Selector -->
-                    <div class="flex items-center gap-2 bg-slate-800 p-1 rounded-lg border border-slate-700">
-                        <span class="text-xs text-slate-400 pl-2 hidden sm:inline" id="lbl-sample">Industry / Profile:</span>
-                        <select id="sample-profile-select" class="bg-slate-900 text-xs text-slate-200 border-none rounded px-2 py-1.5 focus:ring-1 focus:ring-green-500">
-                            <option value="all">🌟 All / General Professional</option>
-                            <option value="finance">💰 Finance, Banking & Accounting</option>
-                            <option value="fresher">🎓 Fresher / Recent Graduate</option>
-                            <option value="software">💻 Software & IT Engineer</option>
-                            <option value="marketing">✍️ Digital Marketing & Sales</option>
+                    <!-- Industry Selector -->
+                    <div class="flex items-center gap-1.5 bg-slate-800 p-1 rounded-lg border border-slate-700">
+                        <select id="sample-profile-select" class="bg-slate-900 text-[11px] text-slate-200 border-none rounded px-2 py-1 focus:ring-1 focus:ring-green-500 max-w-[140px] sm:max-w-none">
+                            <option value="all">🌟 All / General</option>
+                            <option value="finance">💰 Finance & Banking</option>
+                            <option value="fresher">🎓 Fresher / Graduate</option>
+                            <option value="software">💻 Software & IT</option>
+                            <option value="marketing">✍️ Marketing & Sales</option>
                             <option value="hr">👔 HR & Management</option>
-                            <option value="healthcare">🩺 Healthcare & Nursing</option>
-                            <option value="executive">🏢 Senior Executive / Leader</option>
+                            <option value="healthcare">🩺 Healthcare</option>
+                            <option value="executive">🏢 Executive</option>
                         </select>
-                        <button onclick="loadSelectedSample()" class="bg-slate-700 hover:bg-slate-600 text-xs text-white px-2.5 py-1.5 rounded transition" id="btn-load">
-                            Load
-                        </button>
+                        <button onclick="loadSelectedSample()" class="bg-slate-700 hover:bg-slate-600 text-[11px] text-white px-2 py-1 rounded transition" id="btn-load">Load</button>
                     </div>
 
-                    <!-- Language & Download -->
-                    <div class="flex items-center space-x-3">
-                        <div class="bg-slate-800 p-1 rounded-lg border border-slate-700 flex items-center space-x-1">
-                            <button onclick="changeLanguage('en')" id="lang-en" class="px-2.5 py-1 text-xs rounded font-semibold transition bg-green-600 text-white">English</button>
-                            <button onclick="changeLanguage('mr')" id="lang-mr" class="px-2.5 py-1 text-xs rounded font-semibold transition text-slate-300 hover:bg-slate-700">मराठी</button>
-                            <button onclick="changeLanguage('hi')" id="lang-hi" class="px-2.5 py-1 text-xs rounded font-semibold transition text-slate-300 hover:bg-slate-700">हिंदी</button>
-                            <button onclick="changeLanguage('kn')" id="lang-kn" class="px-2.5 py-1 text-xs rounded font-semibold transition text-slate-300 hover:bg-slate-700">ಕನ್ನಡ</button>
+                    <!-- Language & PDF Export -->
+                    <div class="flex items-center space-x-1.5">
+                        <div class="bg-slate-800 p-0.5 rounded-lg border border-slate-700 flex items-center">
+                            <button onclick="changeLanguage('en')" id="lang-en" class="px-1.5 py-1 text-[10px] rounded font-semibold bg-green-600 text-white">EN</button>
+                            <button onclick="changeLanguage('mr')" id="lang-mr" class="px-1.5 py-1 text-[10px] rounded font-semibold text-slate-300">मराठी</button>
+                            <button onclick="changeLanguage('hi')" id="lang-hi" class="px-1.5 py-1 text-[10px] rounded font-semibold text-slate-300">हिंदी</button>
+                            <button onclick="changeLanguage('kn')" id="lang-kn" class="px-1.5 py-1 text-[10px] rounded font-semibold text-slate-300">ಕನ್ನಡ</button>
                         </div>
 
-                        <button onclick="triggerPrint()" class="bg-green-600 hover:bg-green-500 text-white font-semibold text-xs px-4 py-2 rounded-lg shadow-md transition flex items-center space-x-1.5">
-                            <i class="fa-solid fa-file-pdf text-sm"></i>
-                            <span id="btn-download-pdf">Download PDF</span>
-                        </button>
-
-                        <button onclick="goToHome()" title="Home" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-2 rounded-lg text-xs font-semibold transition">
-                            <i class="fa-solid fa-house"></i>
+                        <button onclick="triggerExportWithAdTimer()" class="bg-green-600 hover:bg-green-500 text-white font-semibold text-[11px] px-3 py-1.5 rounded-lg shadow flex items-center gap-1">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span id="btn-download-pdf">PDF</span>
                         </button>
                     </div>
                 </div>
             </header>
 
             <!-- MAIN CONTAINER -->
-            <main class="max-w-7xl w-full mx-auto p-4 grid grid-cols-1 lg:grid-cols-12 gap-6 mt-2">
-                <!-- Left: Controls & Form -->
-                <div class="lg:col-span-6 xl:col-span-5 space-y-6 no-print">
-                    <!-- Visual Template Gallery -->
-                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
-                        <div class="flex items-center justify-between mb-3">
-                            <h2 class="font-bold text-slate-800 text-sm flex items-center gap-2" id="ui-heading-templates">
-                                <i class="fa-solid fa-paintbrush text-green-600"></i> Visual Template Gallery (8 Formats)
+            <main class="max-w-7xl w-full mx-auto p-3 sm:p-4 grid grid-cols-1 lg:grid-cols-12 gap-4 mt-1">
+                <!-- Left: Form & Layout Gallery -->
+                <div class="lg:col-span-6 xl:col-span-5 space-y-3 no-print">
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-2.5">
+                        <div class="flex items-center justify-between mb-1.5">
+                            <h2 class="font-bold text-slate-800 text-xs flex items-center gap-1.5" id="ui-heading-templates">
+                                <i class="fa-solid fa-paintbrush text-green-600"></i> 8 Distinct Pro Layouts
                             </h2>
-                            <span class="text-xs bg-green-50 text-green-700 border border-green-200 font-semibold px-2 py-0.5 rounded" id="active-template-badge">Format 1: Combined</span>
+                            <span class="text-[10px] bg-green-50 text-green-700 border border-green-200 font-semibold px-2 py-0.5 rounded" id="active-template-badge">1. Combined</span>
                         </div>
-                        
-                        <!-- Format Filter Buttons -->
-                        <div class="grid grid-cols-4 gap-1.5 pb-2 mb-3 text-[11px]">
-                            <button onclick="selectFormatDirectly(1, 'all')" class="px-2 py-1.5 rounded bg-slate-900 text-white font-semibold">All (101)</button>
-                            <button onclick="selectFormatDirectly(1, 'combined')" class="px-2 py-1.5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">1. Combined</button>
-                            <button onclick="selectFormatDirectly(14, 'general')" class="px-2 py-1.5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">2. General</button>
-                            <button onclick="selectFormatDirectly(27, 'hybrid')" class="px-2 py-1.5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">3. Hybrid</button>
-                            <button onclick="selectFormatDirectly(40, 'it')" class="px-2 py-1.5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">4. IT / DevOps</button>
-                            <button onclick="selectFormatDirectly(53, 'minimalist')" class="px-2 py-1.5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">5. Minimalist</button>
-                            <button onclick="selectFormatDirectly(66, 'skillbased')" class="px-2 py-1.5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">6. Sidebar</button>
-                            <button onclick="selectFormatDirectly(79, 'tech')" class="px-2 py-1.5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">7. Tech Bars</button>
-                            <button onclick="selectFormatDirectly(92, 'traditional')" class="col-span-4 px-2 py-1.5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">8. Executive Banner</button>
-                        </div>
-
-                        <!-- Gallery Container -->
-                        <div id="template-gallery-container" class="grid grid-cols-4 gap-2.5 max-h-52 overflow-y-auto p-2 border rounded-lg bg-slate-50"></div>
+                        <div id="template-gallery-container" class="flex overflow-x-auto gap-2 pb-1.5 pt-0.5 px-0.5"></div>
                     </div>
 
                     <!-- Form Tabs -->
                     <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                        <div class="flex border-b border-slate-200 bg-slate-50 text-xs overflow-x-auto">
-                            <button onclick="switchFormTab('personal')" id="tab-btn-personal" class="px-3 py-3 font-semibold border-b-2 border-green-600 text-green-600 whitespace-nowrap"><i class="fa-solid fa-user mr-1"></i> <span id="t-tab-personal">Personal</span></button>
-                            <button onclick="switchFormTab('experience')" id="tab-btn-experience" class="px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap"><i class="fa-solid fa-briefcase mr-1"></i> <span id="t-tab-exp">Experience</span></button>
-                            <button onclick="switchFormTab('education')" id="tab-btn-education" class="px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap"><i class="fa-solid fa-graduation-cap mr-1"></i> <span id="t-tab-edu">Education</span></button>
-                            <button onclick="switchFormTab('skills')" id="tab-btn-skills" class="px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap"><i class="fa-solid fa-code mr-1"></i> <span id="t-tab-skills">Skills</span></button>
-                            <button onclick="switchFormTab('more')" id="tab-btn-more" class="px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap"><i class="fa-solid fa-plus-circle mr-1"></i> <span id="t-tab-proj">Projects</span></button>
+                        <div class="flex border-b border-slate-200 bg-slate-50 text-[11px] overflow-x-auto">
+                            <button onclick="switchFormTab('personal')" id="tab-btn-personal" class="px-2.5 py-2.5 font-semibold border-b-2 border-green-600 text-green-600 whitespace-nowrap"><i class="fa-solid fa-user mr-1"></i> <span id="t-tab-personal">Personal</span></button>
+                            <button onclick="switchFormTab('experience')" id="tab-btn-experience" class="px-2.5 py-2.5 font-semibold text-slate-600 whitespace-nowrap"><i class="fa-solid fa-briefcase mr-1"></i> <span id="t-tab-exp">Experience</span></button>
+                            <button onclick="switchFormTab('education')" id="tab-btn-education" class="px-2.5 py-2.5 font-semibold text-slate-600 whitespace-nowrap"><i class="fa-solid fa-graduation-cap mr-1"></i> <span id="t-tab-edu">Education</span></button>
+                            <button onclick="switchFormTab('skills')" id="tab-btn-skills" class="px-2.5 py-2.5 font-semibold text-slate-600 whitespace-nowrap"><i class="fa-solid fa-code mr-1"></i> <span id="t-tab-skills">Skills</span></button>
+                            <button onclick="switchFormTab('more')" id="tab-btn-more" class="px-2.5 py-2.5 font-semibold text-slate-600 whitespace-nowrap"><i class="fa-solid fa-plus-circle mr-1"></i> <span id="t-tab-proj">Projects</span></button>
                         </div>
 
-                        <div class="p-5 space-y-4">
+                        <div class="p-3.5 space-y-3">
                             <!-- Personal Tab -->
-                            <div id="form-tab-personal" class="space-y-4">
-                                <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-lg border border-dashed border-slate-300">
-                                    <div class="w-14 h-14 rounded-full bg-slate-200 border flex items-center justify-center overflow-hidden shrink-0 relative">
+                            <div id="form-tab-personal" class="space-y-3">
+                                <div class="flex items-center gap-3 p-2 bg-slate-50 rounded-lg border border-dashed border-slate-300">
+                                    <div class="w-11 h-11 rounded-full bg-slate-200 border flex items-center justify-center overflow-hidden shrink-0">
                                         <img id="photo-preview" class="w-full h-full object-cover hidden" alt="Photo">
-                                        <i id="photo-placeholder" class="fa-solid fa-user text-xl text-slate-400"></i>
+                                        <i id="photo-placeholder" class="fa-solid fa-user text-base text-slate-400"></i>
                                     </div>
-                                    <div class="flex-grow space-y-1">
-                                        <label class="block text-xs font-semibold text-slate-700" id="lbl-photo">Profile Photo</label>
+                                    <div class="flex-grow">
+                                        <label class="block text-[11px] font-semibold text-slate-700 mb-0.5" id="lbl-photo">Profile Photo</label>
                                         <div class="flex gap-2">
                                             <input type="file" id="photo-input" accept="image/*" onchange="handlePhotoUpload(event)" class="hidden">
-                                            <button onclick="document.getElementById('photo-input').click()" class="bg-slate-800 hover:bg-slate-700 text-white text-xs px-3 py-1 rounded" id="btn-upload">Select Photo</button>
-                                            <button onclick="removePhoto()" class="text-xs text-red-600 hover:underline px-1" id="btn-remove">Remove</button>
+                                            <button onclick="document.getElementById('photo-input').click()" class="bg-slate-800 text-white text-[11px] px-2.5 py-1 rounded" id="btn-upload">Select</button>
+                                            <button onclick="removePhoto()" class="text-[11px] text-red-600 hover:underline" id="btn-remove">Remove</button>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="grid grid-cols-2 gap-3">
-                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-fullname">Full Name</label><input type="text" id="inp-fullname" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
-                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-jobtitle">Job Title / Role</label><input type="text" id="inp-jobtitle" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                <div class="grid grid-cols-2 gap-2.5">
+                                    <div><label class="block text-[11px] font-semibold text-slate-700 mb-0.5" id="lbl-fullname">Full Name</label><input type="text" id="inp-fullname" oninput="updateResume()" class="w-full text-xs p-2 border rounded-lg"></div>
+                                    <div><label class="block text-[11px] font-semibold text-slate-700 mb-0.5" id="lbl-jobtitle">Job Title</label><input type="text" id="inp-jobtitle" oninput="updateResume()" class="w-full text-xs p-2 border rounded-lg"></div>
                                 </div>
-                                <div class="grid grid-cols-2 gap-3">
-                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-email">Email</label><input type="email" id="inp-email" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
-                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-phone">Phone Number</label><input type="text" id="inp-phone" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                <div class="grid grid-cols-2 gap-2.5">
+                                    <div><label class="block text-[11px] font-semibold text-slate-700 mb-0.5" id="lbl-email">Email</label><input type="email" id="inp-email" oninput="updateResume()" class="w-full text-xs p-2 border rounded-lg"></div>
+                                    <div><label class="block text-[11px] font-semibold text-slate-700 mb-0.5" id="lbl-phone">Phone</label><input type="text" id="inp-phone" oninput="updateResume()" class="w-full text-xs p-2 border rounded-lg"></div>
                                 </div>
-                                <div class="grid grid-cols-2 gap-3">
-                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-location">Location / City</label><input type="text" id="inp-location" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
-                                    <div><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-linkedin">Website / Portfolio</label><input type="text" id="inp-linkedin" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></div>
+                                <div class="grid grid-cols-2 gap-2.5">
+                                    <div><label class="block text-[11px] font-semibold text-slate-700 mb-0.5" id="lbl-location">Location</label><input type="text" id="inp-location" oninput="updateResume()" class="w-full text-xs p-2 border rounded-lg"></div>
+                                    <div><label class="block text-[11px] font-semibold text-slate-700 mb-0.5" id="lbl-linkedin">Website</label><input type="text" id="inp-linkedin" oninput="updateResume()" class="w-full text-xs p-2 border rounded-lg"></div>
                                 </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-summary">Professional Summary</label>
-                                    <textarea id="inp-summary" rows="3" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg focus:ring-1 focus:ring-green-500"></textarea>
-                                </div>
+                                <div><label class="block text-[11px] font-semibold text-slate-700 mb-0.5" id="lbl-summary">Summary</label><textarea id="inp-summary" rows="2" oninput="updateResume()" class="w-full text-xs p-2 border rounded-lg"></textarea></div>
                             </div>
 
                             <!-- Experience Tab -->
-                            <div id="form-tab-experience" class="space-y-4 hidden">
-                                <div class="flex justify-between items-center"><h3 class="font-bold text-xs text-slate-800" id="lbl-exp-heading">Work Experience</h3><button onclick="addExperience()" class="bg-green-600 hover:bg-green-700 text-white text-xs px-2.5 py-1 rounded font-semibold">+ Add Experience</button></div>
-                                <div id="experience-list" class="space-y-3"></div>
+                            <div id="form-tab-experience" class="space-y-3 hidden">
+                                <div class="flex justify-between items-center"><h3 class="font-bold text-xs text-slate-800" id="lbl-exp-heading">Work Experience</h3><button onclick="addExperience()" class="bg-green-600 text-white text-[11px] px-2 py-1 rounded font-semibold">+ Add</button></div>
+                                <div id="experience-list" class="space-y-2.5"></div>
                             </div>
 
                             <!-- Education Tab -->
-                            <div id="form-tab-education" class="space-y-4 hidden">
-                                <div class="flex justify-between items-center"><h3 class="font-bold text-xs text-slate-800" id="lbl-edu-heading">Education</h3><button onclick="addEducation()" class="bg-green-600 hover:bg-green-700 text-white text-xs px-2.5 py-1 rounded font-semibold">+ Add Education</button></div>
-                                <div id="education-list" class="space-y-3"></div>
+                            <div id="form-tab-education" class="space-y-3 hidden">
+                                <div class="flex justify-between items-center"><h3 class="font-bold text-xs text-slate-800" id="lbl-edu-heading">Education</h3><button onclick="addEducation()" class="bg-green-600 text-white text-[11px] px-2 py-1 rounded font-semibold">+ Add</button></div>
+                                <div id="education-list" class="space-y-2.5"></div>
                             </div>
 
                             <!-- Skills Tab -->
-                            <div id="form-tab-skills" class="space-y-4 hidden">
-                                <div class="mb-2"><label class="block text-xs font-semibold text-slate-700 mb-1" id="lbl-skills-heading">Skills (comma separated)</label><input type="text" id="inp-skills" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg"></div>
-                                <div class="mb-2"><label class="block text-xs font-semibold text-slate-700 mb-1">Interests / Hobbies (comma separated)</label><input type="text" id="inp-interests" oninput="updateResume()" class="w-full text-xs p-2.5 border rounded-lg"></div>
-                                <div class="pt-3 border-t"><label class="block text-xs font-semibold text-slate-700 mb-2" id="lbl-lang-heading">Languages Known</label>
-                                    <div class="grid grid-cols-2 gap-2" id="languages-checkbox-group">
-                                        <label class="flex items-center gap-2 text-xs bg-slate-50 p-2 rounded border cursor-pointer"><input type="checkbox" value="English" checked onchange="updateResume()" class="lang-chk"> English</label>
-                                        <label class="flex items-center gap-2 text-xs bg-slate-50 p-2 rounded border cursor-pointer"><input type="checkbox" value="मराठी" checked onchange="updateResume()" class="lang-chk"> मराठी</label>
-                                        <label class="flex items-center gap-2 text-xs bg-slate-50 p-2 rounded border cursor-pointer"><input type="checkbox" value="हिंदी" checked onchange="updateResume()" class="lang-chk"> हिंदी</label>
-                                        <label class="flex items-center gap-2 text-xs bg-slate-50 p-2 rounded border cursor-pointer"><input type="checkbox" value="ಕನ್ನಡ" onchange="updateResume()" class="lang-chk"> ಕನ್ನಡ</label>
+                            <div id="form-tab-skills" class="space-y-3 hidden">
+                                <div><label class="block text-[11px] font-semibold text-slate-700 mb-0.5" id="lbl-skills-heading">Skills (comma separated)</label><input type="text" id="inp-skills" oninput="updateResume()" class="w-full text-xs p-2 border rounded-lg"></div>
+                                <div><label class="block text-[11px] font-semibold text-slate-700 mb-0.5">Interests (comma separated)</label><input type="text" id="inp-interests" oninput="updateResume()" class="w-full text-xs p-2 border rounded-lg"></div>
+                                <div class="pt-2 border-t"><label class="block text-[11px] font-semibold text-slate-700 mb-1.5" id="lbl-lang-heading">Languages</label>
+                                    <div class="grid grid-cols-2 gap-1.5">
+                                        <label class="flex items-center gap-1.5 text-xs bg-slate-50 p-1.5 rounded border"><input type="checkbox" value="English" checked onchange="updateResume()" class="lang-chk"> English</label>
+                                        <label class="flex items-center gap-1.5 text-xs bg-slate-50 p-1.5 rounded border"><input type="checkbox" value="मराठी" checked onchange="updateResume()" class="lang-chk"> मराठी</label>
+                                        <label class="flex items-center gap-1.5 text-xs bg-slate-50 p-1.5 rounded border"><input type="checkbox" value="हिंदी" checked onchange="updateResume()" class="lang-chk"> हिंदी</label>
+                                        <label class="flex items-center gap-1.5 text-xs bg-slate-50 p-1.5 rounded border"><input type="checkbox" value="ಕನ್ನಡ" onchange="updateResume()" class="lang-chk"> ಕನ್ನಡ</label>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Projects Tab -->
-                            <div id="form-tab-more" class="space-y-4 hidden">
-                                <div class="flex justify-between items-center"><h3 class="font-bold text-xs text-slate-800" id="lbl-proj-heading">Projects / Certifications</h3><button onclick="addProject()" class="bg-green-600 hover:bg-green-700 text-white text-xs px-2.5 py-1 rounded font-semibold">+ Add Project</button></div>
-                                <div id="projects-list" class="space-y-3"></div>
+                            <div id="form-tab-more" class="space-y-3 hidden">
+                                <div class="flex justify-between items-center"><h3 class="font-bold text-xs text-slate-800" id="lbl-proj-heading">Projects</h3><button onclick="addProject()" class="bg-green-600 text-white text-[11px] px-2 py-1 rounded font-semibold">+ Add</button></div>
+                                <div id="projects-list" class="space-y-2.5"></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- ATS Score Card -->
-                    <div class="bg-slate-900 text-white rounded-xl p-4 shadow-sm border border-slate-800">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs font-bold flex items-center gap-1.5" id="lbl-ats-title"><i class="fa-solid fa-chart-line text-green-400"></i> ATS Score</span>
-                            <span id="ats-score-badge" class="bg-green-500 text-slate-950 font-black text-xs px-2 py-0.5 rounded-full">100%</span>
+                    <div class="bg-slate-900 text-white rounded-xl p-3 shadow-sm border border-slate-800">
+                        <div class="flex justify-between items-center mb-1.5">
+                            <span class="text-[11px] font-bold flex items-center gap-1.5" id="lbl-ats-title"><i class="fa-solid fa-chart-line text-green-400"></i> ATS Score</span>
+                            <span id="ats-score-badge" class="bg-green-500 text-slate-950 font-black text-[11px] px-2 py-0.5 rounded-full">100%</span>
                         </div>
-                        <div class="w-full bg-slate-800 rounded-full h-2"><div id="ats-progress-bar" class="bg-green-500 h-2 rounded-full transition-all duration-500" style="width: 100%;"></div></div>
+                        <div class="w-full bg-slate-800 rounded-full h-1.5"><div id="ats-progress-bar" class="bg-green-500 h-1.5 rounded-full" style="width: 100%;"></div></div>
                     </div>
                 </div>
 
                 <!-- Right: Live Preview -->
                 <div class="lg:col-span-6 xl:col-span-7 flex flex-col items-center">
-                    <div class="w-full max-w-[210mm] bg-white rounded-xl shadow-sm border border-slate-200 p-3 mb-4 flex flex-wrap justify-between items-center gap-2 text-xs no-print">
-                        <div class="flex items-center gap-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
-                            <span class="font-bold text-slate-700" id="lbl-live-preview">Live Preview (A4)</span>
-                            <span class="bg-amber-50 text-amber-700 border border-amber-200 px-2 py-0.5 rounded text-[11px] font-medium" id="lbl-click-hint">
-                                <i class="fa-solid fa-pen-to-square mr-1"></i> Click any text below to edit directly!
+                    <div class="w-full max-w-[210mm] bg-white rounded-xl shadow-sm border border-slate-200 p-2.5 mb-3 flex flex-wrap justify-between items-center gap-2 text-xs no-print">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            <span class="font-bold text-slate-700 text-[11px]" id="lbl-live-preview">Live Preview</span>
+                            <span class="bg-amber-50 text-amber-700 border border-amber-200 px-1.5 py-0.5 rounded text-[10px]" id="lbl-click-hint">
+                                <i class="fa-solid fa-pen-to-square"></i> Tap text to edit!
                             </span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <button onclick="zoomResume(1)" title="Zoom In" class="hover:text-green-600 p-1"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
-                            <button onclick="zoomResume(-1)" title="Zoom Out" class="hover:text-green-600 p-1"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
-                            <button onclick="resetZoom()" title="Reset Zoom" class="hover:text-green-600 p-1"><i class="fa-solid fa-rotate-left"></i></button>
+                        <div class="flex items-center gap-2">
+                            <button onclick="zoomResume(1)" class="hover:text-green-600 p-1"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                            <button onclick="zoomResume(-1)" class="hover:text-green-600 p-1"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+                            <button onclick="resetZoom()" class="hover:text-green-600 p-1"><i class="fa-solid fa-rotate-left"></i></button>
                         </div>
                     </div>
-                    <div class="w-full overflow-x-auto flex justify-center pb-10">
+                    
+                    <div id="preview-wrapper" class="w-full overflow-hidden flex justify-center pb-8">
                         <div id="resume-preview-container" class="bg-white shadow-2xl transition-all duration-300 transform origin-top border border-slate-200" style="width: 210mm; min-height: 297mm;">
                             <div id="resume-render-target" class="w-full min-h-[297mm]"></div>
                         </div>
@@ -368,18 +267,29 @@
             </main>
         </div>
 
-        <!-- FOOTER -->
-        <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 mt-10 no-print">
-            <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-                <p>© 2026 Resume.RK. All rights reserved. 100% Free ATS Resume Builder.</p>
-            </div>
+        <footer class="bg-slate-900 text-slate-400 text-[11px] py-4 border-t border-slate-800 no-print text-center">
+            <p>© 2026 Resume.RK. All rights reserved.</p>
         </footer>
+    </div>
+
+    <!-- DOWNLOAD TIMER & VIGNETTE AD MODAL -->
+    <div id="ad-timer-modal" class="fixed inset-0 bg-slate-950/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white text-slate-900 rounded-2xl max-w-sm w-full p-5 text-center space-y-3 shadow-2xl border border-slate-200">
+            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-xl mx-auto">
+                <i class="fa-solid fa-file-arrow-down animate-bounce"></i>
+            </div>
+            <h3 class="text-base font-bold">Preparing Your PDF</h3>
+            <p class="text-xs text-slate-600">Please wait while we generate your professional resume...</p>
+
+            <div class="text-sm font-black text-green-600 py-3" id="timer-countdown">Downloading in 3s...</div>
+            <button onclick="closeAdModal()" class="w-full bg-slate-900 text-white font-semibold py-2 rounded-xl text-xs">Cancel</button>
+        </div>
     </div>
 
     <!-- SCRIPT ENGINE -->
     <script>
         let currentLang = 'en';
-        let currentTemplateId = 1;
+        let activeLayoutId = 1;
         let zoomLevel = 1;
 
         let resumeData = {
@@ -391,8 +301,8 @@
             location: 'Mumbai, Maharashtra',
             linkedin: 'resumerk.com/profile',
             summary: 'Versatile and goal-driven professional equipped with a robust skillset, adaptable across multiple industries, projects, and administrative or technical roles.',
-            skills: ['Project Management', 'Communication', 'Problem Solving', 'Data Analysis', 'Strategic Planning', 'Leadership', 'Quality Assurance', 'Teamwork'],
-            interests: ['Innovation', 'Continuous Learning', 'Networking', 'Reading'],
+            skills: ['Project Management', 'Communication', 'Problem Solving', 'Data Analysis', 'Strategic Planning', 'Leadership'],
+            interests: ['Innovation', 'Continuous Learning', 'Networking'],
             languages: ['English', 'मराठी', 'हिंदी'],
             experiences: [
                 { role: 'Professional Consultant', company: 'Global Solutions Inc.', duration: '2023 - Present', details: 'Streamlined operational workflows and delivered high-impact projects on schedule.' }
@@ -405,200 +315,95 @@
             ]
         };
 
-        const colorThemes = [
-            { name: 'Slate Navy', primary: '#1d3557', accent: '#e09f3e', dark: '#16293d', light: '#f1f5f9', border: '#94a3b8' },
-            { name: 'Ocean Blue', primary: '#175676', accent: '#4ba3c3', dark: '#0f3d54', light: '#e0f2fe', border: '#7dd3fc' },
-            { name: 'Teal Charcoal', primary: '#2b3a42', accent: '#3f888f', dark: '#1e293b', light: '#f0fdfa', border: '#5eead4' },
-            { name: 'DevOps Red-Blue', primary: '#2b5b84', accent: '#d9534f', dark: '#1e3f5a', light: '#fef2f2', border: '#fca5a5' },
-            { name: 'Emerald Minimal', primary: '#2d6a4f', accent: '#52b788', dark: '#1b4332', light: '#ecfdf5', border: '#6ee7b7' },
-            { name: 'Executive Black', primary: '#18181b', accent: '#52525b', dark: '#09090b', light: '#f4f4f5', border: '#d4d4d8' }
+        const proLayouts = [
+            { id: 1, name: '1. Combined', primary: '#1d3557', accent: '#e09f3e', light: '#f1f5f9', dark: '#16293d' },
+            { id: 2, name: '2. General', primary: '#175676', accent: '#4ba3c3', light: '#e0f2fe', dark: '#0f3d54' },
+            { id: 3, name: '3. Hybrid', primary: '#2b3a42', accent: '#3f888f', light: '#f0fdfa', dark: '#1e293b' },
+            { id: 4, name: '4. IT/DevOps', primary: '#2b5b84', accent: '#d9534f', light: '#fef2f2', dark: '#1e3f5a' },
+            { id: 5, name: '5. Minimalist', primary: '#2d6a4f', accent: '#52b788', light: '#ecfdf5', dark: '#1b4332' },
+            { id: 6, name: '6. Sidebar', primary: '#18181b', accent: '#52525b', light: '#f4f4f5', dark: '#09090b' },
+            { id: 7, name: '7. Tech Bars', primary: '#7c2d12', accent: '#ea580c', light: '#fff7ed', dark: '#431407' },
+            { id: 8, name: '8. Executive', primary: '#581c87', accent: '#c084fc', light: '#faf5ff', dark: '#3b0764' }
         ];
-
-        const formatNames = {
-            combined: '1. Combined',
-            general: '2. General',
-            hybrid: '3. Hybrid',
-            it: '4. IT/DevOps',
-            minimalist: '5. Minimalist',
-            skillbased: '6. Sidebar',
-            tech: '7. Tech Bars',
-            traditional: '8. Executive Banner'
-        };
 
         const i18n = {
             en: {
-                tagline: "Smart Multi-Language AI Resume Builder",
-                sample: "Industry / Profile:",
-                load: "Load",
-                downloadPdf: "Download PDF",
-                templates: "Visual Template Gallery (8 Formats)",
-                tabPersonal: "Personal",
-                tabExp: "Experience",
-                tabEdu: "Education",
-                tabSkills: "Skills",
-                tabProj: "Projects",
-                lblPhoto: "Profile Photo",
-                btnUpload: "Select Photo",
-                btnRemove: "Remove",
-                lblFullname: "Full Name",
-                lblJobtitle: "Job Title / Role",
-                lblEmail: "Email Address",
-                lblPhone: "Phone Number",
-                lblLocation: "Location / City",
-                lblSummary: "Professional Summary",
-                lblExpHeading: "Work Experience",
-                lblEduHeading: "Education Qualification",
-                lblSkillsHeading: "Key Skills (comma separated)",
-                lblLangHeading: "Languages Known",
-                lblProjHeading: "Key Projects / Certificates",
-                atsTitle: "ATS Compatibility Score",
-                livePreview: "Live Preview (A4)",
-                clickHint: "Click any text below to edit directly!",
-                secExp: "WORK EXPERIENCE",
-                secEdu: "EDUCATION",
-                secSkills: "SKILLS & COMPETENCIES",
-                secLang: "LANGUAGES",
-                secProj: "PROJECTS & CERTIFICATES",
-                secInt: "INTERESTS",
+                load: "Load", downloadPdf: "PDF", templates: "8 Pro Layouts",
+                tabPersonal: "Personal", tabExp: "Experience", tabEdu: "Education", tabSkills: "Skills", tabProj: "Projects",
+                lblPhoto: "Profile Photo", btnUpload: "Select", btnRemove: "Remove",
+                lblFullname: "Full Name", lblJobtitle: "Job Title", lblEmail: "Email", lblPhone: "Phone",
+                lblLocation: "Location", lblSummary: "Summary", lblExpHeading: "Work Experience",
+                lblEduHeading: "Education", lblSkillsHeading: "Skills (comma separated)", lblLangHeading: "Languages",
+                lblProjHeading: "Projects", atsTitle: "ATS Score", livePreview: "Live Preview",
+                clickHint: "Tap text to edit!", secExp: "WORK EXPERIENCE", secEdu: "EDUCATION",
+                secSkills: "SKILLS & COMPETENCIES", secLang: "LANGUAGES", secProj: "PROJECTS",
                 samples: {
-                    all: { fullname: "Professional User", jobtitle: "All-Rounder / General Professional", location: "Mumbai, Maharashtra", summary: "Versatile and goal-driven professional equipped with a robust skillset, adaptable across multiple industries, projects, and administrative or technical roles." },
-                    finance: { fullname: "Rohan Kulkarni", jobtitle: "Financial Analyst & Accountant", location: "Mumbai, Maharashtra", summary: "Detail-oriented Finance professional with 5+ years of experience in financial modeling, budgeting, tax compliance, and corporate financial auditing." },
-                    fresher: { fullname: "Alex Morgan", jobtitle: "Recent Graduate / Entry Level", location: "Pune, Maharashtra", summary: "Motivated and enthusiastic recent college graduate with strong academic background and hands-on project experience, eager to kickstart a professional career." },
-                    software: { fullname: "Jordan Lee", jobtitle: "Software / IT Engineer", location: "Bengaluru, Karnataka", summary: "Dedicated Software Engineer with expertise in full-stack development, algorithms, and scalable web solutions." },
-                    marketing: { fullname: "Taylor Smith", jobtitle: "Digital Marketer & Content Writer", location: "Hyderabad, Telangana", summary: "Creative content strategist focused on SEO growth, digital storytelling, and audience engagement." },
-                    hr: { fullname: "Morgan Davis", jobtitle: "HR & Management Professional", location: "Chennai, Tamil Nadu", summary: "Detail-oriented HR professional skilled in talent acquisition, employee relations, and organizational development." },
-                    healthcare: { fullname: "Dr. Sneha Patil", jobtitle: "Healthcare Specialist & Nurse", location: "Nagpur, Maharashtra", summary: "Compassionate healthcare professional with expertise in patient care management, clinical documentation, and emergency response." },
-                    executive: { fullname: "Pat Taylor", jobtitle: "Senior Executive / Leader", location: "New Delhi, Delhi", summary: "Visionary executive with proven track record in enterprise leadership, digital transformation, and strategic planning." }
+                    all: { fullname: "Professional User", jobtitle: "All-Rounder / General Professional", location: "Mumbai, Maharashtra", summary: "Versatile and goal-driven professional equipped with a robust skillset, adaptable across multiple industries and roles." },
+                    finance: { fullname: "Rohan Kulkarni", jobtitle: "Financial Analyst & Accountant", location: "Mumbai, Maharashtra", summary: "Finance professional with 5+ years of experience in financial modeling, budgeting, and tax auditing." },
+                    fresher: { fullname: "Alex Morgan", jobtitle: "Recent Graduate / Entry Level", location: "Pune, Maharashtra", summary: "Motivated college graduate with strong academic background and project experience." },
+                    software: { fullname: "Jordan Lee", jobtitle: "Software / IT Engineer", location: "Bengaluru, Karnataka", summary: "Dedicated Software Engineer with expertise in full-stack development and scalable web solutions." },
+                    marketing: { fullname: "Taylor Smith", jobtitle: "Digital Marketer", location: "Hyderabad, Telangana", summary: "Creative strategist focused on SEO growth and digital storytelling." },
+                    hr: { fullname: "Morgan Davis", jobtitle: "HR Professional", location: "Chennai, Tamil Nadu", summary: "Skilled in talent acquisition and organizational development." },
+                    healthcare: { fullname: "Dr. Sneha Patil", jobtitle: "Healthcare Specialist", location: "Nagpur, Maharashtra", summary: "Healthcare professional with expertise in patient care management." },
+                    executive: { fullname: "Pat Taylor", jobtitle: "Senior Executive", location: "New Delhi, Delhi", summary: "Visionary executive with proven track record in enterprise leadership." }
                 }
             },
             mr: {
-                tagline: "स्मार्ट व बहुभाषिक रेझ्युमे बिल्डर",
-                sample: "क्षेत्र / प्रोफाईल:",
-                load: "लोड करा",
-                downloadPdf: "PDF डाऊनलोड",
-                templates: "व्हिज्युअल टेम्पलेट गॅलरी (८ फॉरमॅट्स)",
-                tabPersonal: "माहिती",
-                tabExp: "अनुभव",
-                tabEdu: "शिक्षण",
-                tabSkills: "कौशल्ये",
-                tabProj: "प्रोजेक्ट्स",
-                lblPhoto: "प्रोफाइल फोटो",
-                btnUpload: "फोटो निवडा",
-                btnRemove: "काढून टाका",
-                lblFullname: "पूर्ण नाव",
-                lblJobtitle: "पदनाम / Role",
-                lblEmail: "ईमेल",
-                lblPhone: "मोबाईल क्रमांक",
-                lblLocation: "पत्ता / शहर",
-                lblSummary: "प्रोफाइल सारांश",
-                lblExpHeading: "कार्य अनुभव",
-                lblEduHeading: "शैक्षणिक पात्रता",
-                lblSkillsHeading: "कौशल्ये (कॉमा देऊन टाका)",
-                lblLangHeading: "अवगत असलेल्या भाषा",
-                lblProjHeading: "प्रोजेक्ट्स व प्रमाणपत्रे",
-                atsTitle: "ATS स्कोर",
-                livePreview: "लाइव्ह प्रीव्ह्यू (A4)",
-                clickHint: "एडिट करण्यासाठी खालील मजकुरावर थेट क्लिक करा!",
-                secExp: "कार्य अनुभव",
-                secEdu: "शिक्षण",
-                secSkills: "कौशल्ये",
-                secLang: "भाषा ज्ञान",
-                secProj: "प्रोजेक्ट्स",
-                secInt: "आवडीनिवडी",
+                load: "लोड", downloadPdf: "PDF", templates: "८ प्रो लेआउट्स",
+                tabPersonal: "माहिती", tabExp: "अनुभव", tabEdu: "शिक्षण", tabSkills: "कौशल्ये", tabProj: "प्रोजेक्ट्स",
+                lblPhoto: "फोटो", btnUpload: "निवडा", btnRemove: "काढा",
+                lblFullname: "पूर्ण नाव", lblJobtitle: "पदनाम", lblEmail: "ईमेल", lblPhone: "मोबाईल",
+                lblLocation: "शहर", lblSummary: "सारांश", lblExpHeading: "कार्य अनुभव",
+                lblEduHeading: "शिक्षण", lblSkillsHeading: "कौशल्ये (कॉमा देऊन)", lblLangHeading: "भाषा",
+                lblProjHeading: "प्रोजेक्ट्स", atsTitle: "ATS स्कोर", livePreview: "लाइव्ह प्रीव्ह्यू",
+                clickHint: "एडिट करण्यासाठी मजकुरावर टॅप करा!", secExp: "कार्य अनुभव", secEdu: "शिक्षण",
+                secSkills: "कौशल्ये", secLang: "भाषा ज्ञान", secProj: "प्रोजेक्ट्स",
                 samples: {
-                    all: { fullname: "प्रोफेशनल युजर", jobtitle: "सर्वसाधारण / ऑल-राऊंडर प्रोफेशनल", location: "मुंबई, महाराष्ट्र", summary: "विविध क्षेत्रांत आणि प्रकल्पांत सहज काम करण्यास सक्षम असा बहुगुणी आणि कार्यक्षम व्यावसायिक." },
-                    finance: { fullname: "रोहन कुलकर्णी", jobtitle: "फायनान्शियल ॲनालिस्ट आणि अकाउंटंट", location: "मुंबई, महाराष्ट्र", summary: "फायनान्शियल मॉडेलिंग, बजेटिंग आणि टॅक्स ऑडिटिंगमध्ये ५+ वर्षांचा अनुभव असलेला तज्ज्ञ." },
-                    fresher: { fullname: "अमित कुमार", jobtitle: "कॉलेज फ्रेशर्स / ग्रॅज्युएट", location: "पुणे, महाराष्ट्र", summary: "उत्कृष्ट शैक्षणिक पार्श्वभूमी आणि प्रोजेक्ट अनुभवासह करिअरची सुरुवात करण्यास उत्सुक फ्रेश ग्रॅज्युएट." },
-                    software: { fullname: "रोहित शर्मा", jobtitle: "सॉफ्टवेअर / आयटी इंजिनिअर", location: "बेंगळुरू, कर्नाटक", summary: "फुल-स्टॅक डेव्हलपमेंट आणि कोडिंगमध्ये पारंगत असलेला सॉफ्टवेअर इंजिनिअर." },
-                    marketing: { fullname: "नेहा पाटील", jobtitle: "डिजिटल मार्केटर आणि रायटर", location: "हैदराबाद, तेलंगणा", summary: "एसइओ ग्रोथ आणि डिजिटल मार्केटिंगमध्ये विशेष रुची असलेली मार्केटर." },
-                    hr: { fullname: "पूजा कुलकर्णी", jobtitle: "एचआर आणि मॅनेजमेंट प्रोफेशनल", location: "चेन्नई, तामिळनाडू", summary: "मानव संसाधन आणि टॅलेंट ॲक्विझिशनमध्ये कुशल एचआर प्रोफेशनल." },
-                    healthcare: { fullname: "डॉ. स्नेहा पाटील", jobtitle: "हेल्थकेअर स्पेशालिस्ट", location: "नागपूर, महाराष्ट्र", summary: "रुग्ण सेवा व्यवस्थापन आणि क्लिनिकल डॉक्युमेंटेशनमध्ये पारंगत वैद्यकीय व्यावसायिक." },
-                    executive: { fullname: "राजेश मल्होत्रा", jobtitle: "सिनिअर एक्झिक्युटिव्ह / लीडर", location: "नवी दिल्ली", summary: "एंटरप्राइज लीडरशिप आणि धोरणात्मक नियोजनात १०+ वर्षांचा अनुभव." }
+                    all: { fullname: "प्रोफेशनल युजर", jobtitle: "ऑल-राऊंडर प्रोफेशनल", location: "मुंबई, महाराष्ट्र", summary: "विविध क्षेत्रांत आणि प्रकल्पांत सहज काम करण्यास सक्षम व्यावसायिक." },
+                    finance: { fullname: "रोहन कुलकर्णी", jobtitle: "फायनान्शियल ॲनालिस्ट", location: "मुंबई, महाराष्ट्र", summary: "फायनान्शियल मॉडेलिंग आणि टॅक्स ऑडिटिंगमध्ये ५+ वर्षांचा अनुभव." },
+                    fresher: { fullname: "अमित कुमार", jobtitle: "फ्रेश ग्रॅज्युएट", location: "पुणे, महाराष्ट्र", summary: "उत्कृष्ट शैक्षणिक पार्श्वभूमी आणि प्रोजेक्ट अनुभवासह करिअरची सुरुवात करण्यास उत्सुक." },
+                    software: { fullname: "रोहित शर्मा", jobtitle: "सॉफ्टवेअर इंजिनिअर", location: "बेंगळुरू", summary: "फुल-स्टॅक डेव्हलपमेंट आणि कोडिंगमध्ये पारंगत." },
+                    marketing: { fullname: "नेहा पाटील", jobtitle: "डिजिटल मार्केटर", location: "हैदराबाद", summary: "डिजिटल मार्केटिंगमध्ये विशेष रुची असलेली मार्केटर." },
+                    hr: { fullname: "पूजा कुलकर्णी", jobtitle: "एचआर प्रोफेशनल", location: "चेन्नई", summary: "मानव संसाधन व्यवस्थापनात कुशल." },
+                    healthcare: { fullname: "डॉ. स्नेहा पाटील", jobtitle: "हेल्थकेअर स्पेशालिस्ट", location: "नागपूर", summary: "रुग्ण सेवा व्यवस्थापनात पारंगत वैद्यकीय व्यावसायिक." },
+                    executive: { fullname: "राजेश मल्होत्रा", jobtitle: "सिनिअर एक्झिक्युटिव्ह", location: "नवी दिल्ली", summary: "एंटरप्राइज लीडरशिपमध्ये १०+ वर्षांचा अनुभव." }
                 }
             },
             hi: {
-                tagline: "स्मार्ट एवं बहुभाषी रिज्यूमे बिल्डर",
-                sample: "क्षेत्र / प्रोफाइल:",
-                load: "लोड करें",
-                downloadPdf: "PDF डाउनलोड",
-                templates: "विजुअल टेम्पलेट गैलरी (8 फॉर्मेट)",
-                tabPersonal: "जानकारी",
-                tabExp: "अनुभव",
-                tabEdu: "शिक्षा",
-                tabSkills: "कौशल",
-                tabProj: "प्रोजेक्ट्स",
-                lblPhoto: "प्रोफाइल फोटो",
-                btnUpload: "फोटो चुनें",
-                btnRemove: "हटाएं",
-                lblFullname: "पूरा नाम",
-                lblJobtitle: "पदनाम",
-                lblEmail: "ईमेल",
-                lblPhone: "मोबाइल नंबर",
-                lblLocation: "पता / शहर",
-                lblSummary: "प्रोफाइल सारांश",
-                lblExpHeading: "कार्य अनुभव",
-                lblEduHeading: "शैक्षणिक योग्यता",
-                lblSkillsHeading: "कौशल (कॉमा लगाकर लिखें)",
-                lblLangHeading: "भाषा ज्ञान",
-                lblProjHeading: "प्रमुख प्रोजेक्ट्स",
-                atsTitle: "ATS स्कोर",
-                livePreview: "लाइव पूर्वावलोकन (A4)",
-                clickHint: "एडिट करने के लिए नीचे किसी भी टेक्स्ट पर सीधे क्लिक करें!",
-                secExp: "कार्य अनुभव",
-                secEdu: "शिक्षा",
-                secSkills: "कौशल",
-                secLang: "भाषाएँ",
-                secProj: "प्रोजेक्ट्स",
-                secInt: "रुचियाँ",
+                load: "लोड", downloadPdf: "PDF", templates: "8 प्रो लेआउट",
+                tabPersonal: "जानकारी", tabExp: "अनुभव", tabEdu: "शिक्षा", tabSkills: "कौशल", tabProj: "प्रोजेक्ट्स",
+                lblPhoto: "फोटो", btnUpload: "चुनें", btnRemove: "हटाएं",
+                lblFullname: "पूरा नाम", lblJobtitle: "पदनाम", lblEmail: "ईमेल", lblPhone: "मोबाइल",
+                lblLocation: "शहर", lblSummary: "सारांश", lblExpHeading: "कार्य अनुभव",
+                lblEduHeading: "शिक्षा", lblSkillsHeading: "कौशल (कॉमा लगाकर)", lblLangHeading: "भाषाएँ",
+                lblProjHeading: "प्रोजेक्ट्स", atsTitle: "ATS स्कोर", livePreview: "लाइव प्रीव्यू",
+                clickHint: "एडिट करने के लिए टेक्स्ट पर क्लिक करें!", secExp: "कार्य अनुभव", secEdu: "शिक्षा",
+                secSkills: "कौशल", secLang: "भाषाएँ", secProj: "प्रोजेक्ट्स",
                 samples: {
-                    all: { fullname: "प्रोफेशनल यूजर", jobtitle: "ऑल-राउंडर / जनरल प्रोफेशनल", location: "मुंबई, महाराष्ट्र", summary: "विभिन्न उद्योगों और भूमिकाओं में अनुकूलनीय और कुशल पेशेवर।" },
-                    finance: { fullname: "रोहन कुलकर्णी", jobtitle: "फाइनेंशियल एनालिस्ट", location: "मुंबई, महाराष्ट्र", summary: "वित्तीय मॉडलिंग, बजटिंग और कर अनुपालन में 5+ वर्षों का अनुभव।" },
-                    fresher: { fullname: "अमित कुमार", jobtitle: "फ्रेषर / हालिया ग्रेजुएट", location: "पुणे, महाराष्ट्र", summary: "मजबूत अकादमिक पृष्ठभूमि और प्रोजेक्ट अनुभव के साथ करियर शुरू करने के लिए उत्सुक।" },
-                    software: { fullname: "रोहित शर्मा", jobtitle: "सॉफ्टवेयर / आईटी इंजीनियर", location: "बेंगलुरु", summary: "फुल-स्टैक डेवलपमेंट और एल्गोरिदम में विशेषज्ञ सॉफ्टवेयर इंजीनियर।" },
-                    marketing: { fullname: "नेहा पाटिल", jobtitle: "डिजिटल मार्केटर", location: "हैदराबाद", summary: "एसईओ ग्रोथ और डिजिटल स्टोरीटेलिंग में निपुण।" },
-                    hr: { fullname: "पूजा कुलकर्णी", jobtitle: "एचआर प्रोफेशनल", location: "चेन्नई", summary: "टैलेंट एक्विजिशन और एम्प्लॉई रिलेशंस में कुशल।" },
-                    healthcare: { fullname: "डॉ. स्नेहा पाटिल", jobtitle: "हेल्थकेअर स्पेशलिस्ट", location: "नागपुर", summary: "रोगी देखभाल प्रबंधन और नैदानिक ​​दस्तावेज़ीकरण में विशेषज्ञ।" },
-                    executive: { fullname: "राजेश मल्होत्रा", jobtitle: "सीनियर एक्जीक्यूटिव / लीडर", location: "नई दिल्ली", summary: "एंटरप्राइज लीडरशिप और स्ट्रैटेजिक प्लानिंग में अनुभवी।" }
+                    all: { fullname: "प्रोफेशनल यूजर", jobtitle: "जनरल प्रोफेशनल", location: "मुंबई", summary: "विभिन्न उद्योगों में कार्य करने में कुशल पेशेवर।" },
+                    finance: { fullname: "रोहन कुलकर्णी", jobtitle: "फाइनेंशियल एनालिस्ट", location: "मुंबई", summary: "वित्तीय मॉडलिंग और बजटिंग में अनुभव।" },
+                    fresher: { fullname: "अमित कुमार", jobtitle: "फ्रेशर", location: "पुणे", summary: "मजबूत अकादमिक पृष्ठभूमि के साथ करियर शुरू करने के लिए उत्सुक।" },
+                    software: { fullname: "रोहित शर्मा", jobtitle: "सॉफ्टवेयर इंजीनियर", location: "बेंगलुरु", summary: "फुल-स्टैक डेवलपमेंट में विशेषज्ञ।" },
+                    marketing: { fullname: "नेहा पाटिल", jobtitle: "डिजिटल मार्केटर", location: "हैदराबाद", summary: "डिजिटल मार्केटिंग विशेषज्ञ।" },
+                    hr: { fullname: "पूजा कुलकर्णी", jobtitle: "एचआर प्रोफेशनल", location: "चेन्नई", summary: "टैलेंट एक्विजिशन में कुशल।" },
+                    healthcare: { fullname: "डॉ. स्नेहा पाटिल", jobtitle: "हेल्थकेअर स्पेशलिस्ट", location: "नागपुर", summary: "रोगी देखभाल प्रबंधन में विशेषज्ञ।" },
+                    executive: { fullname: "राजेश मल्होत्रा", jobtitle: "सीनियर एक्जीक्यूटिव", location: "नई दिल्ली", summary: "एंटरप्राइज लीडरशिप में अनुभवी।" }
                 }
             },
             kn: {
-                tagline: "ಸ್ಮಾರ್ಟ್ ಮಲ್ಟಿ-ಲ್ಯಾಂಗ್ವೇಜ್ ರೆಸ್ಯೂಮ್ ಬಿಲ್ಡರ್",
-                sample: "ಕ್ಷೇತ್ರ / ಪ್ರೊಫೈಲ್:",
-                load: "ಲೋಡ್ ಮಾಡಿ",
-                downloadPdf: "PDF ಡೌನ್‌ಲೋಡ್",
-                templates: "ವಿಶುಯಲ್ ಟೆಂಪ್ಲೇಟ್ ಗ್ಯಾಲರಿ (8 ಫಾರ್ಮ್ಯಾಟ್‌ಗಳು)",
-                tabPersonal: "ಮಾಹಿತಿ",
-                tabExp: "ಅನುಭವ",
-                tabEdu: "ಶಿಕ್ಷಣ",
-                tabSkills: "ಕೌಶಲ್ಯಗಳು",
-                tabProj: "ಪ್ರಾಜೆಕ್ಟ್‌ಗಳು",
-                lblPhoto: "ಪ್ರೊಫೈಲ್ ಫೋಟೋ",
-                btnUpload: "ಫೋಟೋ ಆಯ್ಕೆ",
-                btnRemove: "ತೆಗೆದುಹಾಕಿ",
-                lblFullname: "ಪೂರ್ಣ ಹೆಸರು",
-                lblJobtitle: "ಹುದ್ದೆಯ ಹೆಸರು",
-                lblEmail: "ಇಮೇಲ್",
-                lblPhone: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
-                lblLocation: "ಸ್ಥಳ / ನಗರ",
-                lblSummary: "ಪ್ರೊಫೈಲ್ ಸಾರಾಂಶ",
-                lblExpHeading: "ಕಾರ್ಯ ಅನುಭವ",
-                lblEduHeading: "ಶೈಕ್ಷಣಿಕ ಅರ್ಹತೆ",
-                lblSkillsHeading: "ಕೌಶಲ್ಯಗಳು",
-                lblLangHeading: "ತಿಳಿದಿರುವ ಭಾಷೆಗಳು",
-                lblProjHeading: "ಪ್ರಾಜೆಕ್ಟ್‌ಗಳು",
-                atsTitle: "ATS ಸ್ಕೋರ್",
-                livePreview: "ಲೈವ್ ಪೂರ್ವವೀಕ್ಷಣೆ (A4)",
-                clickHint: "ನೇರವಾಗಿ ಎಡಿಟ್ ಮಾಡಲು ಕೆಳಗಿನ ಪಠ್ಯದ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ!",
-                secExp: "ಕಾರ್ಯ ಅನುಭವ",
-                secEdu: "ಶಿಕ್ಷಣ",
-                secSkills: "ಕೌಶಲ್ಯಗಳು",
-                secLang: "ಭಾಷೆಗಳು",
-                secProj: "ಪ್ರಾಜೆಕ್ಟ್‌ಗಳು",
-                secInt: "ಆಸಕ್ತಿಗಳು",
+                load: "ಲೋಡ್", downloadPdf: "PDF", templates: "8 ಪ್ರೊ ಲೇಔಟ್‌ಗಳು",
+                tabPersonal: "ಮಾಹಿತಿ", tabExp: "ಅನುಭವ", tabEdu: "ಶಿಕ್ಷಣ", tabSkills: "ಕೌಶಲ್ಯ", tabProj: "ಪ್ರಾಜೆಕ್ಟ್",
+                lblPhoto: "ಫೋಟೋ", btnUpload: "ಆಯ್ಕೆ", btnRemove: "ತೆಗೆ",
+                lblFullname: "ಪೂರ್ಣ ಹೆಸರು", lblJobtitle: "ಹುದ್ದೆ", lblEmail: "ಇಮೇಲ್", lblPhone: "ಮೊಬೈಲ್",
+                lblLocation: "ನಗರ", lblSummary: "ಸಾರಾಂಶ", lblExpHeading: "ಕಾರ್ಯ ಅನುಭವ",
+                lblEduHeading: "ಶಿಕ್ಷಣ", lblSkillsHeading: "ಕೌಶಲ್ಯಗಳು", lblLangHeading: "ಭಾಷೆಗಳು",
+                lblProjHeading: "ಪ್ರಾಜೆಕ್ಟ್‌ಗಳು", atsTitle: "ATS ಸ್ಕೋರ್", livePreview: "ಲೈವ್ ಪ್ರಿವ್ಯೂ",
+                clickHint: "ಎಡಿಟ್ ಮಾಡಲು ಪಠ್ಯದ ಮೇಲೆ ಟ್ಯಾಪ್ ಮಾಡಿ!", secExp: "ಕಾರ್ಯ ಅನುಭವ", secEdu: "ಶಿಕ್ಷಣ",
+                secSkills: "ಕೌಶಲ್ಯಗಳು", secLang: "ಭಾಷೆಗಳು", secProj: "ಪ್ರಾಜೆಕ್ಟ್‌ಗಳು",
                 samples: {
-                    all: { fullname: "Professional User", jobtitle: "All-Rounder / General Professional", location: "ಬೆಂಗಳೂರು", summary: "ವಿವಿಧ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಕೆಲಸ ಮಾಡಲು ಸಮರ್ಥರಾದ ವೃತ್ತಿಪರ." },
-                    finance: { fullname: "Rohan Kulkarni", jobtitle: "Financial Analyst", location: "ಮುಂಬೈ", summary: "ಹಣಕಾಸು ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ಲೆಕ್ಕಪತ್ರ ನಿರ್ವಹಣೆಯಲ್ಲಿ ಅನುಭವ." },
-                    fresher: { fullname: "ಅಮಿತ್ ಕುಮಾರ್", jobtitle: "Fresher / Graduate", location: "ಪುಣೆ", summary: "ಉತ್ತಮ ಶೈಕ್ಷಣಿಕ ಹಿನ್ನೆಲೆ ಹೊಂದಿರುವ ಫ್ರೆಶರ್." },
+                    all: { fullname: "Professional User", jobtitle: "General Professional", location: "ಬೆಂಗಳೂರು", summary: "ವಿವಿಧ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಕೆಲಸ ಮಾಡಲು ಸಮರ್ಥರಾದ ವೃತ್ತಿಪರ." },
+                    finance: { fullname: "Rohan Kulkarni", jobtitle: "Financial Analyst", location: "ಮುಂಬೈ", summary: "ಹಣಕಾಸು ವಿಶ್ಲೇಷಣೆಯಲ್ಲಿ ಅನುಭವ." },
+                    fresher: { fullname: "ಅಮಿತ್ ಕುಮಾರ್", jobtitle: "Fresher", location: "ಪುಣೆ", summary: "ಉತ್ತಮ ಶೈಕ್ಷಣಿಕ ಹಿನ್ನೆಲೆ ಹೊಂದಿರುವ ಫ್ರೆಶರ್." },
                     software: { fullname: "ರೋಹಿತ್ ಶರ್ಮಾ", jobtitle: "Software Engineer", location: "ಬೆಂಗಳೂರು", summary: "ಸಾಫ್ಟ್‌ವೇರ್ ಅಭಿವೃದ್ಧಿಯಲ್ಲಿ ಪರಿಣತಿ." },
                     marketing: { fullname: "ನೇಹಾ ಪಾಟೀಲ್", jobtitle: "Digital Marketer", location: "ಹೈದರಾಬಾದ್", summary: "ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ತಜ್ಞ." },
                     hr: { fullname: "ಪೂಜಾ ಕುಲಕರ್ಣಿ", jobtitle: "HR Professional", location: "ಚೆನ್ನೈ", summary: "ಮಾನವ ಸಂಪನ್ಮೂಲ ತಜ್ಞ." },
@@ -608,13 +413,35 @@
             }
         };
 
+        function calculateAutoScale() {
+            const wrapper = document.getElementById('preview-wrapper');
+            if (!wrapper) return;
+            const containerWidth = wrapper.clientWidth;
+            const a4WidthPx = 794;
+            if (containerWidth < a4WidthPx) {
+                zoomLevel = (containerWidth - 16) / a4WidthPx;
+            } else {
+                zoomLevel = 0.85;
+            }
+            const previewEl = document.getElementById('resume-preview-container');
+            previewEl.style.transform = `scale(${zoomLevel})`;
+            wrapper.style.height = `${1123 * zoomLevel + 24}px`;
+        }
+
+        window.addEventListener('resize', () => {
+            if (!document.getElementById('app-workspace-view').classList.contains('hidden')) {
+                calculateAutoScale();
+            }
+        });
+
         function startApp() {
             document.getElementById('landing-page-view').classList.add('hidden');
             document.getElementById('app-workspace-view').classList.remove('hidden');
-            renderTemplateGallery('all');
-            syncFormWithData();
-            renderDynamicLists();
-            updateResume();
+            renderLayoutThumbnails();
+            syncFormFields();
+            renderFormLists();
+            renderResumePreview();
+            setTimeout(calculateAutoScale, 50);
         }
 
         function goToHome() {
@@ -622,90 +449,14 @@
             document.getElementById('landing-page-view').classList.remove('hidden');
         }
 
-        function getTemplateMeta(id) {
-            let layout =
-                id <= 13 ? 'combined' :
-                id <= 26 ? 'general' :
-                id <= 39 ? 'hybrid' :
-                id <= 52 ? 'it' :
-                id <= 65 ? 'minimalist' :
-                id <= 78 ? 'skillbased' :
-                id <= 91 ? 'tech' : 'traditional';
-
-            let theme = colorThemes[(id - 1) % colorThemes.length];
-            return { layout, theme };
-        }
-
-        function selectFormatDirectly(templateId, filterType) {
-            currentTemplateId = templateId;
-            const { layout } = getTemplateMeta(templateId);
-            document.getElementById('active-template-badge').innerText = formatNames[layout];
-            renderTemplateGallery(filterType);
-            updateResume();
-        }
-
-        function renderTemplateGallery(filter = 'all') {
-            const container = document.getElementById('template-gallery-container');
-            container.innerHTML = '';
-            for (let i = 1; i <= 101; i++) {
-                const { layout, theme } = getTemplateMeta(i);
-                if (filter !== 'all' && layout !== filter) continue;
-
-                let btn = document.createElement('button');
-                const isSelected = currentTemplateId === i;
-                btn.className = `p-1.5 rounded border text-center text-[10px] font-bold transition flex flex-col items-center justify-between gap-1 ${isSelected ? 'bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-green-500 scale-105' : 'bg-white hover:bg-slate-100 text-slate-700'}`;
-                
-                let miniHTML = '';
-                if (layout === 'combined') {
-                    miniHTML = `<div class="w-full h-12 rounded border flex flex-col overflow-hidden" style="background:${theme.light}"><div class="h-4 w-full flex"><div class="w-1/2 h-full" style="background:${theme.dark}"></div><div class="w-1/2 h-full bg-slate-300"></div></div><div class="flex-grow flex p-0.5 gap-0.5"><div class="w-1/2 bg-white rounded-xs"></div><div class="w-1/2 bg-slate-200 rounded-xs"></div></div></div>`;
-                } else if (layout === 'general') {
-                    miniHTML = `<div class="w-full h-12 rounded border flex flex-col overflow-hidden" style="background:${theme.light}"><div class="h-4 w-full" style="background:${theme.primary}"></div><div class="flex-grow flex p-1 gap-1"><div class="w-1/2 bg-white rounded-xs"></div><div class="w-1/2 bg-slate-200 rounded-xs"></div></div></div>`;
-                } else if (layout === 'hybrid') {
-                    miniHTML = `<div class="w-full h-12 rounded border flex flex-col overflow-hidden p-0.5 space-y-0.5" style="background:${theme.light}"><div class="h-2 w-full" style="background:${theme.dark}"></div><div class="h-1.5 w-full" style="background:${theme.accent}"></div><div class="flex-grow flex gap-1"><div class="w-3/5 bg-white rounded-xs"></div><div class="w-2/5 bg-slate-200 rounded-xs"></div></div></div>`;
-                } else if (layout === 'it') {
-                    miniHTML = `<div class="w-full h-12 rounded border flex flex-col overflow-hidden p-1 space-y-1 bg-slate-50"><div class="flex gap-1"><div class="w-3/5 h-3 bg-slate-300"></div><div class="w-2/5 h-3" style="background:${theme.primary}"></div></div><div class="h-0.5 bg-red-400 w-full"></div><div class="h-1 bg-slate-200 w-full"></div></div>`;
-                } else if (layout === 'minimalist') {
-                    miniHTML = `<div class="w-full h-12 rounded border flex flex-col overflow-hidden p-1 space-y-1 bg-white"><div class="h-3 bg-slate-200 w-3/4 rounded-xs"></div><div class="h-0.5 w-full" style="background:${theme.primary}"></div><div class="h-1 bg-slate-300 w-full"></div></div>`;
-                } else if (layout === 'skillbased') {
-                    miniHTML = `<div class="w-full h-12 rounded border flex overflow-hidden"><div class="w-1/3 h-full p-0.5 space-y-0.5" style="background:${theme.dark}"><div class="h-1 bg-white/50 w-full"></div></div><div class="w-2/3 h-full p-1 space-y-1 bg-white"><div class="h-2 bg-slate-300 w-full rounded-xs"></div><div class="h-1 bg-slate-200 w-3/4"></div></div></div>`;
-                } else if (layout === 'tech') {
-                    miniHTML = `<div class="w-full h-12 rounded border flex flex-col overflow-hidden"><div class="h-3 w-full bg-slate-200 flex"><div class="w-3/4 h-full"></div><div class="w-1/4 h-full" style="background:${theme.dark}"></div></div><div class="flex-grow flex p-1 gap-1 bg-white"><div class="w-3/5 bg-slate-100 rounded-xs"></div><div class="w-2/5 bg-slate-200 rounded-xs"></div></div></div>`;
-                } else {
-                    miniHTML = `<div class="w-full h-12 rounded border flex flex-col overflow-hidden p-1 space-y-1 bg-slate-50"><div class="h-3 border border-slate-700 rounded bg-white"></div><div class="h-2 bg-slate-900 rounded w-full"></div></div>`;
-                }
-
-                btn.innerHTML = `${miniHTML}<span class="truncate w-full px-0.5">T-${i}</span>`;
-                btn.onclick = () => {
-                    currentTemplateId = i;
-                    document.getElementById('active-template-badge').innerText = `T-${i} • ${formatNames[layout]}`;
-                    renderTemplateGallery(filter);
-                    updateResume();
-                };
-                container.appendChild(btn);
-            }
-        }
-
-        function switchFormTab(tab) {
-            ['personal', 'experience', 'education', 'skills', 'more'].forEach(t => {
-                document.getElementById(`form-tab-${t}`).classList.add('hidden');
-                document.getElementById(`tab-btn-${t}`).className = "px-3 py-3 font-semibold text-slate-600 hover:text-slate-900 whitespace-nowrap";
-            });
-            document.getElementById(`form-tab-${tab}`).classList.remove('hidden');
-            document.getElementById(`tab-btn-${tab}`).className = "px-3 py-3 font-semibold border-b-2 border-green-600 text-green-600 whitespace-nowrap";
-        }
-
         function changeLanguage(lang) {
             currentLang = lang;
             ['en', 'mr', 'hi', 'kn'].forEach(l => {
                 const btn = document.getElementById(`lang-${l}`);
-                btn.className = (l === lang)
-                    ? "px-2.5 py-1 text-xs rounded font-semibold transition bg-green-600 text-white"
-                    : "px-2.5 py-1 text-xs rounded font-semibold transition text-slate-300 hover:bg-slate-700";
+                btn.className = (l === lang) ? "px-1.5 py-1 text-[10px] rounded font-semibold bg-green-600 text-white" : "px-1.5 py-1 text-[10px] rounded font-semibold text-slate-300";
             });
 
             const t = i18n[lang];
-            document.getElementById('ui-tagline').innerText = t.tagline;
-            document.getElementById('lbl-sample').innerText = t.sample;
             document.getElementById('btn-load').innerText = t.load;
             document.getElementById('btn-download-pdf').innerText = t.downloadPdf;
             document.getElementById('ui-heading-templates').innerHTML = `<i class="fa-solid fa-paintbrush text-green-600"></i> ${t.templates}`;
@@ -730,9 +481,27 @@
             document.getElementById('lbl-proj-heading').innerText = t.lblProjHeading;
             document.getElementById('lbl-ats-title').innerHTML = `<i class="fa-solid fa-chart-line text-green-400"></i> ${t.atsTitle}`;
             document.getElementById('lbl-live-preview').innerText = t.livePreview;
-            document.getElementById('lbl-click-hint').innerHTML = `<i class="fa-solid fa-pen-to-square mr-1"></i> ${t.clickHint}`;
+            document.getElementById('lbl-click-hint').innerHTML = `<i class="fa-solid fa-pen-to-square"></i> ${t.clickHint}`;
 
-            updateResume();
+            renderResumePreview();
+        }
+
+        function renderLayoutThumbnails() {
+            const container = document.getElementById('template-gallery-container');
+            container.innerHTML = '';
+            proLayouts.forEach(layout => {
+                let btn = document.createElement('button');
+                const isSelected = activeLayoutId === layout.id;
+                btn.className = `shrink-0 w-16 p-1 rounded border text-[9px] font-bold transition flex flex-col items-center gap-0.5 ${isSelected ? 'bg-slate-900 text-white border-slate-900 ring-1 ring-green-500' : 'bg-slate-50 hover:bg-slate-100 text-slate-700'}`;
+                btn.innerHTML = `<div class="w-full h-5 rounded-xs border flex flex-col overflow-hidden" style="background:${layout.light}"><div class="h-1.5 w-full" style="background:${layout.primary}"></div><div class="flex-grow bg-white"></div></div><span class="truncate w-full">${layout.name}</span>`;
+                btn.onclick = () => {
+                    activeLayoutId = layout.id;
+                    document.getElementById('active-template-badge').innerText = layout.name;
+                    renderLayoutThumbnails();
+                    renderResumePreview();
+                };
+                container.appendChild(btn);
+            });
         }
 
         function loadSelectedSample() {
@@ -743,12 +512,12 @@
                 resumeData.jobtitle = sample.jobtitle;
                 resumeData.location = sample.location;
                 resumeData.summary = sample.summary;
-                syncFormWithData();
-                updateResume();
+                syncFormFields();
+                renderResumePreview();
             }
         }
 
-        function syncFormWithData() {
+        function syncFormFields() {
             document.getElementById('inp-fullname').value = resumeData.fullname;
             document.getElementById('inp-jobtitle').value = resumeData.jobtitle;
             document.getElementById('inp-email').value = resumeData.email;
@@ -760,129 +529,13 @@
             document.getElementById('inp-interests').value = resumeData.interests.join(', ');
         }
 
-        function handleInlineEdit(field, value, index = null, subField = null) {
-            const cleanText = value.trim();
-            if (index !== null && subField !== null) {
-                resumeData[field][index][subField] = cleanText;
-                renderDynamicLists();
-            } else if (field === 'skills' || field === 'interests') {
-                resumeData[field] = cleanText.split(',').map(s => s.trim()).filter(Boolean);
-                document.getElementById(`inp-${field}`).value = resumeData[field].join(', ');
-            } else {
-                resumeData[field] = cleanText;
-                const inputEl = document.getElementById(`inp-${field}`);
-                if (inputEl) inputEl.value = cleanText;
-            }
-            calculateATS();
-        }
-
-        function renderDynamicLists() {
-            const expContainer = document.getElementById('experience-list');
-            expContainer.innerHTML = '';
-            resumeData.experiences.forEach((exp, idx) => {
-                expContainer.innerHTML += `
-                    <div class="p-3 bg-slate-50 border rounded-lg space-y-2">
-                        <div class="flex justify-between"><span class="text-xs font-bold">#${idx+1}</span><button onclick="removeExperience(${idx})" class="text-red-600 text-xs"><i class="fa-solid fa-trash"></i></button></div>
-                        <input type="text" value="${exp.role}" oninput="resumeData.experiences[${idx}].role=this.value; updateResume();" class="w-full text-xs p-2 border rounded" placeholder="Role">
-                        <div class="grid grid-cols-2 gap-2">
-                            <input type="text" value="${exp.company}" oninput="resumeData.experiences[${idx}].company=this.value; updateResume();" class="w-full text-xs p-2 border rounded" placeholder="Company">
-                            <input type="text" value="${exp.duration}" oninput="resumeData.experiences[${idx}].duration=this.value; updateResume();" class="w-full text-xs p-2 border rounded" placeholder="Duration">
-                        </div>
-                        <textarea oninput="resumeData.experiences[${idx}].details=this.value; updateResume();" class="w-full text-xs p-2 border rounded" placeholder="Details">${exp.details}</textarea>
-                    </div>`;
+        function switchFormTab(tab) {
+            ['personal', 'experience', 'education', 'skills', 'more'].forEach(t => {
+                document.getElementById(`form-tab-${t}`).classList.add('hidden');
+                document.getElementById(`tab-btn-${t}`).className = "px-2.5 py-2.5 font-semibold text-slate-600 whitespace-nowrap";
             });
-
-            const eduContainer = document.getElementById('education-list');
-            eduContainer.innerHTML = '';
-            resumeData.education.forEach((edu, idx) => {
-                eduContainer.innerHTML += `
-                    <div class="p-3 bg-slate-50 border rounded-lg space-y-2">
-                        <div class="flex justify-between"><span class="text-xs font-bold">#${idx+1}</span><button onclick="removeEducation(${idx})" class="text-red-600 text-xs"><i class="fa-solid fa-trash"></i></button></div>
-                        <input type="text" value="${edu.degree}" oninput="resumeData.education[${idx}].degree=this.value; updateResume();" class="w-full text-xs p-2 border rounded" placeholder="Degree">
-                        <div class="grid grid-cols-2 gap-2">
-                            <input type="text" value="${edu.school}" oninput="resumeData.education[${idx}].school=this.value; updateResume();" class="w-full text-xs p-2 border rounded" placeholder="School/University">
-                            <input type="text" value="${edu.year}" oninput="resumeData.education[${idx}].year=this.value; updateResume();" class="w-full text-xs p-2 border rounded" placeholder="Year">
-                        </div>
-                    </div>`;
-            });
-
-            const projContainer = document.getElementById('projects-list');
-            projContainer.innerHTML = '';
-            resumeData.projects.forEach((proj, idx) => {
-                projContainer.innerHTML += `
-                    <div class="p-3 bg-slate-50 border rounded-lg space-y-2">
-                        <div class="flex justify-between"><span class="text-xs font-bold">#${idx+1}</span><button onclick="removeProject(${idx})" class="text-red-600 text-xs"><i class="fa-solid fa-trash"></i></button></div>
-                        <input type="text" value="${proj.title}" oninput="resumeData.projects[${idx}].title=this.value; updateResume();" class="w-full text-xs p-2 border rounded" placeholder="Project Title">
-                        <textarea oninput="resumeData.projects[${idx}].desc=this.value; updateResume();" class="w-full text-xs p-2 border rounded" placeholder="Description">${proj.desc}</textarea>
-                    </div>`;
-            });
-        }
-
-        function addExperience() {
-            resumeData.experiences.push({ role: 'Job Role', company: 'Company Name', duration: '2023 - Present', details: 'Key responsibilities and achievements...' });
-            renderDynamicLists();
-            updateResume();
-        }
-        function removeExperience(idx) {
-            resumeData.experiences.splice(idx, 1);
-            renderDynamicLists();
-            updateResume();
-        }
-
-        function addEducation() {
-            resumeData.education.push({ degree: 'Degree / Course', school: 'University / College', year: '2020 - 2023' });
-            renderDynamicLists();
-            updateResume();
-        }
-        function removeEducation(idx) {
-            resumeData.education.splice(idx, 1);
-            renderDynamicLists();
-            updateResume();
-        }
-
-        function addProject() {
-            resumeData.projects.push({ title: 'Project Title', desc: 'Brief description of project impact and technologies used.' });
-            renderDynamicLists();
-            updateResume();
-        }
-        function removeProject(idx) {
-            resumeData.projects.splice(idx, 1);
-            renderDynamicLists();
-            updateResume();
-        }
-
-        function handlePhotoUpload(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(evt) {
-                    resumeData.photo = evt.target.result;
-                    document.getElementById('photo-preview').src = resumeData.photo;
-                    document.getElementById('photo-preview').classList.remove('hidden');
-                    document.getElementById('photo-placeholder').classList.add('hidden');
-                    updateResume();
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function removePhoto() {
-            resumeData.photo = '';
-            document.getElementById('photo-preview').src = '';
-            document.getElementById('photo-preview').classList.add('hidden');
-            document.getElementById('photo-placeholder').classList.remove('hidden');
-            updateResume();
-        }
-
-        function calculateATS() {
-            let score = 40;
-            if (resumeData.fullname) score += 10;
-            if (resumeData.email && resumeData.phone) score += 15;
-            if (resumeData.summary.length > 25) score += 15;
-            if (resumeData.experiences.length > 0) score += 10;
-            if (resumeData.skills.length >= 3) score += 10;
-            document.getElementById('ats-score-badge').innerText = `${score}%`;
-            document.getElementById('ats-progress-bar').style.width = `${score}%`;
+            document.getElementById(`form-tab-${tab}`).classList.remove('hidden');
+            document.getElementById(`tab-btn-${tab}`).className = "px-2.5 py-2.5 font-semibold border-b-2 border-green-600 text-green-600 whitespace-nowrap";
         }
 
         function updateResume() {
@@ -900,475 +553,201 @@
             resumeData.languages = Array.from(langCheckboxes).filter(c => c.checked).map(c => c.value);
 
             calculateATS();
+            renderResumePreview();
+        }
 
-            const t = i18n[currentLang];
+        function handleInlineEdit(field, value, index = null, subField = null) {
+            const cleanText = value.trim();
+            if (index !== null && subField !== null) {
+                resumeData[field][index][subField] = cleanText;
+                renderFormLists();
+            } else if (field === 'skills' || field === 'interests') {
+                resumeData[field] = cleanText.split(',').map(s => s.trim()).filter(Boolean);
+                document.getElementById(`inp-${field}`).value = resumeData[field].join(', ');
+            } else {
+                resumeData[field] = cleanText;
+                const inputEl = document.getElementById(`inp-${field}`);
+                if (inputEl) inputEl.value = cleanText;
+            }
+            calculateATS();
+        }
+
+        function renderFormLists() {
+            const expContainer = document.getElementById('experience-list');
+            expContainer.innerHTML = '';
+            resumeData.experiences.forEach((exp, idx) => {
+                expContainer.innerHTML += `
+                    <div class="p-2.5 bg-slate-50 border rounded-lg space-y-1.5">
+                        <div class="flex justify-between"><span class="text-[11px] font-bold">#${idx+1}</span><button onclick="removeExperience(${idx})" class="text-red-600 text-[11px]"><i class="fa-solid fa-trash"></i></button></div>
+                        <input type="text" value="${exp.role}" oninput="resumeData.experiences[${idx}].role=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Role">
+                        <div class="grid grid-cols-2 gap-1.5">
+                            <input type="text" value="${exp.company}" oninput="resumeData.experiences[${idx}].company=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Company">
+                            <input type="text" value="${exp.duration}" oninput="resumeData.experiences[${idx}].duration=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Duration">
+                        </div>
+                        <textarea oninput="resumeData.experiences[${idx}].details=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Details">${exp.details}</textarea>
+                    </div>`;
+            });
+
+            const eduContainer = document.getElementById('education-list');
+            eduContainer.innerHTML = '';
+            resumeData.education.forEach((edu, idx) => {
+                eduContainer.innerHTML += `
+                    <div class="p-2.5 bg-slate-50 border rounded-lg space-y-1.5">
+                        <div class="flex justify-between"><span class="text-[11px] font-bold">#${idx+1}</span><button onclick="removeEducation(${idx})" class="text-red-600 text-[11px]"><i class="fa-solid fa-trash"></i></button></div>
+                        <input type="text" value="${edu.degree}" oninput="resumeData.education[${idx}].degree=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Degree">
+                        <div class="grid grid-cols-2 gap-1.5">
+                            <input type="text" value="${edu.school}" oninput="resumeData.education[${idx}].school=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="School">
+                            <input type="text" value="${edu.duration}" oninput="resumeData.education[${idx}].duration=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Year">
+                        </div>
+                    </div>`;
+            });
+
+            const projContainer = document.getElementById('projects-list');
+            projContainer.innerHTML = '';
+            resumeData.projects.forEach((proj, idx) => {
+                projContainer.innerHTML += `
+                    <div class="p-2.5 bg-slate-50 border rounded-lg space-y-1.5">
+                        <div class="flex justify-between"><span class="text-[11px] font-bold">#${idx+1}</span><button onclick="removeProject(${idx})" class="text-red-600 text-[11px]"><i class="fa-solid fa-trash"></i></button></div>
+                        <input type="text" value="${proj.title}" oninput="resumeData.projects[${idx}].title=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Title">
+                        <textarea oninput="resumeData.projects[${idx}].desc=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Description">${proj.desc}</textarea>
+                    </div>`;
+            });
+        }
+
+        function addExperience() { resumeData.experiences.push({ role: 'Job Role', company: 'Company Name', duration: '2023 - Present', details: 'Key responsibilities...' }); renderFormLists(); renderResumePreview(); }
+        function removeExperience(idx) { resumeData.experiences.splice(idx, 1); renderFormLists(); renderResumePreview(); }
+        function addEducation() { resumeData.education.push({ degree: 'Degree', school: 'University', duration: '2020 - 2023' }); renderFormLists(); renderResumePreview(); }
+        function removeEducation(idx) { resumeData.education.splice(idx, 1); renderFormLists(); renderResumePreview(); }
+        function addProject() { resumeData.projects.push({ title: 'Project Title', desc: 'Brief description...' }); renderFormLists(); renderResumePreview(); }
+        function removeProject(idx) { resumeData.projects.splice(idx, 1); renderFormLists(); renderResumePreview(); }
+
+        function handlePhotoUpload(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    resumeData.photo = evt.target.result;
+                    document.getElementById('photo-preview').src = resumeData.photo;
+                    document.getElementById('photo-preview').classList.remove('hidden');
+                    document.getElementById('photo-placeholder').classList.add('hidden');
+                    renderResumePreview();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function removePhoto() {
+            resumeData.photo = '';
+            document.getElementById('photo-preview').src = '';
+            document.getElementById('photo-preview').classList.add('hidden');
+            document.getElementById('photo-placeholder').classList.remove('hidden');
+            renderResumePreview();
+        }
+
+        function calculateATS() {
+            let score = 40;
+            if (resumeData.fullname) score += 10;
+            if (resumeData.email && resumeData.phone) score += 15;
+            if (resumeData.summary.length > 25) score += 15;
+            if (resumeData.experiences.length > 0) score += 10;
+            if (resumeData.skills.length >= 3) score += 10;
+            document.getElementById('ats-score-badge').innerText = `${score}%`;
+            document.getElementById('ats-progress-bar').style.width = `${score}%`;
+        }
+
+        function renderResumePreview() {
             const target = document.getElementById('resume-render-target');
-            const { layout, theme } = getTemplateMeta(currentTemplateId);
+            const theme = proLayouts.find(l => l.id === activeLayoutId) || proLayouts[0];
+            const t = i18n[currentLang];
 
             const initials = resumeData.fullname.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'RK';
             const circlePhoto = resumeData.photo
                 ? `<img src="${resumeData.photo}" class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md shrink-0" />`
                 : `<div class="w-24 h-24 rounded-full bg-slate-200 border-4 border-white shadow-md flex items-center justify-center text-slate-700 font-black text-2xl shrink-0">${initials}</div>`;
 
-            const squarePhoto = resumeData.photo
-                ? `<img src="${resumeData.photo}" class="w-24 h-24 rounded-xl object-cover border-2 border-slate-800 shadow shrink-0" />`
-                : `<div class="w-24 h-24 rounded-xl bg-slate-100 border-2 border-slate-800 flex items-center justify-center text-slate-800 font-black text-2xl shrink-0">${initials}</div>`;
-
-            const expHtml = (bulletColor = theme.accent) => resumeData.experiences.map((e, i) => `
+            const expHtml = (accentColor = theme.accent) => resumeData.experiences.map((e, i) => `
                 <div class="mb-4">
                     <div class="font-extrabold text-sm text-slate-900" contenteditable="true" onblur="handleInlineEdit('experiences', this.innerText, ${i}, 'role')">${e.role}</div>
                     <div class="text-xs font-semibold text-slate-700" contenteditable="true" onblur="handleInlineEdit('experiences', this.innerText, ${i}, 'company')">${e.company}</div>
-                    <div class="text-[11px] italic mb-1" style="color: ${bulletColor}" contenteditable="true" onblur="handleInlineEdit('experiences', this.innerText, ${i}, 'duration')">${e.duration}</div>
-                    <p class="text-xs text-slate-700 leading-relaxed flex items-start gap-1.5">
-                        <span style="color: ${bulletColor}">▸</span>
-                        <span contenteditable="true" onblur="handleInlineEdit('experiences', this.innerText, ${i}, 'details')">${e.details}</span>
-                    </p>
+                    <div class="text-[11px] italic mb-1" style="color: ${accentColor}" contenteditable="true" onblur="handleInlineEdit('experiences', this.innerText, ${i}, 'duration')">${e.duration}</div>
+                    <p class="text-xs text-slate-700 leading-relaxed flex items-start gap-1.5"><span style="color: ${accentColor}">▸</span><span contenteditable="true" onblur="handleInlineEdit('experiences', this.innerText, ${i}, 'details')">${e.details}</span></p>
                 </div>`).join('');
 
             const eduHtml = (accentColor = theme.accent) => resumeData.education.map((ed, i) => `
                 <div class="mb-3">
                     <div class="font-extrabold text-xs text-slate-900" contenteditable="true" onblur="handleInlineEdit('education', this.innerText, ${i}, 'degree')">${ed.degree}</div>
                     <div class="text-xs text-slate-700" contenteditable="true" onblur="handleInlineEdit('education', this.innerText, ${i}, 'school')">${ed.school}</div>
-                    <div class="text-[11px] italic" style="color: ${accentColor}" contenteditable="true" onblur="handleInlineEdit('education', this.innerText, ${i}, 'year')">${ed.year}</div>
+                    <div class="text-[11px] italic" style="color: ${accentColor}" contenteditable="true" onblur="handleInlineEdit('education', this.innerText, ${i}, 'duration')">${ed.duration}</div>
                 </div>`).join('');
 
             const projHtml = (accentColor = theme.accent) => resumeData.projects.map((p, i) => `
                 <div class="mb-3">
                     <div class="font-bold text-xs text-slate-900" contenteditable="true" onblur="handleInlineEdit('projects', this.innerText, ${i}, 'title')">${p.title}</div>
-                    <p class="text-xs text-slate-700 leading-relaxed flex items-start gap-1.5">
-                        <span style="color: ${accentColor}">▸</span>
-                        <span contenteditable="true" onblur="handleInlineEdit('projects', this.innerText, ${i}, 'desc')">${p.desc}</span>
-                    </p>
+                    <p class="text-xs text-slate-700 leading-relaxed flex items-start gap-1.5"><span style="color: ${accentColor}">▸</span><span contenteditable="true" onblur="handleInlineEdit('projects', this.innerText, ${i}, 'desc')">${p.desc}</span></p>
                 </div>`).join('');
 
-            /* 1. COMBINED */
-            if (layout === 'combined') {
-                target.innerHTML = `
-                    <div class="min-h-[297mm] bg-white font-sans flex flex-col">
-                        <div class="grid grid-cols-12 pt-6 pr-8 items-center">
-                            <div class="col-span-7 text-white p-6 rounded-r-2xl relative flex items-center justify-between gap-4" style="background-color: ${theme.dark}">
-                                <div class="space-y-1.5 pr-10">
-                                    <h1 contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)" class="text-2xl font-bold">${resumeData.fullname}</h1>
-                                    <p contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)" class="text-xs font-semibold" style="color: ${theme.accent}">${resumeData.jobtitle}</p>
-                                    <p contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)" class="text-[11px] leading-relaxed opacity-90 pt-1">${resumeData.summary}</p>
-                                </div>
-                                <div class="-mr-16 z-10">${circlePhoto}</div>
-                            </div>
-                            <div class="col-span-5 pl-16 space-y-2 text-right text-xs text-slate-700">
-                                <p><span contenteditable="true" onblur="handleInlineEdit('email', this.innerText)">${resumeData.email}</span> <i class="fa-solid fa-envelope ml-1.5 p-1 rounded text-white text-[10px]" style="background:${theme.dark}"></i></p>
-                                <p><span contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)">${resumeData.phone}</span> <i class="fa-solid fa-mobile-screen ml-1.5 p-1 rounded text-white text-[10px]" style="background:${theme.dark}"></i></p>
-                                <p><span contenteditable="true" onblur="handleInlineEdit('location', this.innerText)">${resumeData.location}</span> <i class="fa-solid fa-location-dot ml-1.5 p-1 rounded text-white text-[10px]" style="background:${theme.dark}"></i></p>
-                                <p><span contenteditable="true" onblur="handleInlineEdit('linkedin', this.innerText)">${resumeData.linkedin}</span> <i class="fa-solid fa-globe ml-1.5 p-1 rounded text-white text-[10px]" style="background:${theme.dark}"></i></p>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-12 flex-grow mt-6">
-                            <div class="col-span-6 p-8 space-y-6">
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 flex items-center gap-2" style="color: ${theme.dark}">
-                                        <span class="w-6 h-6 rounded rotate-45 flex items-center justify-center text-white text-[10px]" style="background:${theme.dark}"><i class="fa-solid fa-briefcase -rotate-45"></i></span> ${t.secExp}
-                                    </h2>
-                                    ${expHtml(theme.accent)}
-                                </div>
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 flex items-center gap-2" style="color: ${theme.dark}">
-                                        <span class="w-6 h-6 rounded rotate-45 flex items-center justify-center text-white text-[10px]" style="background:${theme.dark}"><i class="fa-solid fa-graduation-cap -rotate-45"></i></span> ${t.secEdu}
-                                    </h2>
-                                    ${eduHtml(theme.accent)}
-                                </div>
-                            </div>
-                            <div class="col-span-6 bg-slate-100 p-8 space-y-6">
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 flex items-center gap-2" style="color: ${theme.dark}">
-                                        <span class="w-6 h-6 rounded rotate-45 flex items-center justify-center text-white text-[10px]" style="background:${theme.dark}"><i class="fa-solid fa-gears -rotate-45"></i></span> ${t.secSkills}
-                                    </h2>
-                                    <div contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)" class="grid grid-cols-2 gap-1.5 text-xs text-slate-800">
-                                        ${resumeData.skills.map(s => `<div>${s}</div>`).join('')}
-                                    </div>
-                                </div>
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 flex items-center gap-2" style="color: ${theme.dark}">
-                                        <span class="w-6 h-6 rounded rotate-45 flex items-center justify-center text-white text-[10px]" style="background:${theme.dark}"><i class="fa-solid fa-diagram-project -rotate-45"></i></span> ${t.secProj}
-                                    </h2>
-                                    ${projHtml(theme.accent)}
-                                </div>
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 flex items-center gap-2" style="color: ${theme.dark}">
-                                        <span class="w-6 h-6 rounded rotate-45 flex items-center justify-center text-white text-[10px]" style="background:${theme.dark}"><i class="fa-solid fa-language -rotate-45"></i></span> ${t.secLang}
-                                    </h2>
-                                    <p class="text-xs text-slate-800">${resumeData.languages.join('  •  ')}</p>
-                                </div>
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 flex items-center gap-2" style="color: ${theme.dark}">
-                                        <span class="w-6 h-6 rounded rotate-45 flex items-center justify-center text-white text-[10px]" style="background:${theme.dark}"><i class="fa-solid fa-star -rotate-45"></i></span> ${t.secInt}
-                                    </h2>
-                                    <p contenteditable="true" onblur="handleInlineEdit('interests', this.innerText)" class="text-xs text-slate-800">${resumeData.interests.join('  •  ')}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
-            }
-
-            /* 2. GENERAL */
-            else if (layout === 'general') {
-                target.innerHTML = `
-                    <div class="min-h-[297mm] bg-white font-sans p-4">
-                        <div class="text-white p-7 rounded-2xl shadow-sm grid grid-cols-12 gap-4 items-center" style="background-color: ${theme.primary}">
-                            <div class="col-span-8 space-y-1.5">
-                                <h1 contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)" class="text-3xl font-bold">${resumeData.fullname}</h1>
-                                <p contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)" class="text-sm font-medium opacity-80">${resumeData.jobtitle}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)" class="text-xs leading-relaxed opacity-95 pt-1">${resumeData.summary}</p>
-                            </div>
-                            <div class="col-span-4 text-right text-xs space-y-1.5 opacity-95">
-                                <p contenteditable="true" onblur="handleInlineEdit('email', this.innerText)">${resumeData.email} <i class="fa-solid fa-envelope ml-1"></i></p>
-                                <p contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)">${resumeData.phone} <i class="fa-solid fa-phone ml-1"></i></p>
-                                <p contenteditable="true" onblur="handleInlineEdit('location', this.innerText)">${resumeData.location} <i class="fa-solid fa-location-dot ml-1"></i></p>
-                                <p contenteditable="true" onblur="handleInlineEdit('linkedin', this.innerText)">${resumeData.linkedin} <i class="fa-solid fa-globe ml-1"></i></p>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-12 gap-8 p-6 mt-2">
-                            <div class="col-span-6 space-y-4">
-                                <h2 class="text-sm font-extrabold uppercase tracking-wider flex items-center gap-2" style="color: ${theme.primary}">
-                                    <i class="fa-solid fa-briefcase p-1.5 rounded text-white text-xs" style="background:${theme.primary}"></i> ${t.secExp}
-                                </h2>
-                                ${expHtml(theme.primary)}
-                            </div>
-                            <div class="col-span-6 space-y-6">
-                                <div>
-                                    <h2 class="text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 mb-3" style="color: ${theme.primary}">
-                                        <i class="fa-solid fa-wand-magic-sparkles p-1.5 rounded text-white text-xs" style="background:${theme.primary}"></i> ${t.secSkills}
-                                    </h2>
-                                    <div contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)" class="flex flex-wrap gap-1.5">
-                                        ${resumeData.skills.map(s => `<span class="text-white text-[11px] px-2.5 py-1 rounded font-medium opacity-85" style="background:${theme.primary}">${s}</span>`).join('')}
-                                    </div>
-                                </div>
-                                <div>
-                                    <h2 class="text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 mb-3" style="color: ${theme.primary}">
-                                        <i class="fa-solid fa-certificate p-1.5 rounded text-white text-xs" style="background:${theme.primary}"></i> ${t.secProj}
-                                    </h2>
-                                    ${projHtml(theme.primary)}
-                                </div>
-                                <div>
-                                    <h2 class="text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 mb-3" style="color: ${theme.primary}">
-                                        <i class="fa-solid fa-graduation-cap p-1.5 rounded text-white text-xs" style="background:${theme.primary}"></i> ${t.secEdu}
-                                    </h2>
-                                    ${eduHtml(theme.primary)}
-                                </div>
-                                <div>
-                                    <h2 class="text-sm font-extrabold uppercase tracking-wider flex items-center gap-2 mb-2" style="color: ${theme.primary}">
-                                        <i class="fa-solid fa-language p-1.5 rounded text-white text-xs" style="background:${theme.primary}"></i> ${t.secLang}
-                                    </h2>
-                                    <p class="text-xs font-semibold text-slate-700">${resumeData.languages.join('  •  ')}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
-            }
-
-            /* 3. HYBRID */
-            else if (layout === 'hybrid') {
-                target.innerHTML = `
-                    <div class="min-h-[297mm] bg-white font-sans">
-                        <div class="p-6 pb-0 flex items-center gap-6">
-                            ${circlePhoto}
-                            <div>
-                                <h1 contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)" class="text-3xl font-bold text-slate-900">${resumeData.fullname}</h1>
-                                <p contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)" class="text-sm font-semibold" style="color: ${theme.accent}">${resumeData.jobtitle}</p>
-                            </div>
-                        </div>
-                        <div class="mx-6 mt-3 p-4 rounded-t-xl text-white text-xs leading-relaxed" style="background-color: ${theme.dark}">
-                            <p contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p>
-                        </div>
-                        <div class="mx-6 px-6 py-2.5 text-white text-xs flex flex-wrap justify-between gap-2" style="background-color: ${theme.accent}">
-                            <span contenteditable="true" onblur="handleInlineEdit('email', this.innerText)"><i class="fa-solid fa-envelope mr-1"></i>${resumeData.email}</span>
-                            <span contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)"><i class="fa-solid fa-phone mr-1"></i>${resumeData.phone}</span>
-                            <span contenteditable="true" onblur="handleInlineEdit('location', this.innerText)"><i class="fa-solid fa-location-dot mr-1"></i>${resumeData.location}</span>
-                            <span contenteditable="true" onblur="handleInlineEdit('linkedin', this.innerText)"><i class="fa-solid fa-globe mr-1"></i>${resumeData.linkedin}</span>
-                        </div>
-                        <div class="grid grid-cols-12 gap-6 px-6 pt-6 flex-grow">
-                            <div class="col-span-7 space-y-6 pr-2">
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 text-slate-900 border-b pb-1">${t.secExp}</h2>
-                                    ${expHtml(theme.accent)}
-                                </div>
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 text-slate-900 border-b pb-1">${t.secProj}</h2>
-                                    ${projHtml(theme.accent)}
-                                </div>
-                            </div>
-                            <div class="col-span-5 bg-slate-100 p-5 rounded-t-xl space-y-6">
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 text-slate-900">${t.secSkills}</h2>
-                                    <div contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)" class="space-y-1 text-xs text-slate-700">
-                                        ${resumeData.skills.map(s => `<div>• ${s}</div>`).join('')}
-                                    </div>
-                                </div>
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 text-slate-900">${t.secEdu}</h2>
-                                    ${eduHtml(theme.accent)}
-                                </div>
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 text-slate-900">${t.secLang}</h2>
-                                    <p class="text-xs text-slate-700">${resumeData.languages.join(', ')}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
-            }
-
-            /* 4. IT / DEVOPS */
-            else if (layout === 'it') {
-                target.innerHTML = `
-                    <div class="min-h-[297mm] bg-white font-sans p-8 space-y-6">
-                        <div class="grid grid-cols-12 gap-6 items-start">
-                            <div class="col-span-7 space-y-2 pt-2">
-                                <h1 contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)" class="text-3xl font-bold" style="color: ${theme.primary}">${resumeData.fullname}</h1>
-                                <p contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)" class="text-sm font-semibold" style="color: ${theme.accent}">${resumeData.jobtitle}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)" class="text-xs text-slate-700 leading-relaxed pt-1">${resumeData.summary}</p>
-                            </div>
-                            <div class="col-span-5 text-white p-5 rounded-xl space-y-2 text-xs shadow" style="background-color: ${theme.primary}">
-                                <p contenteditable="true" onblur="handleInlineEdit('email', this.innerText)"><i class="fa-solid fa-envelope mr-2"></i>${resumeData.email}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)"><i class="fa-solid fa-phone mr-2"></i>${resumeData.phone}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('location', this.innerText)"><i class="fa-solid fa-location-dot mr-2"></i>${resumeData.location}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('linkedin', this.innerText)"><i class="fa-solid fa-globe mr-2"></i>${resumeData.linkedin}</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="text-xs font-extrabold uppercase tracking-wider" style="color: ${theme.primary}">${t.secSkills}</span>
-                                <div class="flex-grow h-1 rounded flex gap-1"><span class="w-1/3 bg-red-400 rounded"></span><span class="w-1/3 bg-blue-800 rounded"></span><span class="w-1/3 bg-red-400 rounded"></span></div>
-                            </div>
-                            <div contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)" class="flex flex-wrap gap-1.5">
-                                ${resumeData.skills.map(s => `<span class="bg-slate-200 text-slate-800 text-xs px-2.5 py-1 rounded font-medium">${s}</span>`).join('')}
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="text-xs font-extrabold uppercase tracking-wider" style="color: ${theme.primary}">${t.secExp}</span>
-                                <div class="flex-grow h-1 rounded flex gap-1"><span class="w-1/3 bg-red-400 rounded"></span><span class="w-1/3 bg-blue-800 rounded"></span><span class="w-1/3 bg-red-400 rounded"></span></div>
-                            </div>
-                            ${expHtml('#d9534f')}
-                        </div>
-
-                        <div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="text-xs font-extrabold uppercase tracking-wider" style="color: ${theme.primary}">${t.secEdu}</span>
-                                <div class="flex-grow h-1 rounded flex gap-1"><span class="w-1/3 bg-red-400 rounded"></span><span class="w-1/3 bg-blue-800 rounded"></span><span class="w-1/3 bg-red-400 rounded"></span></div>
-                            </div>
-                            ${eduHtml('#d9534f')}
-                        </div>
-                    </div>`;
-            }
-
-            /* 5. MINIMALIST */
-            else if (layout === 'minimalist') {
-                target.innerHTML = `
-                    <div class="min-h-[297mm] bg-white font-sans p-10 space-y-6">
-                        <div>
-                            <h1 contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)" class="text-3xl font-light text-slate-900">${resumeData.fullname}</h1>
-                            <p contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)" class="text-sm font-medium mt-0.5" style="color: ${theme.accent}">${resumeData.jobtitle}</p>
-                            <p contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)" class="text-xs text-slate-600 leading-relaxed mt-2">${resumeData.summary}</p>
-                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-700 mt-4 pt-3 border-t">
-                                <span contenteditable="true" onblur="handleInlineEdit('email', this.innerText)"><i class="fa-solid fa-envelope mr-1.5 text-red-400"></i>${resumeData.email}</span>
-                                <span contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)"><i class="fa-solid fa-phone mr-1.5 text-red-400"></i>${resumeData.phone}</span>
-                                <span contenteditable="true" onblur="handleInlineEdit('location', this.innerText)"><i class="fa-solid fa-location-dot mr-1.5 text-red-400"></i>${resumeData.location}</span>
-                                <span contenteditable="true" onblur="handleInlineEdit('linkedin', this.innerText)"><i class="fa-solid fa-globe mr-1.5 text-red-400"></i>${resumeData.linkedin}</span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b pb-1 mb-3 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rotate-45 inline-block" style="background:${theme.primary}"></span> ${t.secSkills}
-                            </h2>
-                            <div contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)" class="flex flex-wrap gap-1.5">
-                                ${resumeData.skills.map(s => `<span class="bg-slate-200 text-slate-800 text-[11px] px-2.5 py-1 rounded">${s}</span>`).join('')}
-                            </div>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b pb-1 mb-3 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rotate-45 inline-block" style="background:${theme.primary}"></span> ${t.secExp}
-                            </h2>
-                            ${expHtml(theme.accent)}
-                        </div>
-
-                        <div>
-                            <h2 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b pb-1 mb-3 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rotate-45 inline-block" style="background:${theme.primary}"></span> ${t.secEdu}
-                            </h2>
-                            ${eduHtml(theme.accent)}
-                        </div>
-                    </div>`;
-            }
-
-            /* 6. SIDEBAR */
-            else if (layout === 'skillbased') {
-                target.innerHTML = `
-                    <div class="grid grid-cols-12 min-h-[297mm] font-sans">
-                        <div class="col-span-4 text-white p-7 space-y-6 border-r-4" style="background-color: ${theme.dark}; border-color: ${theme.accent}">
-                            <div class="space-y-2.5 text-xs opacity-90 pt-4">
-                                <p contenteditable="true" onblur="handleInlineEdit('email', this.innerText)"><i class="fa-solid fa-envelope mr-2"></i>${resumeData.email}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)"><i class="fa-solid fa-phone mr-2"></i>${resumeData.phone}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('location', this.innerText)"><i class="fa-solid fa-location-dot mr-2"></i>${resumeData.location}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('linkedin', this.innerText)"><i class="fa-solid fa-globe mr-2"></i>${resumeData.linkedin}</p>
-                            </div>
-                            <div>
-                                <h3 class="text-xs font-bold uppercase tracking-wider mb-3 border-b border-white/20 pb-1">${t.secSkills}</h3>
-                                <div contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)" class="space-y-1.5 text-xs">
-                                    ${resumeData.skills.map(s => `<div>${s}</div>`).join('')}
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-xs font-bold uppercase tracking-wider mb-2 border-b border-white/20 pb-1">${t.secLang}</h3>
-                                <p class="text-xs">${resumeData.languages.join('<br>')}</p>
-                            </div>
-                        </div>
-                        <div class="col-span-8 bg-white p-8 space-y-6">
-                            <div>
-                                <h1 contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)" class="text-3xl font-light text-slate-900">${resumeData.fullname}</h1>
-                                <p contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)" class="text-sm font-medium mt-0.5" style="color: ${theme.accent}">${resumeData.jobtitle}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)" class="text-xs text-slate-600 leading-relaxed mt-3">${resumeData.summary}</p>
-                            </div>
-                            <div>
-                                <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b pb-1 mb-3">${t.secExp}</h2>
-                                ${expHtml(theme.accent)}
-                            </div>
-                            <div>
-                                <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b pb-1 mb-3">${t.secProj}</h2>
-                                ${projHtml(theme.accent)}
-                            </div>
-                            <div>
-                                <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b pb-1 mb-3">${t.secEdu}</h2>
-                                ${eduHtml(theme.accent)}
-                            </div>
-                        </div>
-                    </div>`;
-            }
-
-            /* 7. TECH BARS */
-            else if (layout === 'tech') {
-                target.innerHTML = `
-                    <div class="min-h-[297mm] bg-white font-sans flex flex-col">
-                        <div class="grid grid-cols-12">
-                            <div class="col-span-8 bg-slate-100 p-7 flex items-center gap-5">
-                                ${circlePhoto}
-                                <div class="space-y-1">
-                                    <h1 contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)" class="text-2xl font-bold text-slate-900">${resumeData.fullname}</h1>
-                                    <p contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)" class="text-xs font-bold" style="color: ${theme.accent}">${resumeData.jobtitle}</p>
-                                    <p contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)" class="text-[11px] text-slate-600 leading-relaxed pt-1">${resumeData.summary}</p>
-                                </div>
-                            </div>
-                            <div class="col-span-4 text-white p-6 space-y-2 text-[11px]" style="background-color: ${theme.dark}">
-                                <p contenteditable="true" onblur="handleInlineEdit('email', this.innerText)"><i class="fa-solid fa-envelope mr-1.5" style="color:${theme.accent}"></i>${resumeData.email}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)"><i class="fa-solid fa-phone mr-1.5" style="color:${theme.accent}"></i>${resumeData.phone}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('location', this.innerText)"><i class="fa-solid fa-location-dot mr-1.5" style="color:${theme.accent}"></i>${resumeData.location}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('linkedin', this.innerText)"><i class="fa-solid fa-globe mr-1.5" style="color:${theme.accent}"></i>${resumeData.linkedin}</p>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-12 flex-grow">
-                            <div class="col-span-8 p-7 space-y-6">
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b pb-1 mb-3">${t.secExp}</h2>
-                                    ${expHtml(theme.accent)}
-                                </div>
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b pb-1 mb-3">${t.secEdu}</h2>
-                                    ${eduHtml(theme.accent)}
-                                </div>
-                            </div>
-                            <div class="col-span-4 bg-slate-100 p-6 space-y-6">
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 mb-3">${t.secSkills}</h2>
-                                    <div class="space-y-2.5">
-                                        ${resumeData.skills.slice(0, 8).map((s, idx) => `
-                                            <div>
-                                                <div class="text-[11px] font-semibold text-slate-800 mb-0.5">${s}</div>
-                                                <div class="w-full bg-slate-300 h-2 rounded-sm overflow-hidden">
-                                                    <div class="h-full" style="width: ${95 - (idx * 3)}%; background-color: ${theme.dark}"></div>
-                                                </div>
-                                            </div>
-                                        `).join('')}
-                                    </div>
-                                </div>
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 mb-2">${t.secLang}</h2>
-                                    <p class="text-xs text-slate-700">${resumeData.languages.join(', ')}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
-            }
-
-            /* 8. EXECUTIVE BANNER (TRADITIONAL) */
-            else {
-                target.innerHTML = `
-                    <div class="min-h-[297mm] bg-white font-sans p-8 space-y-5">
-                        <div class="border border-slate-800 rounded-xl p-5 flex items-center gap-6">
-                            ${squarePhoto}
-                            <div class="space-y-1">
-                                <h1 contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)" class="text-3xl font-light text-slate-900">${resumeData.fullname}</h1>
-                                <p contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)" class="text-xs font-semibold text-slate-500">${resumeData.jobtitle}</p>
-                                <p contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)" class="text-xs text-slate-700 leading-relaxed pt-1">${resumeData.summary}</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-900 text-white px-6 py-3 rounded-lg grid grid-cols-2 gap-2 text-xs">
-                            <span contenteditable="true" onblur="handleInlineEdit('email', this.innerText)"><i class="fa-solid fa-envelope mr-2 text-slate-400"></i>${resumeData.email}</span>
-                            <span contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)"><i class="fa-solid fa-phone mr-2 text-slate-400"></i>${resumeData.phone}</span>
-                            <span contenteditable="true" onblur="handleInlineEdit('location', this.innerText)"><i class="fa-solid fa-location-dot mr-2 text-slate-400"></i>${resumeData.location}</span>
-                            <span contenteditable="true" onblur="handleInlineEdit('linkedin', this.innerText)"><i class="fa-solid fa-globe mr-2 text-slate-400"></i>${resumeData.linkedin}</span>
-                        </div>
-
-                        <div class="grid grid-cols-12 gap-8 pt-2">
-                            <div class="col-span-7 space-y-6">
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b pb-1 mb-3">${t.secExp}</h2>
-                                    ${expHtml('#52525b')}
-                                </div>
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b pb-1 mb-3">${t.secEdu}</h2>
-                                    ${eduHtml('#52525b')}
-                                </div>
-                            </div>
-                            <div class="col-span-5 space-y-6">
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b pb-1 mb-3">${t.secSkills}</h2>
-                                    <div contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)" class="grid grid-cols-2 gap-1.5 text-xs text-slate-800">
-                                        ${resumeData.skills.map(s => `<div>${s}</div>`).join('')}
-                                    </div>
-                                </div>
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b pb-1 mb-3">${t.secProj}</h2>
-                                    ${projHtml('#52525b')}
-                                </div>
-                                <div>
-                                    <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 border-b pb-1 mb-2">${t.secLang}</h2>
-                                    <p class="text-xs text-slate-800">${resumeData.languages.join('  •  ')}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
+            // --- 8 DISTINCT PRO LAYOUTS ---
+            if (activeLayoutId === 1) {
+                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans flex flex-col justify-between"><div><div class="grid grid-cols-12 pt-6 pr-8 items-center"><div class="col-span-7 text-white p-6 rounded-r-2xl relative flex items-center justify-between gap-4" style="background-color: ${theme.dark}"><div class="space-y-1.5 pr-10"><h1 contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)" class="text-2xl font-bold">${resumeData.fullname}</h1><p contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)" class="text-xs font-semibold" style="color: ${theme.accent}">${resumeData.jobtitle}</p><p contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)" class="text-[11px] leading-relaxed opacity-90 pt-1">${resumeData.summary}</p></div><div class="-mr-16 z-10">${circlePhoto}</div></div><div class="col-span-5 pl-16 space-y-2 text-right text-xs text-slate-700"><p><span contenteditable="true" onblur="handleInlineEdit('email', this.innerText)">${resumeData.email}</span> <i class="fa-solid fa-envelope ml-1.5 p-1 rounded text-white text-[10px]" style="background:${theme.dark}"></i></p><p><span contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)">${resumeData.phone}</span> <i class="fa-solid fa-mobile-screen ml-1.5 p-1 rounded text-white text-[10px]" style="background:${theme.dark}"></i></p><p><span contenteditable="true" onblur="handleInlineEdit('location', this.innerText)">${resumeData.location}</span> <i class="fa-solid fa-location-dot ml-1.5 p-1 rounded text-white text-[10px]" style="background:${theme.dark}"></i></p><p><span contenteditable="true" onblur="handleInlineEdit('linkedin', this.innerText)">${resumeData.linkedin}</span> <i class="fa-solid fa-globe ml-1.5 p-1 rounded text-white text-[10px]" style="background:${theme.dark}"></i></p></div></div><div class="grid grid-cols-12 mt-6"><div class="col-span-6 p-8 space-y-6"><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3" style="color: ${theme.dark}">${t.secExp}</h2>${expHtml(theme.accent)}</div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3" style="color: ${theme.dark}">${t.secEdu}</h2>${eduHtml(theme.accent)}</div></div><div class="col-span-6 bg-slate-100 p-8 space-y-6"><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3" style="color: ${theme.dark}">${t.secSkills}</h2><div contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)" class="grid grid-cols-2 gap-1.5 text-xs text-slate-800">${resumeData.skills.map(s => `<div>• ${s}</div>`).join('')}</div></div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3" style="color: ${theme.dark}">${t.secProj}</h2>${projHtml(theme.accent)}</div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-2" style="color: ${theme.dark}">${t.secLang}</h2><p class="text-xs text-slate-800">${resumeData.languages.join('  •  ')}</p></div></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 1. Combined Layout</div></div>`;
+            } else if (activeLayoutId === 2) {
+                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans p-8 flex flex-col justify-between"><div><div class="text-center pb-6 border-b-2 space-y-2" style="border-color:${theme.primary}"><div class="flex justify-center mb-2">${circlePhoto}</div><h1 class="text-3xl font-black text-slate-900" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-xs font-bold uppercase tracking-widest" style="color:${theme.accent}" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">${resumeData.jobtitle}</p><p class="text-xs text-slate-600 max-w-lg mx-auto" contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p><div class="flex justify-center gap-4 text-[11px] text-slate-700 pt-1"><span contenteditable="true" onblur="handleInlineEdit('email', this.innerText)"><i class="fa-solid fa-envelope mr-1"></i>${resumeData.email}</span><span contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)"><i class="fa-solid fa-phone mr-1"></i>${resumeData.phone}</span><span contenteditable="true" onblur="handleInlineEdit('location', this.innerText)"><i class="fa-solid fa-location-dot mr-1"></i>${resumeData.location}</span></div></div><div class="grid grid-cols-12 gap-8 mt-6"><div class="col-span-7 space-y-6"><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 text-slate-900 border-b pb-1" style="color:${theme.primary}">${t.secExp}</h2>${expHtml(theme.accent)}</div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 text-slate-900 border-b pb-1" style="color:${theme.primary}">${t.secEdu}</h2>${eduHtml(theme.accent)}</div></div><div class="col-span-5 space-y-6 bg-slate-50 p-4 rounded-xl"><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 text-slate-900" style="color:${theme.primary}">${t.secSkills}</h2><div class="flex flex-wrap gap-1" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.map(s => `<span class="bg-white border px-2 py-0.5 rounded text-[10px] font-medium">${s}</span>`).join('')}</div></div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 text-slate-900" style="color:${theme.primary}">${t.secProj}</h2>${projHtml(theme.accent)}</div></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 2. General Corporate</div></div>`;
+            } else if (activeLayoutId === 3) {
+                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans p-8 flex flex-col justify-between"><div><div class="p-6 rounded-2xl text-white shadow-lg space-y-2" style="background: linear-gradient(135deg, ${theme.primary}, ${theme.dark})"><h1 class="text-2xl font-black" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-xs font-semibold" style="color:${theme.accent}" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">${resumeData.jobtitle}</p><p class="text-[11px] opacity-90 leading-relaxed" contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p></div><div class="grid grid-cols-12 gap-6 mt-6"><div class="col-span-4 space-y-6"><div class="p-4 rounded-xl border bg-slate-50"><h2 class="text-xs font-bold uppercase mb-2" style="color:${theme.primary}">${t.secSkills}</h2><div class="text-xs space-y-1" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.map(s => `<div>• ${s}</div>`).join('')}</div></div><div class="p-4 rounded-xl border bg-slate-50"><h2 class="text-xs font-bold uppercase mb-2" style="color:${theme.primary}">${t.secLang}</h2><p class="text-xs">${resumeData.languages.join(', ')}</p></div></div><div class="col-span-8 space-y-6"><div><h2 class="text-xs font-bold uppercase mb-3 border-b pb-1" style="color:${theme.primary}">${t.secExp}</h2>${expHtml(theme.accent)}</div><div><h2 class="text-xs font-bold uppercase mb-3 border-b pb-1" style="color:${theme.primary}">${t.secEdu}</h2>${eduHtml(theme.accent)}</div></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 3. Hybrid Layout</div></div>`;
+            } else if (activeLayoutId === 4) {
+                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans p-8 flex flex-col justify-between"><div><div class="p-5 rounded-lg text-white font-mono space-y-2 shadow" style="background:#0f172a"><div class="flex items-center gap-2 text-xs text-green-400"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span><span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span><span class="w-2.5 h-2.5 rounded-full bg-green-500"></span> root@resumerk:~# profile.sh</div><h1 class="text-2xl font-bold text-white" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-xs text-cyan-400 font-semibold" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">// ${resumeData.jobtitle}</p></div><div class="grid grid-cols-12 gap-6 mt-6"><div class="col-span-8 space-y-6"><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 text-slate-900 border-l-4 pl-2" style="border-color:${theme.primary}">${t.secExp}</h2>${expHtml(theme.accent)}</div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 text-slate-900 border-l-4 pl-2" style="border-color:${theme.primary}">${t.secProj}</h2>${projHtml(theme.accent)}</div></div><div class="col-span-4 space-y-6"><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 text-slate-900">${t.secSkills}</h2><div class="flex flex-wrap gap-1" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.map(s => `<span class="bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded">${s}</span>`).join('')}</div></div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 text-slate-900">${t.secEdu}</h2>${eduHtml(theme.accent)}</div></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 4. IT/DevOps Layout</div></div>`;
+            } else if (activeLayoutId === 5) {
+                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans p-10 flex flex-col justify-between"><div class="space-y-6"><div class="space-y-1"><h1 class="text-4xl font-extrabold tracking-tight text-slate-900" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-sm font-medium uppercase tracking-widest text-slate-500" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">${resumeData.jobtitle}</p><p class="text-xs text-slate-600 pt-2" contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p></div><div class="grid grid-cols-3 gap-4 py-3 border-y text-xs text-slate-700"><div><strong class="text-slate-900">Email:</strong> <span contenteditable="true" onblur="handleInlineEdit('email', this.innerText)">${resumeData.email}</span></div><div><strong class="text-slate-900">Phone:</strong> <span contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)">${resumeData.phone}</span></div><div><strong class="text-slate-900">Location:</strong> <span contenteditable="true" onblur="handleInlineEdit('location', this.innerText)">${resumeData.location}</span></div></div><div class="space-y-6"><div><h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">${t.secExp}</h2>${expHtml(theme.primary)}</div><div><h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">${t.secEdu}</h2>${eduHtml(theme.primary)}</div><div><h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">${t.secSkills}</h2><p class="text-xs text-slate-800" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.join(' • ')}</p></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 5. Minimalist Clean</div></div>`;
+            } else if (activeLayoutId === 6) {
+                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans flex flex-col justify-between"><div class="grid grid-cols-12 min-h-[297mm]"><div class="col-span-4 p-6 text-white space-y-6 flex flex-col justify-between" style="background-color: ${theme.dark}"><div class="space-y-6"><div class="text-center">${circlePhoto}</div><div><h2 class="text-xs font-extrabold uppercase tracking-wider pb-1 mb-2 border-b border-white/20" style="color:${theme.accent}">Contact</h2><div class="space-y-2 text-[11px] opacity-90"><p><i class="fa-solid fa-envelope mr-1.5"></i><span contenteditable="true" onblur="handleInlineEdit('email', this.innerText)">${resumeData.email}</span></p><p><i class="fa-solid fa-phone mr-1.5"></i><span contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)">${resumeData.phone}</span></p><p><i class="fa-solid fa-location-dot mr-1.5"></i><span contenteditable="true" onblur="handleInlineEdit('location', this.innerText)">${resumeData.location}</span></p></div></div><div><h2 class="text-xs font-extrabold uppercase tracking-wider pb-1 mb-2 border-b border-white/20" style="color:${theme.accent}">${t.secSkills}</h2><div class="text-[11px] space-y-1" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.map(s => `<div>• ${s}</div>`).join('')}</div></div></div><div class="text-[9px] opacity-60 text-center">Resume.RK Sidebar Pro</div></div><div class="col-span-8 p-8 space-y-6"><div><h1 class="text-3xl font-black text-slate-900" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-sm font-bold mt-1" style="color:${theme.primary}" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">${resumeData.jobtitle}</p><p class="text-xs text-slate-600 mt-2 leading-relaxed" contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p></div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 pb-1 border-b" style="color:${theme.primary}">${t.secExp}</h2>${expHtml(theme.accent)}</div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 pb-1 border-b" style="color:${theme.primary}">${t.secEdu}</h2>${eduHtml(theme.accent)}</div></div></div></div>`;
+            } else if (activeLayoutId === 7) {
+                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans p-8 flex flex-col justify-between" style="background:#fff7ed"><div class="space-y-6"><div class="p-6 bg-white rounded-2xl border border-orange-200 shadow-sm flex items-center gap-6"><div>${circlePhoto}</div><div class="space-y-1"><h1 class="text-2xl font-extrabold text-slate-900" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-xs font-bold text-orange-600" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">${resumeData.jobtitle}</p><p class="text-xs text-slate-600" contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p></div></div><div class="grid grid-cols-12 gap-6"><div class="col-span-7 space-y-4"><div class="p-5 bg-white rounded-xl border border-orange-100 shadow-sm"><h2 class="text-xs font-bold uppercase text-orange-800 mb-3 border-b pb-1">${t.secExp}</h2>${expHtml('#ea580c')}</div></div><div class="col-span-5 space-y-4"><div class="p-5 bg-white rounded-xl border border-orange-100 shadow-sm"><h2 class="text-xs font-bold uppercase text-orange-800 mb-2">${t.secSkills}</h2><div class="flex flex-wrap gap-1" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.map(s => `<span class="bg-orange-50 text-orange-900 border border-orange-200 text-[10px] px-2 py-0.5 rounded font-semibold">${s}</span>`).join('')}</div></div><div class="p-5 bg-white rounded-xl border border-orange-100 shadow-sm"><h2 class="text-xs font-bold uppercase text-orange-800 mb-2">${t.secEdu}</h2>${eduHtml('#ea580c')}</div></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 7. Tech Bars Cards</div></div>`;
+            } else {
+                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans p-8 flex flex-col justify-between" style="background:#faf5ff"><div class="space-y-6"><div class="p-8 rounded-2xl text-white text-center space-y-3 shadow-xl" style="background: linear-gradient(135deg, #581c87, #3b0764)"><h1 class="text-3xl font-black tracking-wide" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-xs font-semibold tracking-widest uppercase text-purple-300" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">${resumeData.jobtitle}</p><p class="text-xs text-purple-100 max-w-xl mx-auto leading-relaxed" contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p></div><div class="grid grid-cols-12 gap-6"><div class="col-span-8 space-y-5"><div class="p-6 bg-white rounded-xl border border-purple-100 shadow-xs"><h2 class="text-xs font-bold uppercase text-purple-900 mb-3 border-b pb-1">${t.secExp}</h2>${expHtml('#9333ea')}</div></div><div class="col-span-4 space-y-5"><div class="p-6 bg-white rounded-xl border border-purple-100 shadow-xs"><h2 class="text-xs font-bold uppercase text-purple-900 mb-2">${t.secSkills}</h2><div class="text-xs space-y-1" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.map(s => `<div>• ${s}</div>`).join('')}</div></div><div class="p-6 bg-white rounded-xl border border-purple-100 shadow-xs"><h2 class="text-xs font-bold uppercase text-purple-900 mb-2">${t.secEdu}</h2>${eduHtml('#9333ea')}</div></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 8. Executive Banner</div></div>`;
             }
         }
 
         function zoomResume(dir) {
             zoomLevel += dir * 0.1;
-            if (zoomLevel < 0.6) zoomLevel = 0.6;
-            if (zoomLevel > 1.4) zoomLevel = 1.4;
-            document.getElementById('resume-preview-container').style.transform = `scale(${zoomLevel})`;
+            if (zoomLevel < 0.35) zoomLevel = 0.35;
+            if (zoomLevel > 1.3) zoomLevel = 1.3;
+            const previewEl = document.getElementById('resume-preview-container');
+            const wrapper = document.getElementById('preview-wrapper');
+            previewEl.style.transform = `scale(${zoomLevel})`;
+            wrapper.style.height = `${1123 * zoomLevel + 24}px`;
         }
 
-        function resetZoom() {
-            zoomLevel = 1;
-            document.getElementById('resume-preview-container').style.transform = `scale(1)`;
+        function resetZoom() { calculateAutoScale(); }
+
+        // DOWNLOAD TIMER & MONETAG VIGNETTE AD INTEGRATION
+        function triggerExportWithAdTimer() {
+            let modal = document.getElementById('ad-timer-modal');
+            modal.classList.remove('hidden');
+            
+            // 🌟 Monetag Vignette Ad script execution on download trigger
+            try {
+                (function(s){s.dataset.zone='12266419',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+            } catch(e) {
+                console.log("Ad load error", e);
+            }
+
+            let count = 3;
+            let counterEl = document.getElementById('timer-countdown');
+            counterEl.innerText = `Downloading in ${count}s...`;
+            
+            let interval = setInterval(() => {
+                count--;
+                if (count > 0) {
+                    counterEl.innerText = `Downloading in ${count}s...`;
+                } else {
+                    clearInterval(interval);
+                    modal.classList.add('hidden');
+                    window.print();
+                }
+            }, 1000);
         }
 
-        function triggerPrint() {
-            window.print();
+        function closeAdModal() {
+            document.getElementById('ad-timer-modal').classList.add('hidden');
         }
     </script>
 </body>
