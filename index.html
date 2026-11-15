@@ -281,7 +281,7 @@
             <h3 class="text-base font-bold">Preparing Your PDF</h3>
             <p class="text-xs text-slate-600">Please wait while we generate your professional resume...</p>
 
-            <div class="text-sm font-black text-green-600 py-3" id="timer-countdown">Downloading in 3s...</div>
+            <div class="text-sm font-black text-green-600 py-3" id="timer-countdown">Downloading in 10s...</div>
             <button onclick="closeAdModal()" class="w-full bg-slate-900 text-white font-semibold py-2 rounded-xl text-xs">Cancel</button>
         </div>
     </div>
@@ -386,7 +386,7 @@
                     software: { fullname: "रोहित शर्मा", jobtitle: "सॉफ्टवेयर इंजीनियर", location: "बेंगलुरु", summary: "फुल-स्टैक डेवलपमेंट में विशेषज्ञ।" },
                     marketing: { fullname: "नेहा पाटिल", jobtitle: "डिजिटल मार्केटर", location: "हैदराबाद", summary: "डिजिटल मार्केटिंग विशेषज्ञ।" },
                     hr: { fullname: "पूजा कुलकर्णी", jobtitle: "एचआर प्रोफेशनल", location: "चेन्नई", summary: "टैलेंट एक्विजिशन में कुशल।" },
-                    healthcare: { fullname: "डॉ. स्नेहा पाटिल", jobtitle: "हेल्थकेअर स्पेशलिस्ट", location: "नागपुर", summary: "रोगी देखभाल प्रबंधन में विशेषज्ञ।" },
+                    healthcare: { fullname: "डॉ. स्नेहा पाटिल", jobtitle: "हेल्थकेयर स्पेशलिस्ट", location: "नागपुर", summary: "रोगी देखभाल प्रबंधन में विशेषज्ञ।" },
                     executive: { fullname: "राजेश मल्होत्रा", jobtitle: "सीनियर एक्जीक्यूटिव", location: "नई दिल्ली", summary: "एंटरप्राइज लीडरशिप में अनुभवी।" }
                 }
             },
@@ -718,19 +718,19 @@
 
         function resetZoom() { calculateAutoScale(); }
 
-        // DOWNLOAD TIMER & MONETAG VIGNETTE AD INTEGRATION
+        // 10 SECONDS DOWNLOAD TIMER & MONETAG VIGNETTE AD INTEGRATION
         function triggerExportWithAdTimer() {
             let modal = document.getElementById('ad-timer-modal');
             modal.classList.remove('hidden');
             
-            // 🌟 Monetag Vignette Ad script execution on download trigger
+            // Monetag Vignette Ad script execution on download trigger
             try {
                 (function(s){s.dataset.zone='12266419',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
             } catch(e) {
                 console.log("Ad load error", e);
             }
 
-            let count = 3;
+            let count = 10; // १० सेकंदाचा टायमर सेट केला आहे
             let counterEl = document.getElementById('timer-countdown');
             counterEl.innerText = `Downloading in ${count}s...`;
             
@@ -741,7 +741,11 @@
                 } else {
                     clearInterval(interval);
                     modal.classList.add('hidden');
-                    window.print();
+                    
+                    // ॲड पूर्ण लोड होण्यासाठी आणि दिसाण्यासाठी अर्धा सेकंद थांबून प्रिंट विंडो उघडेल
+                    setTimeout(() => {
+                        window.print();
+                    }, 500);
                 }
             }, 1000);
         }
