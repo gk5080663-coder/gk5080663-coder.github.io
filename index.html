@@ -2,12 +2,12 @@
 <html lang="mr" class="h-full">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags & 100+ Keywords for Google Search -->
-    <title>Resume.RK - Free AI Multi-Language Resume Builder | ATS Friendly CV Maker in Marathi, Hindi, English</title>
-    <meta name="description" content="Create a professional, ATS-friendly resume for free with Resume.RK. Choose from 8 distinct Pro Layouts for Finance, Software, Freshers, and Marketing in English, Marathi, Hindi, and Kannada with instant A4 PDF export. फ्री मराठी रेझ्युमे बिल्डर.">
-    <meta name="keywords" content="Resume Builder, Free Resume, ATS Resume, Marathi Resume Builder, Hindi Resume, Resume.RK, Online CV Maker, AI Resume Generator, Free CV Template, Marathi CV maker, free resume builder online, resume formats in marathi, resume in marathi download, marathi biodata format, free cv maker online, resume banana ki website, c.v. templates free download, ats friendly resume templates, software engineer resume format, fresher resume format pdf, finance resume templates, marketing cv builder, professional resume creator, curriculum vitae maker free, marathi resume templates free, pdf resume generator, job resume creator, resume builder website, marathi bio data format for job, c.v. maker app online, best resume maker 2026, simple resume format, modern cv design, creative resume layout, executive resume format, healthcare resume template, engineering resume creator, student resume builder, multi language resume maker, kannada resume builder, hindi resume format, english cv templates, resume builder for freshers, experienced resume formats, download resume pdf, quick resume maker, smart cv builder, auto resume generator, best free resume tools, resume maker without login, instant pdf resume maker, responsive resume builder, mobile friendly resume creator, job application form maker, biodata maker in marathi, marathi resume builder app, online resume builder free india, job ready resume templates, professional curriculum vitae design, c.v. format for freshers, c.v. format for experienced, resume writing guide, ATS score checker resume, top resume builder sites, resume templates word pdf, resume maker with photo, photo resume builder, custom resume creator, resume sections guide, career portfolio maker, employment application template, job hunting tools, interview ready resume, corporate resume formats, startup resume maker, freelance resume builder, academia resume template, teaching resume format, banking resume template, accountant resume format, nurse resume format, sales resume creator, business development resume, operations manager resume, customer service resume, human resources resume, legal resume template, construction resume format, hospitality resume design, retail resume format, data analyst resume, python developer resume, full stack developer resume, digital marketing resume, graphic designer resume, content writer resume, civil engineer resume, mechanical engineer resume, electrical engineer resume, pharmacist resume template, doctor resume format, chef resume builder, driver resume format, security guard resume, receptionist resume template, event manager resume, real estate resume format, logistics resume template, agriculture resume format, fashion designer resume, pilot resume template, flight attendant resume, mass communication resume, social worker resume template">
+    <!-- SEO Meta Tags & Keywords -->
+    <title>Resume.RK - Free AI Multi-Language Resume Builder | ATS Friendly CV Maker</title>
+    <meta name="description" content="Create a professional, ATS-friendly resume for free with Resume.RK. Choose from 8 distinct Pro Layouts for Finance, Software, Freshers, and Marketing in English, Marathi, Hindi, and Kannada with instant A4 PDF export.">
+    <meta name="keywords" content="Resume Builder, Free Resume, ATS Resume, Marathi Resume Builder, Hindi Resume, Resume.RK, Online CV Maker, AI Resume Generator, Free CV Template">
     
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="U-TV8X7rnACKty5AZAt7tafkK_2mhA4S2E4TvMJL5-w" />
@@ -55,7 +55,8 @@
             body { background: white !important; color: black !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
             .no-print { display: none !important; }
             [contenteditable="true"]:hover, [contenteditable="true"]:focus { background-color: transparent !important; box-shadow: none !important; }
-            #resume-preview-container { box-shadow: none !important; border: none !important; width: 100% !important; max-width: 100% !important; margin: 0 !important; padding: 0 !important; transform: scale(1) !important; }
+            #preview-wrapper { height: auto !important; overflow: visible !important; }
+            #resume-preview-container { box-shadow: none !important; border: none !important; width: 210mm !important; max-width: 100% !important; margin: 0 !important; padding: 0 !important; transform: scale(1) !important; }
         }
     </style>
 </head>
@@ -133,7 +134,6 @@
                             <button onclick="changeLanguage('kn')" id="lang-kn" class="px-1.5 py-1 text-[10px] rounded font-semibold text-slate-300">ಕನ್ನಡ</button>
                         </div>
 
-                        <!-- Download Button with Integrated Montag Ad Trigger -->
                         <button onclick="triggerExportWithAdTimer()" class="bg-green-600 hover:bg-green-500 text-white font-semibold text-[11px] px-3 py-1.5 rounded-lg shadow flex items-center gap-1">
                             <i class="fa-solid fa-file-pdf"></i>
                             <span id="btn-download-pdf">PDF</span>
@@ -242,8 +242,8 @@
                     </div>
                 </div>
 
-                <!-- Right: Live Preview (Optimized for Mobile & Desktop Viewing) -->
-                <div class="lg:col-span-6 xl:col-span-7 flex flex-col items-center">
+                <!-- Right: Live Preview (Responsive Auto-Fit for Desktop & Mobile) -->
+                <div class="lg:col-span-6 xl:col-span-7 flex flex-col items-center w-full">
                     <div class="w-full max-w-[210mm] bg-white rounded-xl shadow-sm border border-slate-200 p-2.5 mb-3 flex flex-wrap justify-between items-center gap-2 text-xs no-print">
                         <div class="flex items-center gap-1.5">
                             <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
@@ -253,15 +253,14 @@
                             </span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <button onclick="zoomResume(1)" class="hover:text-green-600 p-1"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
-                            <button onclick="zoomResume(-1)" class="hover:text-green-600 p-1"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
-                            <button onclick="resetZoom()" class="hover:text-green-600 p-1"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button onclick="zoomResume(1)" class="hover:text-green-600 p-1" title="Zoom In"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                            <button onclick="zoomResume(-1)" class="hover:text-green-600 p-1" title="Zoom Out"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+                            <button onclick="resetZoom()" class="hover:text-green-600 p-1" title="Fit to Screen"><i class="fa-solid fa-rotate-left"></i></button>
                         </div>
                     </div>
                     
-                    <!-- Responsive Preview Wrapper Container with auto-scaling for mobile screens -->
-                    <div id="preview-wrapper" class="w-full overflow-x-auto flex justify-center pb-8">
-                        <div id="resume-preview-container" class="bg-white shadow-2xl transition-all duration-300 transform origin-top border border-slate-200 scale-[0.60] sm:scale-100" style="width: 210mm; min-height: 297mm; flex-shrink: 0;">
+                    <div id="preview-wrapper" class="w-full overflow-hidden flex justify-center items-start pb-4">
+                        <div id="resume-preview-container" class="bg-white shadow-2xl transition-transform duration-200 transform origin-top border border-slate-200 shrink-0" style="width: 210mm; min-height: 297mm;">
                             <div id="resume-render-target" class="w-full min-h-[297mm]"></div>
                         </div>
                     </div>
@@ -274,7 +273,7 @@
         </footer>
     </div>
 
-    <!-- DOWNLOAD TIMER & MONETAG AD VIGNETTE MODAL -->
+    <!-- DOWNLOAD TIMER & MONETAG AD MODAL -->
     <div id="ad-timer-modal" class="fixed inset-0 bg-slate-950/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white text-slate-900 rounded-2xl max-w-sm w-full p-5 text-center space-y-3 shadow-2xl border border-slate-200">
             <div class="w-12 h-12 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-xl mx-auto">
@@ -283,12 +282,12 @@
             <h3 class="text-base font-bold">Preparing Your PDF</h3>
             <p class="text-xs text-slate-600">Please watch this quick sponsored content while we generate your A4 PDF...</p>
 
-            <!-- Montag Ad Integration Hook (तुमचा मोनोटॅग जाहिरात कोड येथे टाकू शकता) -->
-            <div id="montag-ad-container" class="my-2 min-h-[50px] flex items-center justify-center bg-slate-50 border rounded text-[11px] text-slate-400">
-                <!-- Monetag Direct Ad Script Code can be embedded here -->
+            <!-- Monetag Ad Container & Script Injector -->
+            <div id="montag-ad-container" class="my-2 min-h-[70px] flex items-center justify-center bg-slate-50 border rounded text-[11px] text-slate-400 p-2 overflow-hidden">
+                <!-- तुमची मोनोटॅग जाहिरात स्क्रिप्ट येथे ॲक्टिव्ह होईल -->
             </div>
 
-            <div class="text-sm font-black text-green-600 py-3" id="timer-countdown">Downloading in 5s...</div>
+            <div class="text-sm font-black text-green-600 py-2" id="timer-countdown">Downloading in 10s...</div>
             <button onclick="closeAdModal()" class="w-full bg-slate-900 text-white font-semibold py-2 rounded-xl text-xs">Cancel</button>
         </div>
     </div>
@@ -302,24 +301,28 @@
 
         let resumeData = {
             photo: '',
-            fullname: 'Professional User',
-            jobtitle: 'All-Rounder / General Professional',
-            email: 'user@resumerk.com',
+            fullname: 'Rohan Kulkarni',
+            jobtitle: 'Senior Software & Full-Stack Engineer',
+            email: 'rohan.kulkarni@resumerk.com',
             phone: '+91 98765 43210',
-            location: 'Mumbai, Maharashtra',
-            linkedin: 'resumerk.com/profile',
-            summary: 'Versatile and goal-driven professional equipped with a robust skillset, adaptable across multiple industries, projects, and administrative or technical roles.',
-            skills: ['Project Management', 'Communication', 'Problem Solving', 'Data Analysis', 'Strategic Planning', 'Leadership'],
-            interests: ['Innovation', 'Continuous Learning', 'Networking'],
-            languages: ['English', 'मराठी', 'हिंदी'],
+            location: 'Pune, Maharashtra, India',
+            linkedin: 'github.com/rohankulkarni',
+            summary: 'Results-driven Senior Full-Stack Engineer with 6+ years of expertise in designing, developing, and deploying scalable web applications, microservices, and AI-powered platforms. Adept at cross-functional leadership, optimizing code performance, and implementing robust backend architectures.',
+            skills: ['Python', 'JavaScript', 'Node.js', 'React.js', 'Flask', 'Tailwind CSS', 'SQL & NoSQL', 'REST APIs', 'Git & GitHub', 'AWS Cloud', 'Docker', 'Agile Methodologies'],
+            interests: ['Open Source Contribution', 'AI Agent Integration', 'System Architecture', 'UI/UX Design'],
+            languages: ['English', 'मराठी', 'हिंदी', 'ಕನ್ನಡ'],
             experiences: [
-                { role: 'Professional Consultant', company: 'Global Solutions Inc.', duration: '2023 - Present', details: 'Streamlined operational workflows and delivered high-impact projects on schedule.' }
+                { role: 'Lead Software Architect', company: 'TechNova Solutions Ltd.', duration: '2023 - Present', details: 'Spearheaded the development of a microservices-based SaaS platform serving 1M+ active users. Reduced server latency by 35% through query optimization and caching.' },
+                { role: 'Full-Stack Developer', company: 'Alpha Web Innovations', duration: '2021 - 2023', details: 'Built responsive web interfaces using React and Tailwind CSS. Integrated secure payment gateways and third-party RESTful APIs.' },
+                { role: 'Junior Python Developer', company: 'DataCore Systems', duration: '2019 - 2021', details: 'Automated data pipelines using Python and Flask. Performed rigorous bug tracking, unit testing, and debugging.' }
             ],
             education: [
-                { degree: 'Bachelor / Master Degree', school: 'University Institute', duration: '2019 - 2023' }
+                { degree: 'Master of Computer Applications (MCA)', school: 'University of Pune', duration: '2017 - 2019' },
+                { degree: 'Bachelor of Science in Information Technology', school: 'Mumbai University', duration: '2014 - 2017' }
             ],
             projects: [
-                { title: 'Enterprise Optimization Project', desc: 'Successfully planned and executed core resource optimization strategies.' }
+                { title: 'AI-Powered Resume Builder (Resume.RK)', desc: 'Developed a multilingual resume generator featuring live editing, 8 professional layouts, and instant A4 PDF rendering.' },
+                { title: 'Global E-Commerce Analytics Dashboard', desc: 'Engineered a real-time analytics tracker monitoring traffic, CTR, impressions, and revenue metrics.' }
             ]
         };
 
@@ -346,7 +349,7 @@
                 clickHint: "Tap text to edit!", secExp: "WORK EXPERIENCE", secEdu: "EDUCATION",
                 secSkills: "SKILLS & COMPETENCIES", secLang: "LANGUAGES", secProj: "PROJECTS",
                 samples: {
-                    all: { fullname: "Professional User", jobtitle: "All-Rounder / General Professional", location: "Mumbai, Maharashtra", summary: "Versatile and goal-driven professional equipped with a robust skillset, adaptable across multiple industries and roles." },
+                    all: { fullname: "Rohan Kulkarni", jobtitle: "Senior Software & Full-Stack Engineer", location: "Pune, Maharashtra, India", summary: "Results-driven Senior Full-Stack Engineer with 6+ years of expertise in designing and deploying scalable web applications." },
                     finance: { fullname: "Rohan Kulkarni", jobtitle: "Financial Analyst & Accountant", location: "Mumbai, Maharashtra", summary: "Finance professional with 5+ years of experience in financial modeling, budgeting, and tax auditing." },
                     fresher: { fullname: "Alex Morgan", jobtitle: "Recent Graduate / Entry Level", location: "Pune, Maharashtra", summary: "Motivated college graduate with strong academic background and project experience." },
                     software: { fullname: "Jordan Lee", jobtitle: "Software / IT Engineer", location: "Bengaluru, Karnataka", summary: "Dedicated Software Engineer with expertise in full-stack development and scalable web solutions." },
@@ -367,9 +370,9 @@
                 clickHint: "एडिट करण्यासाठी मजकुरावर टॅप करा!", secExp: "कार्य अनुभव", secEdu: "शिक्षण",
                 secSkills: "कौशल्ये", secLang: "भाषा ज्ञान", secProj: "प्रोजेक्ट्स",
                 samples: {
-                    all: { fullname: "प्रोफेशनल युजर", jobtitle: "ऑल-राऊंडर प्रोफेशनल", location: "मुंबई, महाराष्ट्र", summary: "विविध क्षेत्रांत आणि प्रकल्पांत सहज काम करण्यास सक्षम व्यावसायिक." },
+                    all: { fullname: "रोहन कुलकर्णी", jobtitle: "सिनिअर सॉफ्टवेअर इंजिनिअर", location: "पुणे, महाराष्ट्र", summary: "स्केलेबल वेब ॲप्लिकेशन्स आणि कोडिंगमध्ये ६+ वर्षांचा प्रगत अनुभव असलेला व्यावसायिक." },
                     finance: { fullname: "रोहन कुलकर्णी", jobtitle: "फायनान्शियल ॲनालिस्ट", location: "मुंबई, महाराष्ट्र", summary: "फायनान्शियल मॉडेलिंग आणि टॅक्स ऑडिटिंगमध्ये ५+ वर्षांचा अनुभव." },
-                    fresher: { fullname: "अमित कुमार", jobtitle: "फ्रेश ग्रॅज्युएट", location: "पुणे, महाराष्ट्र", summary: "उत्कृष्ट शैक्षणिक पार्श्वभूमी आणि प्रोजेक्ट अनुभवासह करिअरची सुरुवात करण्यास उत्सुक." },
+                    fresher: { fullname: "अमित कुमार", jobtitle: "फ्रेश ग्रॅज्युएट", location: "पुणे, महाराष्ट्र", summary: "उत्कृष्ट शैक्षणिक पार्श्वभूमी आणि प्रोजेक्ट अनुभवासह करिअरची सुरुवात." },
                     software: { fullname: "रोहित शर्मा", jobtitle: "सॉफ्टवेअर इंजिनिअर", location: "बेंगळुरू", summary: "फुल-स्टॅक डेव्हलपमेंट आणि कोडिंगमध्ये पारंगत." },
                     marketing: { fullname: "नेहा पाटील", jobtitle: "डिजिटल मार्केटर", location: "हैदराबाद", summary: "डिजिटल मार्केटिंगमध्ये विशेष रुची असलेली मार्केटर." },
                     hr: { fullname: "पूजा कुलकर्णी", jobtitle: "एचआर प्रोफेशनल", location: "चेन्नई", summary: "मानव संसाधन व्यवस्थापनात कुशल." },
@@ -388,7 +391,7 @@
                 clickHint: "एडिट करने के लिए टैप करें!", secExp: "कार्य अनुभव", secEdu: "शिक्षा",
                 secSkills: "कौशल", secLang: "भाषाएँ", secProj: "प्रोजेक्ट्स",
                 samples: {
-                    all: { fullname: "प्रोफेशनल यूजर", jobtitle: "ऑल-राउंडर प्रोफेशनल", location: "मुंबई", summary: "विभिन्न क्षेत्रों में कार्य करने में सक्षम।" },
+                    all: { fullname: "रोहन कुलकर्णी", jobtitle: "सीनियर सॉफ्टवेयर इंजीनियर", location: "पुणे, महाराष्ट्र", summary: "स्केलेबल वेब एप्लीकेशंस और कोडिंग में 6+ वर्ष का अनुभव।" },
                     finance: { fullname: "रोहन कुलकर्णी", jobtitle: "फाइनेंशियल एनालिस्ट", location: "मुंबई", summary: "फाइनेंशियल मॉडलिंग में 5+ वर्ष का अनुभव।" },
                     fresher: { fullname: "अमित कुमार", jobtitle: "फ्रेश ग्रेजुएट", location: "पुणे", summary: "करियर की शुरुआत करने के लिए उत्सुक।" },
                     software: { fullname: "रोहित शर्मा", jobtitle: "सॉफ्टवेयर इंजीनियर", location: "बेंगलुरु", summary: "फुल-स्टैक डेवलपमेंट में कुशल।" },
@@ -409,7 +412,7 @@
                 clickHint: "ಸಂಪಾದಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ!", secExp: "ಕೆಲಸದ ಅನುಭವ", secEdu: "ಶಿಕ್ಷಣ",
                 secSkills: "ಕೌಶಲ್ಯಗಳು", secLang: "ಭಾಷೆಗಳು", secProj: "ಪ್ರೊಜೆಕ್ಟ್ಸ್",
                 samples: {
-                    all: { fullname: "ವೃತ್ತಿಪರ ಬಳಕೆದಾರ", jobtitle: "ಸಾಮಾನ್ಯ ವೃತ್ತಿಪರ", location: "ಬೆಂಗಳೂರು", summary: "ವಿವಿಧ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಸಾಮರ್ಥ್ಯ." },
+                    all: { fullname: "ರೋಹನ್ ಕುಲಕರ್ಣಿ", jobtitle: "ಹಿರಿಯ ಸಾಫ್ಟ್‌ವೇರ್ ಇಂಜಿನಿಯರ್", location: "ಬೆಂಗಳೂರು", summary: "ಸಾಫ್ಟ್‌ವೇರ್ ಡೆವಲಪ್ಮೆಂಟ್‌ನಲ್ಲಿ 6+ ವರ್ಷಗಳ ಅನುಭವ." },
                     finance: { fullname: "ರೋಹನ್ ಕುಲಕರ್ಣಿ", jobtitle: "ಫೈನಾನ್ಷಿಯಲ್ ಅನಾಲಿಸ್ಟ್", location: "ಮುಂಬೈ", summary: "ಹಣಕಾಸು ವಿಶ್ಲೇಷಣೆಯಲ್ಲಿ ಅನುಭವ." },
                     fresher: { fullname: "ಅಮಿತ್ ಕುಮಾರ್", jobtitle: "ಫ್ರೆಶರ್ ಗ್ರಾಜುಯೇಟ್", location: "ಪುಣೆ", summary: "ಉದ್ಯೋಗಾಕರ್ತಿ." },
                     software: { fullname: "ರೋಹಿತ್ ಶರ್ಮಾ", jobtitle: "ಸಾಫ್ಟ್‌ವೇರ್ ಇಂಜಿನಿಯರ್", location: "ಬೆಂಗಳೂರು", summary: "ಕೋಡಿಂಗ್ ಹಾಗೂ ಡೆವಲಪ್ಮೆಂಟ್." },
@@ -421,11 +424,59 @@
             }
         };
 
+        // लहान आकाराचे टेम्पलेट थंबनेल
+        function getLayoutThumbnailHTML(l) {
+            return `
+                <div class="h-10 rounded bg-white border border-slate-200 p-1 mb-1 flex flex-col justify-between overflow-hidden shadow-inner" style="border-top: 2px solid ${l.primary};">
+                    <div class="flex items-center gap-1">
+                        <div class="w-2 h-2 rounded-full shrink-0" style="background:${l.primary};"></div>
+                        <div class="h-1 w-3/4 rounded bg-slate-300"></div>
+                    </div>
+                    <div class="space-y-0.5">
+                        <div class="h-0.5 w-full rounded bg-slate-200"></div>
+                        <div class="h-0.5 w-4/5 rounded bg-slate-200"></div>
+                    </div>
+                    <div class="flex gap-0.5">
+                        <div class="h-0.5 w-1/3 rounded" style="background:${l.accent};"></div>
+                        <div class="h-0.5 w-1/3 rounded bg-slate-200"></div>
+                    </div>
+                </div>`;
+        }
+
+        function autoScalePreview() {
+            const wrapper = document.getElementById('preview-wrapper');
+            const container = document.getElementById('resume-preview-container');
+            if (!wrapper || !container) return;
+
+            const availableWidth = wrapper.clientWidth;
+            const resumeWidthPx = 794;
+
+            if (availableWidth > 0 && availableWidth < resumeWidthPx) {
+                zoomLevel = Number((availableWidth / resumeWidthPx).toFixed(2));
+            } else {
+                zoomLevel = 1;
+            }
+            applyPreviewScale();
+        }
+
+        function applyPreviewScale() {
+            const wrapper = document.getElementById('preview-wrapper');
+            const container = document.getElementById('resume-preview-container');
+            if (!wrapper || !container) return;
+
+            container.style.transform = `scale(${zoomLevel})`;
+            const scaledHeight = container.offsetHeight * zoomLevel;
+            if (scaledHeight > 0) {
+                wrapper.style.height = `${scaledHeight + 16}px`;
+            }
+        }
+
         function startApp() {
             document.getElementById('landing-page-view').classList.add('hidden');
             document.getElementById('app-workspace-view').classList.remove('hidden');
             initGallery();
             loadSampleData('all');
+            setTimeout(autoScalePreview, 50);
         }
 
         function goToHome() {
@@ -445,9 +496,9 @@
         function initGallery() {
             const container = document.getElementById('template-gallery-container');
             container.innerHTML = proLayouts.map(l => `
-                <div onclick="selectLayout(${l.id})" class="cursor-pointer border-2 rounded-lg p-1.5 text-center shrink-0 w-20 transition ${activeLayoutId === l.id ? 'border-green-600 bg-green-50' : 'border-slate-200 bg-white hover:border-slate-300'}">
-                    <div class="h-10 rounded mb-1 flex items-center justify-center text-white font-bold text-[10px]" style="background:${l.primary};">RK</div>
-                    <span class="text-[9px] font-bold text-slate-700 block truncate">${l.name}</span>
+                <div onclick="selectLayout(${l.id})" class="cursor-pointer border-2 rounded-xl p-1.5 text-center shrink-0 w-24 transition bg-white shadow-sm hover:shadow-md ${activeLayoutId === l.id ? 'border-green-600 ring-2 ring-green-500/20 bg-green-50/50' : 'border-slate-200 hover:border-slate-300'}">
+                    ${getLayoutThumbnailHTML(l)}
+                    <span class="text-[10px] font-bold text-slate-700 block truncate">${l.name}</span>
                 </div>
             `).join('');
         }
@@ -597,6 +648,7 @@
             resumeData.languages = checkedLangs;
 
             renderRenderTarget();
+            applyPreviewScale();
         }
 
         function renderRenderTarget() {
@@ -610,7 +662,7 @@
 
             let html = '';
 
-            if (activeLayoutId === 1 || activeLayoutId === 2 || activeLayoutId === 3) {
+            if (activeLayoutId === 1) {
                 html = `
                     <div class="p-8 font-sans text-slate-800 bg-white" style="min-height:297mm; display:flex; flex-direction:column; justify-content:space-between;">
                         <div>
@@ -627,11 +679,9 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="mt-4">
                                 <h3 class="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded text-white inline-block mb-1.5" style="background:${l.primary};">${t.secExp}</h3>
                                 <p contenteditable="true" onblur="resumeData.summary=this.innerText" class="text-xs text-slate-700 leading-relaxed mb-4 p-2 bg-slate-50 rounded border border-slate-100">${resumeData.summary}</p>
-                                
                                 <div class="space-y-3">
                                     ${resumeData.experiences.map(e => `
                                         <div class="border-l-2 pl-3 py-0.5" style="border-color:${l.accent};">
@@ -641,7 +691,6 @@
                                     `).join('')}
                                 </div>
                             </div>
-
                             <div class="mt-5">
                                 <h3 class="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded text-white inline-block mb-2" style="background:${l.primary};">${t.secEdu}</h3>
                                 <div class="space-y-2">
@@ -653,7 +702,6 @@
                                     `).join('')}
                                 </div>
                             </div>
-
                             <div class="mt-5">
                                 <h3 class="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded text-white inline-block mb-2" style="background:${l.primary};">${t.secProj}</h3>
                                 <div class="space-y-2">
@@ -663,7 +711,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="mt-8 pt-4 border-t border-slate-200 grid grid-cols-2 gap-4 text-xs">
                             <div>
                                 <h4 class="font-bold uppercase tracking-wider text-[11px] mb-1" style="color:${l.primary};">${t.secSkills}</h4>
@@ -676,34 +723,178 @@
                         </div>
                     </div>
                 `;
-            } else {
+            } else if (activeLayoutId === 2) {
+                html = `
+                    <div class="p-8 font-sans text-slate-800 bg-white" style="min-height:297mm;">
+                        <div class="text-center pb-6 border-b border-slate-300">
+                            ${resumeData.photo ? `<div class="w-20 h-20 rounded-full mx-auto mb-3 border-2 overflow-hidden shadow"><img src="${resumeData.photo}" class="w-full h-full object-cover"></div>` : ''}
+                            <h1 class="text-3xl font-bold tracking-tight" style="color:${l.primary};">${resumeData.fullname}</h1>
+                            <p class="text-sm font-semibold text-slate-600 mt-1">${resumeData.jobtitle}</p>
+                            <div class="flex justify-center flex-wrap gap-4 text-[11px] text-slate-500 mt-2">
+                                <span><i class="fa-solid fa-envelope mr-1"></i>${resumeData.email}</span>
+                                <span><i class="fa-solid fa-phone mr-1"></i>${resumeData.phone}</span>
+                                <span><i class="fa-solid fa-location-dot mr-1"></i>${resumeData.location}</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 space-y-5">
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secExp}</h3>
+                                <p class="text-xs text-slate-700 mb-3">${resumeData.summary}</p>
+                                <div class="space-y-3">
+                                    ${resumeData.experiences.map(e => `
+                                        <div>
+                                            <div class="flex justify-between font-bold text-xs"><span>${e.role} at ${e.company}</span><span class="text-slate-500">${e.duration}</span></div>
+                                            <p class="text-[11px] text-slate-600">${e.details}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secEdu}</h3>
+                                ${resumeData.education.map(ed => `<div class="flex justify-between text-xs mb-1"><div><span class="font-bold">${ed.degree}</span> - ${ed.school}</div><span class="text-slate-500">${ed.duration}</span></div>`).join('')}
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secSkills}</h3>
+                                <div class="flex flex-wrap gap-1.5">${resumeData.skills.map(s => `<span class="bg-slate-100 px-2 py-0.5 rounded text-[11px] font-medium">${s}</span>`).join('')}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (activeLayoutId === 3) {
+                html = `
+                    <div class="p-8 font-sans text-slate-800 bg-white grid grid-cols-2 gap-6" style="min-height:297mm;">
+                        <div class="space-y-6">
+                            <div>
+                                ${resumeData.photo ? `<div class="w-16 h-16 rounded-lg mb-3 overflow-hidden shadow"><img src="${resumeData.photo}" class="w-full h-full object-cover"></div>` : ''}
+                                <h1 class="text-xl font-black" style="color:${l.primary};">${resumeData.fullname}</h1>
+                                <p class="text-xs font-bold text-slate-600">${resumeData.jobtitle}</p>
+                                <div class="text-[11px] text-slate-500 mt-2 space-y-1">
+                                    <div><i class="fa-solid fa-envelope mr-1"></i>${resumeData.email}</div>
+                                    <div><i class="fa-solid fa-phone mr-1"></i>${resumeData.phone}</div>
+                                    <div><i class="fa-solid fa-location-dot mr-1"></i>${resumeData.location}</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secSkills}</h3>
+                                <div class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-100 px-2 py-0.5 rounded text-[10px] font-semibold">${s}</span>`).join('')}</div>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secLang}</h3>
+                                <p class="text-[11px] text-slate-600">${resumeData.languages.join(', ')}</p>
+                            </div>
+                        </div>
+                        <div class="space-y-6 border-l pl-6 border-slate-200">
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secExp}</h3>
+                                <p class="text-xs text-slate-700 mb-3">${resumeData.summary}</p>
+                                <div class="space-y-3">
+                                    ${resumeData.experiences.map(e => `<div><div class="font-bold text-xs">${e.role}</div><div class="text-[11px] text-slate-500">${e.company} | ${e.duration}</div><p class="text-[11px] text-slate-600 mt-0.5">${e.details}</p></div>`).join('')}
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secEdu}</h3>
+                                ${resumeData.education.map(ed => `<div class="text-xs mb-2"><div class="font-bold">${ed.degree}</div><div class="text-[11px] text-slate-500">${ed.school} (${ed.duration})</div></div>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (activeLayoutId === 4) {
+                html = `
+                    <div class="p-8 font-sans text-slate-800 bg-white space-y-6" style="min-height:297mm;">
+                        <div class="bg-slate-900 text-white p-6 rounded-xl flex items-center gap-5">
+                            ${photoHTML}
+                            <div>
+                                <h1 class="text-2xl font-black">${resumeData.fullname}</h1>
+                                <p class="text-xs text-green-400 font-bold mt-0.5">${resumeData.jobtitle}</p>
+                                <div class="flex flex-wrap gap-3 text-[11px] text-slate-300 mt-2">
+                                    <span><i class="fa-solid fa-envelope mr-1 text-green-400"></i>${resumeData.email}</span>
+                                    <span><i class="fa-solid fa-phone mr-1 text-green-400"></i>${resumeData.phone}</span>
+                                    <span><i class="fa-solid fa-location-dot mr-1 text-green-400"></i>${resumeData.location}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1 mb-2" style="border-color:${l.primary};">TECHNICAL SUMMARY</h3>
+                            <p class="text-xs text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-200">${resumeData.summary}</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1 mb-2" style="border-color:${l.primary};">${t.secExp}</h3>
+                                <div class="space-y-3">
+                                    ${resumeData.experiences.map(e => `<div><div class="font-bold text-xs">${e.role}</div><div class="text-[11px] text-slate-500">${e.company} (${e.duration})</div><p class="text-[11px] text-slate-600">${e.details}</p></div>`).join('')}
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1 mb-2" style="border-color:${l.primary};">${t.secEdu}</h3>
+                                    ${resumeData.education.map(ed => `<div class="text-xs"><span class="font-bold">${ed.degree}</span><div class="text-[11px] text-slate-500">${ed.school} (${ed.duration})</div></div>`).join('')}
+                                </div>
+                                <div>
+                                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1 mb-2" style="border-color:${l.primary};">${t.secSkills}</h3>
+                                    <div class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] font-medium">${s}</span>`).join('')}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (activeLayoutId === 5) {
+                html = `
+                    <div class="p-10 font-sans text-slate-800 bg-white space-y-6" style="min-height:297mm;">
+                        <div class="flex justify-between items-end border-b pb-4 border-slate-200">
+                            <div>
+                                <h1 class="text-3xl font-light tracking-wide text-slate-900">${resumeData.fullname}</h1>
+                                <p class="text-xs font-medium text-emerald-700 tracking-widest uppercase mt-1">${resumeData.jobtitle}</p>
+                            </div>
+                            <div class="text-right text-[11px] text-slate-500 space-y-0.5">
+                                <div>${resumeData.email}</div>
+                                <div>${resumeData.phone}</div>
+                                <div>${resumeData.location}</div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-600 leading-relaxed italic">${resumeData.summary}</p>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-800">${t.secExp}</h3>
+                            ${resumeData.experiences.map(e => `<div class="text-xs"><div class="flex justify-between font-bold"><span>${e.role} — ${e.company}</span><span class="text-slate-400 font-normal">${e.duration}</span></div><p class="text-[11px] text-slate-600 mt-1">${e.details}</p></div>`).join('')}
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-800">${t.secEdu}</h3>
+                            ${resumeData.education.map(ed => `<div class="text-xs flex justify-between"><div><span class="font-bold">${ed.degree}</span>, ${ed.school}</div><span class="text-slate-400">${ed.duration}</span></div>`).join('')}
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-800">${t.secSkills}</h3>
+                            <p class="text-xs text-slate-700">${resumeData.skills.join(' • ')}</p>
+                        </div>
+                    </div>
+                `;
+            } else if (activeLayoutId === 6 || activeLayoutId === 7 || activeLayoutId === 8) {
                 html = `
                     <div class="p-8 font-sans text-slate-800 bg-white grid grid-cols-12 gap-6" style="min-height:297mm;">
-                        <div class="col-span-4 p-4 rounded-xl text-white space-y-6" style="background:${l.dark};">
+                        <div class="col-span-4 p-5 rounded-xl text-white space-y-6 shadow-md" style="background:${l.dark};">
                             ${photoHTML}
                             <div>
                                 <h1 class="text-xl font-black">${resumeData.fullname}</h1>
-                                <p class="text-xs text-green-400 mt-0.5">${resumeData.jobtitle}</p>
+                                <p class="text-xs text-green-400 font-semibold mt-1">${resumeData.jobtitle}</p>
                             </div>
-                            <div class="space-y-2 text-[11px] opacity-90">
-                                <div><i class="fa-solid fa-envelope mr-1"></i>${resumeData.email}</div>
-                                <div><i class="fa-solid fa-phone mr-1"></i>${resumeData.phone}</div>
-                                <div><i class="fa-solid fa-location-dot mr-1"></i>${resumeData.location}</div>
-                            </div>
-                            <div>
-                                <h3 class="text-xs font-bold uppercase tracking-wider border-b border-slate-700 pb-1 mb-2 text-green-400">${t.secSkills}</h3>
-                                <div class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-800 px-2 py-0.5 rounded text-[10px]">${s}</span>`).join('')}</div>
+                            <div class="space-y-2 text-[11px] text-slate-300">
+                                <div><i class="fa-solid fa-envelope mr-1.5 text-green-400"></i>${resumeData.email}</div>
+                                <div><i class="fa-solid fa-phone mr-1.5 text-green-400"></i>${resumeData.phone}</div>
+                                <div><i class="fa-solid fa-location-dot mr-1.5 text-green-400"></i>${resumeData.location}</div>
                             </div>
                             <div>
-                                <h3 class="text-xs font-bold uppercase tracking-wider border-b border-slate-700 pb-1 mb-2 text-green-400">${t.secLang}</h3>
-                                <p class="text-[11px]">${resumeData.languages.join(', ')}</p>
+                                <h3 class="text-xs font-bold uppercase tracking-wider border-b border-slate-700 pb-1 mb-2.5 text-green-400">${t.secSkills}</h3>
+                                <div class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-800 px-2 py-0.5 rounded text-[10px] font-medium">${s}</span>`).join('')}</div>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider border-b border-slate-700 pb-1 mb-2.5 text-green-400">${t.secLang}</h3>
+                                <p class="text-[11px] text-slate-300">${resumeData.languages.join(', ')}</p>
                             </div>
                         </div>
-
                         <div class="col-span-8 space-y-6">
                             <div>
-                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1 mb-2" style="border-color:${l.primary};">${t.secExp}</h3>
-                                <p class="text-xs text-slate-700 mb-4">${resumeData.summary}</p>
+                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1.5 mb-2.5" style="border-color:${l.primary};">${t.secExp}</h3>
+                                <p class="text-xs text-slate-700 leading-relaxed mb-4">${resumeData.summary}</p>
                                 <div class="space-y-3">
                                     ${resumeData.experiences.map(e => `
                                         <div>
@@ -714,13 +905,21 @@
                                 </div>
                             </div>
                             <div>
-                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1 mb-2" style="border-color:${l.primary};">${t.secEdu}</h3>
+                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1.5 mb-2.5" style="border-color:${l.primary};">${t.secEdu}</h3>
                                 <div class="space-y-2">
                                     ${resumeData.education.map(ed => `
                                         <div class="flex justify-between text-xs">
                                             <div><span class="font-bold">${ed.degree}</span> - ${ed.school}</div>
                                             <span class="text-[11px] text-slate-500">${ed.duration}</span>
                                         </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1.5 mb-2.5" style="border-color:${l.primary};">${t.secProj}</h3>
+                                <div class="space-y-2">
+                                    ${resumeData.projects.map(p => `
+                                        <div class="text-xs"><span class="font-bold">${p.title}:</span> <span class="text-slate-600">${p.desc}</span></div>
                                     `).join('')}
                                 </div>
                             </div>
@@ -733,20 +932,19 @@
         }
 
         function zoomResume(dir) {
-            zoomLevel = Math.max(0.4, Math.min(1.4, zoomLevel + (dir * 0.1)));
-            document.getElementById('resume-preview-container').style.transform = `scale(${zoomLevel})`;
+            zoomLevel = Math.max(0.35, Math.min(1.4, Number((zoomLevel + (dir * 0.1)).toFixed(2))));
+            applyPreviewScale();
         }
 
         function resetZoom() {
-            zoomLevel = 1;
-            document.getElementById('resume-preview-container').style.transform = `scale(1)`;
+            autoScalePreview();
         }
 
-        // Montag Ad Timer & PDF Download Trigger
         function triggerExportWithAdTimer() {
             const modal = document.getElementById('ad-timer-modal');
             modal.classList.remove('hidden');
-            let timeLeft = 5;
+            
+            let timeLeft = 10;
             document.getElementById('timer-countdown').innerText = `Downloading in ${timeLeft}s...`;
 
             if (adCountdownInterval) clearInterval(adCountdownInterval);
@@ -758,7 +956,7 @@
                 } else {
                     clearInterval(adCountdownInterval);
                     closeAdModal();
-                    window.print(); // Triggers browser native PDF print/save
+                    window.print();
                 }
             }, 1000);
         }
@@ -768,9 +966,11 @@
             document.getElementById('ad-timer-modal').classList.add('hidden');
         }
 
-        // Initial Load
+        window.addEventListener('resize', autoScalePreview);
+
         window.onload = function() {
             loadSampleData('all');
+            autoScalePreview();
         }
     </script>
 </body>
