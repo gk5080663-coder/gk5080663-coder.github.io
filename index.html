@@ -2,12 +2,12 @@
 <html lang="mr" class="h-full">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- SEO Meta Tags -->
-    <title>Resume.RK - Free AI Multi-Language Resume Builder | ATS Friendly CV Maker</title>
-    <meta name="description" content="Create a professional, ATS-friendly resume for free with Resume.RK. Choose from 8 distinct Pro Layouts for Finance, Software, Freshers, and Marketing in English, Marathi, Hindi, and Kannada with instant A4 PDF export.">
-    <meta name="keywords" content="Resume Builder, Free Resume, ATS Resume, Marathi Resume Builder, Hindi Resume, Resume.RK, Online CV Maker, AI Resume Generator, Free CV Template">
+    <!-- SEO Meta Tags & 100+ Keywords for Google Search -->
+    <title>Resume.RK - Free AI Multi-Language Resume Builder | ATS Friendly CV Maker in Marathi, Hindi, English</title>
+    <meta name="description" content="Create a professional, ATS-friendly resume for free with Resume.RK. Choose from 8 distinct Pro Layouts for Finance, Software, Freshers, and Marketing in English, Marathi, Hindi, and Kannada with instant A4 PDF export. फ्री मराठी रेझ्युमे बिल्डर.">
+    <meta name="keywords" content="Resume Builder, Free Resume, ATS Resume, Marathi Resume Builder, Hindi Resume, Resume.RK, Online CV Maker, AI Resume Generator, Free CV Template, Marathi CV maker, free resume builder online, resume formats in marathi, resume in marathi download, marathi biodata format, free cv maker online, resume banana ki website, c.v. templates free download, ats friendly resume templates, software engineer resume format, fresher resume format pdf, finance resume templates, marketing cv builder, professional resume creator, curriculum vitae maker free, marathi resume templates free, pdf resume generator, job resume creator, resume builder website, marathi bio data format for job, c.v. maker app online, best resume maker 2026, simple resume format, modern cv design, creative resume layout, executive resume format, healthcare resume template, engineering resume creator, student resume builder, multi language resume maker, kannada resume builder, hindi resume format, english cv templates, resume builder for freshers, experienced resume formats, download resume pdf, quick resume maker, smart cv builder, auto resume generator, best free resume tools, resume maker without login, instant pdf resume maker, responsive resume builder, mobile friendly resume creator, job application form maker, biodata maker in marathi, marathi resume builder app, online resume builder free india, job ready resume templates, professional curriculum vitae design, c.v. format for freshers, c.v. format for experienced, resume writing guide, ATS score checker resume, top resume builder sites, resume templates word pdf, resume maker with photo, photo resume builder, custom resume creator, resume sections guide, career portfolio maker, employment application template, job hunting tools, interview ready resume, corporate resume formats, startup resume maker, freelance resume builder, academia resume template, teaching resume format, banking resume template, accountant resume format, nurse resume format, sales resume creator, business development resume, operations manager resume, customer service resume, human resources resume, legal resume template, construction resume format, hospitality resume design, retail resume format, data analyst resume, python developer resume, full stack developer resume, digital marketing resume, graphic designer resume, content writer resume, civil engineer resume, mechanical engineer resume, electrical engineer resume, pharmacist resume template, doctor resume format, chef resume builder, driver resume format, security guard resume, receptionist resume template, event manager resume, real estate resume format, logistics resume template, agriculture resume format, fashion designer resume, pilot resume template, flight attendant resume, mass communication resume, social worker resume template">
     
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="U-TV8X7rnACKty5AZAt7tafkK_2mhA4S2E4TvMJL5-w" />
@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        body { font-family: 'Inter', 'Baloo 2', 'Noto Sans Devanagari', 'Noto Sans Kannada', sans-serif; }
+        body { font-family: 'Inter', 'Baloo 2', 'Noto Sans Devanagari', 'Noto Sans Kannada', sans-serif; overflow-x: hidden; }
         ::-webkit-scrollbar { width: 4px; height: 4px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
@@ -133,6 +133,7 @@
                             <button onclick="changeLanguage('kn')" id="lang-kn" class="px-1.5 py-1 text-[10px] rounded font-semibold text-slate-300">ಕನ್ನಡ</button>
                         </div>
 
+                        <!-- Download Button with Integrated Montag Ad Trigger -->
                         <button onclick="triggerExportWithAdTimer()" class="bg-green-600 hover:bg-green-500 text-white font-semibold text-[11px] px-3 py-1.5 rounded-lg shadow flex items-center gap-1">
                             <i class="fa-solid fa-file-pdf"></i>
                             <span id="btn-download-pdf">PDF</span>
@@ -241,7 +242,7 @@
                     </div>
                 </div>
 
-                <!-- Right: Live Preview -->
+                <!-- Right: Live Preview (Optimized for Mobile & Desktop Viewing) -->
                 <div class="lg:col-span-6 xl:col-span-7 flex flex-col items-center">
                     <div class="w-full max-w-[210mm] bg-white rounded-xl shadow-sm border border-slate-200 p-2.5 mb-3 flex flex-wrap justify-between items-center gap-2 text-xs no-print">
                         <div class="flex items-center gap-1.5">
@@ -258,8 +259,9 @@
                         </div>
                     </div>
                     
-                    <div id="preview-wrapper" class="w-full overflow-hidden flex justify-center pb-8">
-                        <div id="resume-preview-container" class="bg-white shadow-2xl transition-all duration-300 transform origin-top border border-slate-200" style="width: 210mm; min-height: 297mm;">
+                    <!-- Responsive Preview Wrapper Container with auto-scaling for mobile screens -->
+                    <div id="preview-wrapper" class="w-full overflow-x-auto flex justify-center pb-8">
+                        <div id="resume-preview-container" class="bg-white shadow-2xl transition-all duration-300 transform origin-top border border-slate-200 scale-[0.60] sm:scale-100" style="width: 210mm; min-height: 297mm; flex-shrink: 0;">
                             <div id="resume-render-target" class="w-full min-h-[297mm]"></div>
                         </div>
                     </div>
@@ -272,16 +274,21 @@
         </footer>
     </div>
 
-    <!-- DOWNLOAD TIMER & VIGNETTE AD MODAL -->
+    <!-- DOWNLOAD TIMER & MONETAG AD VIGNETTE MODAL -->
     <div id="ad-timer-modal" class="fixed inset-0 bg-slate-950/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white text-slate-900 rounded-2xl max-w-sm w-full p-5 text-center space-y-3 shadow-2xl border border-slate-200">
             <div class="w-12 h-12 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-xl mx-auto">
                 <i class="fa-solid fa-file-arrow-down animate-bounce"></i>
             </div>
             <h3 class="text-base font-bold">Preparing Your PDF</h3>
-            <p class="text-xs text-slate-600">Please wait while we generate your professional resume...</p>
+            <p class="text-xs text-slate-600">Please watch this quick sponsored content while we generate your A4 PDF...</p>
 
-            <div class="text-sm font-black text-green-600 py-3" id="timer-countdown">Downloading in 10s...</div>
+            <!-- Montag Ad Integration Hook (तुमचा मोनोटॅग जाहिरात कोड येथे टाकू शकता) -->
+            <div id="montag-ad-container" class="my-2 min-h-[50px] flex items-center justify-center bg-slate-50 border rounded text-[11px] text-slate-400">
+                <!-- Monetag Direct Ad Script Code can be embedded here -->
+            </div>
+
+            <div class="text-sm font-black text-green-600 py-3" id="timer-countdown">Downloading in 5s...</div>
             <button onclick="closeAdModal()" class="w-full bg-slate-900 text-white font-semibold py-2 rounded-xl text-xs">Cancel</button>
         </div>
     </div>
@@ -291,6 +298,7 @@
         let currentLang = 'en';
         let activeLayoutId = 1;
         let zoomLevel = 1;
+        let adCountdownInterval = null;
 
         let resumeData = {
             photo: '',
@@ -377,71 +385,47 @@
                 lblLocation: "शहर", lblSummary: "सारांश", lblExpHeading: "कार्य अनुभव",
                 lblEduHeading: "शिक्षा", lblSkillsHeading: "कौशल (कॉमा लगाकर)", lblLangHeading: "भाषाएँ",
                 lblProjHeading: "प्रोजेक्ट्स", atsTitle: "ATS स्कोर", livePreview: "लाइव प्रीव्यू",
-                clickHint: "एडिट करने के लिए टेक्स्ट पर क्लिक करें!", secExp: "कार्य अनुभव", secEdu: "शिक्षा",
+                clickHint: "एडिट करने के लिए टैप करें!", secExp: "कार्य अनुभव", secEdu: "शिक्षा",
                 secSkills: "कौशल", secLang: "भाषाएँ", secProj: "प्रोजेक्ट्स",
                 samples: {
-                    all: { fullname: "प्रोफेशनल यूजर", jobtitle: "जनरल प्रोफेशनल", location: "मुंबई", summary: "विभिन्न उद्योगों में कार्य करने में कुशल पेशेवर।" },
-                    finance: { fullname: "रोहन कुलकर्णी", jobtitle: "फाइनेंशियल एनालिस्ट", location: "मुंबई", summary: "वित्तीय मॉडलिंग और बजटिंग में अनुभव।" },
-                    fresher: { fullname: "अमित कुमार", jobtitle: "फ्रेशर", location: "पुणे", summary: "मजबूत अकादमिक पृष्ठभूमि के साथ करियर शुरू करने के लिए उत्सुक।" },
-                    software: { fullname: "रोहित शर्मा", jobtitle: "सॉफ्टवेयर इंजीनियर", location: "बेंगलुरु", summary: "फुल-स्टैक डेवलपमेंट में विशेषज्ञ।" },
+                    all: { fullname: "प्रोफेशनल यूजर", jobtitle: "ऑल-राउंडर प्रोफेशनल", location: "मुंबई", summary: "विभिन्न क्षेत्रों में कार्य करने में सक्षम।" },
+                    finance: { fullname: "रोहन कुलकर्णी", jobtitle: "फाइनेंशियल एनालिस्ट", location: "मुंबई", summary: "फाइनेंशियल मॉडलिंग में 5+ वर्ष का अनुभव।" },
+                    fresher: { fullname: "अमित कुमार", jobtitle: "फ्रेश ग्रेजुएट", location: "पुणे", summary: "करियर की शुरुआत करने के लिए उत्सुक।" },
+                    software: { fullname: "रोहित शर्मा", jobtitle: "सॉफ्टवेयर इंजीनियर", location: "बेंगलुरु", summary: "फुल-स्टैक डेवलपमेंट में कुशल।" },
                     marketing: { fullname: "नेहा पाटिल", jobtitle: "डिजिटल मार्केटर", location: "हैदराबाद", summary: "डिजिटल मार्केटिंग विशेषज्ञ।" },
-                    hr: { fullname: "पूजा कुलकर्णी", jobtitle: "एचआर प्रोफेशनल", location: "चेन्नई", summary: "टैलेंट एक्विजिशन में कुशल।" },
-                    healthcare: { fullname: "डॉ. स्नेहा पाटिल", jobtitle: "हेल्थकेयर स्पेशलिस्ट", location: "नागपुर", summary: "रोगी देखभाल प्रबंधन में विशेषज्ञ।" },
-                    executive: { fullname: "राजेश मल्होत्रा", jobtitle: "सीनियर एक्जीक्यूटिव", location: "नई दिल्ली", summary: "एंटरप्राइज लीडरशिप में अनुभवी।" }
+                    hr: { fullname: "पूजा कुलकर्णी", jobtitle: "एचआर प्रोफेशनल", location: "चेन्नई", summary: "एचआर मैनेजमेंट में कुशल।" },
+                    healthcare: { fullname: "डाॅ. स्नेहा पाटिल", jobtitle: "हेल्थकेअर स्पेशलिस्ट", location: "नागपुर", summary: "चिकित्सा पेशेवर।" },
+                    executive: { fullname: "राजेश मल्होत्रा", jobtitle: "सीनियर एक्जीक्यूटिव", location: "नई दिल्ली", summary: "नेतृत्व में अनुभवी।" }
                 }
             },
             kn: {
                 load: "ಲೋಡ್", downloadPdf: "PDF", templates: "8 ಪ್ರೊ ಲೇಔಟ್‌ಗಳು",
-                tabPersonal: "ಮಾಹಿತಿ", tabExp: "ಅನುಭವ", tabEdu: "ಶಿಕ್ಷಣ", tabSkills: "ಕೌಶಲ್ಯ", tabProj: "ಪ್ರಾಜೆಕ್ಟ್",
-                lblPhoto: "ಫೋಟೋ", btnUpload: "ಆಯ್ಕೆ", btnRemove: "ತೆಗೆ",
+                tabPersonal: "ಮಾಹಿತಿ", tabExp: "ಅನುಭವ", tabEdu: "ಶಿಕ್ಷಣ", tabSkills: "ಕೌಶಲ್ಯಗಳು", tabProj: "ಪ್ರೊಜೆಕ್ಟ್ಸ್",
+                lblPhoto: "ಫೋಟೋ", btnUpload: "ಆಯ್ಕೆ", btnRemove: "ತೆಗೆದುಹಾಕಿ",
                 lblFullname: "ಪೂರ್ಣ ಹೆಸರು", lblJobtitle: "ಹುದ್ದೆ", lblEmail: "ಇಮೇಲ್", lblPhone: "ಮೊಬೈಲ್",
-                lblLocation: "ನಗರ", lblSummary: "ಸಾರಾಂಶ", lblExpHeading: "ಕಾರ್ಯ ಅನುಭವ",
+                lblLocation: "ಸ್ಥಳ", lblSummary: "ಸಾರಾಂಶ", lblExpHeading: "ಕೆಲಸದ ಅನುಭವ",
                 lblEduHeading: "ಶಿಕ್ಷಣ", lblSkillsHeading: "ಕೌಶಲ್ಯಗಳು", lblLangHeading: "ಭಾಷೆಗಳು",
-                lblProjHeading: "ಪ್ರಾಜೆಕ್ಟ್‌ಗಳು", atsTitle: "ATS ಸ್ಕೋರ್", livePreview: "ಲೈವ್ ಪ್ರಿವ್ಯೂ",
-                clickHint: "ಎಡಿಟ್ ಮಾಡಲು ಪಠ್ಯದ ಮೇಲೆ ಟ್ಯಾಪ್ ಮಾಡಿ!", secExp: "ಕಾರ್ಯ ಅನುಭವ", secEdu: "ಶಿಕ್ಷಣ",
-                secSkills: "ಕೌಶಲ್ಯಗಳು", secLang: "ಭಾಷೆಗಳು", secProj: "ಪ್ರಾಜೆಕ್ಟ್‌ಗಳು",
+                lblProjHeading: "ಪ್ರೊಜೆಕ್ಟ್ಸ್", atsTitle: "ATS ಸ್ಕೋರ್", livePreview: "ಲೈವ್ ಪೂರ್ವವೀಕ್ಷಣೆ",
+                clickHint: "ಸಂಪಾದಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ!", secExp: "ಕೆಲಸದ ಅನುಭವ", secEdu: "ಶಿಕ್ಷಣ",
+                secSkills: "ಕೌಶಲ್ಯಗಳು", secLang: "ಭಾಷೆಗಳು", secProj: "ಪ್ರೊಜೆಕ್ಟ್ಸ್",
                 samples: {
-                    all: { fullname: "Professional User", jobtitle: "General Professional", location: "ಬೆಂಗಳೂರು", summary: "ವಿವಿಧ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಕೆಲಸ ಮಾಡಲು ಸಮರ್ಥರಾದ ವೃತ್ತಿಪರ." },
-                    finance: { fullname: "Rohan Kulkarni", jobtitle: "Financial Analyst", location: "ಮುಂಬೈ", summary: "ಹಣಕಾಸು ವಿಶ್ಲೇಷಣೆಯಲ್ಲಿ ಅನುಭವ." },
-                    fresher: { fullname: "ಅಮಿತ್ ಕುಮಾರ್", jobtitle: "Fresher", location: "ಪುಣೆ", summary: "ಉತ್ತಮ ಶೈಕ್ಷಣಿಕ ಹಿನ್ನೆಲೆ ಹೊಂದಿರುವ ಫ್ರೆಶರ್." },
-                    software: { fullname: "ರೋಹಿತ್ ಶರ್ಮಾ", jobtitle: "Software Engineer", location: "ಬೆಂಗಳೂರು", summary: "ಸಾಫ್ಟ್‌ವೇರ್ ಅಭಿವೃದ್ಧಿಯಲ್ಲಿ ಪರಿಣತಿ." },
-                    marketing: { fullname: "ನೇಹಾ ಪಾಟೀಲ್", jobtitle: "Digital Marketer", location: "ಹೈದರಾಬಾದ್", summary: "ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟಿಂಗ್ ತಜ್ಞ." },
-                    hr: { fullname: "ಪೂಜಾ ಕುಲಕರ್ಣಿ", jobtitle: "HR Professional", location: "ಚೆನ್ನೈ", summary: "ಮಾನವ ಸಂಪನ್ಮೂಲ ತಜ್ಞ." },
-                    healthcare: { fullname: "Dr. Sneha Patil", jobtitle: "Healthcare Specialist", location: "ನಾಗ್ಪುರ", summary: "ವೈದ್ಯಕೀಯ ವೃತ್ತಿಪರ." },
-                    executive: { fullname: "ರಾಜೇಶ್ ಮಲ್ಹೋತ್ರಾ", jobtitle: "Senior Executive", location: "ದೆಹಲಿ", summary: "ನಾಯಕತ್ವ ಅನುಭವ." }
+                    all: { fullname: "ವೃತ್ತಿಪರ ಬಳಕೆದಾರ", jobtitle: "ಸಾಮಾನ್ಯ ವೃತ್ತಿಪರ", location: "ಬೆಂಗಳೂರು", summary: "ವಿವಿಧ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಸಾಮರ್ಥ್ಯ." },
+                    finance: { fullname: "ರೋಹನ್ ಕುಲಕರ್ಣಿ", jobtitle: "ಫೈನಾನ್ಷಿಯಲ್ ಅನಾಲಿಸ್ಟ್", location: "ಮುಂಬೈ", summary: "ಹಣಕಾಸು ವಿಶ್ಲೇಷಣೆಯಲ್ಲಿ ಅನುಭವ." },
+                    fresher: { fullname: "ಅಮಿತ್ ಕುಮಾರ್", jobtitle: "ಫ್ರೆಶರ್ ಗ್ರಾಜುಯೇಟ್", location: "ಪುಣೆ", summary: "ಉದ್ಯೋಗಾಕರ್ತಿ." },
+                    software: { fullname: "ರೋಹಿತ್ ಶರ್ಮಾ", jobtitle: "ಸಾಫ್ಟ್‌ವೇರ್ ಇಂಜಿನಿಯರ್", location: "ಬೆಂಗಳೂರು", summary: "ಕೋಡಿಂಗ್ ಹಾಗೂ ಡೆವಲಪ್ಮೆಂಟ್." },
+                    marketing: { fullname: "ನೇಹಾ ಪಾಟೀಲ್", jobtitle: "ಡಿಜಿಟಲ್ ಮಾರ್ಕೆಟರ್", location: "ಹೈದರಾಬಾದ್", summary: "ಮಾರ್ಕೆಟಿಂಗ್ ತಜ್ಞ." },
+                    hr: { fullname: "ಪೂಜಾ ಕುಲಕರ್ಣಿ", jobtitle: "HR ವೃತ್ತಿಪರ", location: "ಚೆನ್ನೈ", summary: "ಮಾನವ ಸಂಪನ್ಮೂಲ ನಿರ್ವಹಣೆ." },
+                    healthcare: { fullname: "ಡಾ. ಸ್ನೇಹಾ ಪಾಟೀಲ್", jobtitle: "ವೈದ್ಯಕೀಯ ತಜ್ಞೆ", location: "ನಾಗಪುರ", summary: "ಆರೋಗ್ಯ ಸೇವೆ." },
+                    executive: { fullname: "ರಾಜೇಶ್ ಮಲ್ಹೋತ್ರಾ", jobtitle: "ಹಿರಿಯ ನಿರ್ವಾಹಕ", location: "ದೆಹಲಿ", summary: "ಉನ್ನತ ನಾಯಕತ್ವ." }
                 }
             }
         };
 
-        function calculateAutoScale() {
-            const wrapper = document.getElementById('preview-wrapper');
-            if (!wrapper) return;
-            const containerWidth = wrapper.clientWidth;
-            const a4WidthPx = 794;
-            if (containerWidth < a4WidthPx) {
-                zoomLevel = (containerWidth - 16) / a4WidthPx;
-            } else {
-                zoomLevel = 0.85;
-            }
-            const previewEl = document.getElementById('resume-preview-container');
-            previewEl.style.transform = `scale(${zoomLevel})`;
-            wrapper.style.height = `${1123 * zoomLevel + 24}px`;
-        }
-
-        window.addEventListener('resize', () => {
-            if (!document.getElementById('app-workspace-view').classList.contains('hidden')) {
-                calculateAutoScale();
-            }
-        });
-
         function startApp() {
             document.getElementById('landing-page-view').classList.add('hidden');
             document.getElementById('app-workspace-view').classList.remove('hidden');
-            renderLayoutThumbnails();
-            syncFormFields();
-            renderFormLists();
-            renderResumePreview();
-            setTimeout(calculateAutoScale, 50);
+            initGallery();
+            loadSampleData('all');
         }
 
         function goToHome() {
@@ -449,11 +433,117 @@
             document.getElementById('landing-page-view').classList.remove('hidden');
         }
 
+        function switchFormTab(tabName) {
+            ['personal', 'experience', 'education', 'skills', 'more'].forEach(t => {
+                document.getElementById(`form-tab-${t}`).classList.add('hidden');
+                document.getElementById(`tab-btn-${t}`).className = "px-2.5 py-2.5 font-semibold text-slate-600 whitespace-nowrap";
+            });
+            document.getElementById(`form-tab-${tabName}`).classList.remove('hidden');
+            document.getElementById(`tab-btn-${tabName}`).className = "px-2.5 py-2.5 font-semibold border-b-2 border-green-600 text-green-600 whitespace-nowrap";
+        }
+
+        function initGallery() {
+            const container = document.getElementById('template-gallery-container');
+            container.innerHTML = proLayouts.map(l => `
+                <div onclick="selectLayout(${l.id})" class="cursor-pointer border-2 rounded-lg p-1.5 text-center shrink-0 w-20 transition ${activeLayoutId === l.id ? 'border-green-600 bg-green-50' : 'border-slate-200 bg-white hover:border-slate-300'}">
+                    <div class="h-10 rounded mb-1 flex items-center justify-center text-white font-bold text-[10px]" style="background:${l.primary};">RK</div>
+                    <span class="text-[9px] font-bold text-slate-700 block truncate">${l.name}</span>
+                </div>
+            `).join('');
+        }
+
+        function selectLayout(id) {
+            activeLayoutId = id;
+            const layout = proLayouts.find(l => l.id === id);
+            document.getElementById('active-template-badge').innerText = layout.name;
+            initGallery();
+            updateResume();
+        }
+
+        function loadSelectedSample() {
+            const val = document.getElementById('sample-profile-select').value;
+            loadSampleData(val);
+        }
+
+        function loadSampleData(key) {
+            const sample = i18n[currentLang].samples[key] || i18n['en'].samples[key];
+            resumeData.fullname = sample.fullname;
+            resumeData.jobtitle = sample.jobtitle;
+            resumeData.location = sample.location;
+            resumeData.summary = sample.summary;
+            syncDataToForm();
+            updateResume();
+        }
+
+        function syncDataToForm() {
+            document.getElementById('inp-fullname').value = resumeData.fullname;
+            document.getElementById('inp-jobtitle').value = resumeData.jobtitle;
+            document.getElementById('inp-email').value = resumeData.email;
+            document.getElementById('inp-phone').value = resumeData.phone;
+            document.getElementById('inp-location').value = resumeData.location;
+            document.getElementById('inp-linkedin').value = resumeData.linkedin;
+            document.getElementById('inp-summary').value = resumeData.summary;
+            document.getElementById('inp-skills').value = resumeData.skills.join(', ');
+            document.getElementById('inp-interests').value = resumeData.interests.join(', ');
+            renderDynamicLists();
+        }
+
+        function renderDynamicLists() {
+            document.getElementById('experience-list').innerHTML = resumeData.experiences.map((exp, idx) => `
+                <div class="p-2 bg-slate-50 border rounded-lg space-y-1.5 text-xs">
+                    <div class="flex justify-between"><input type="text" value="${exp.role}" oninput="resumeData.experiences[${idx}].role=this.value; updateResume();" class="font-bold bg-transparent w-2/3 border-b"><button onclick="resumeData.experiences.splice(${idx},1); renderDynamicLists(); updateResume();" class="text-red-500"><i class="fa-solid fa-trash"></i></button></div>
+                    <div class="grid grid-cols-2 gap-1"><input type="text" value="${exp.company}" oninput="resumeData.experiences[${idx}].company=this.value; updateResume();" class="p-1 border rounded bg-white"><input type="text" value="${exp.duration}" oninput="resumeData.experiences[${idx}].duration=this.value; updateResume();" class="p-1 border rounded bg-white"></div>
+                    <textarea rows="2" oninput="resumeData.experiences[${idx}].details=this.value; updateResume();" class="w-full p-1 border rounded bg-white">${exp.details}</textarea>
+                </div>
+            `).join('');
+
+            document.getElementById('education-list').innerHTML = resumeData.education.map((edu, idx) => `
+                <div class="p-2 bg-slate-50 border rounded-lg space-y-1.5 text-xs">
+                    <div class="flex justify-between"><input type="text" value="${edu.degree}" oninput="resumeData.education[${idx}].degree=this.value; updateResume();" class="font-bold bg-transparent w-2/3 border-b"><button onclick="resumeData.education.splice(${idx},1); renderDynamicLists(); updateResume();" class="text-red-500"><i class="fa-solid fa-trash"></i></button></div>
+                    <div class="grid grid-cols-2 gap-1"><input type="text" value="${edu.school}" oninput="resumeData.education[${idx}].school=this.value; updateResume();" class="p-1 border rounded bg-white"><input type="text" value="${edu.duration}" oninput="resumeData.education[${idx}].duration=this.value; updateResume();" class="p-1 border rounded bg-white"></div>
+                </div>
+            `).join('');
+
+            document.getElementById('projects-list').innerHTML = resumeData.projects.map((proj, idx) => `
+                <div class="p-2 bg-slate-50 border rounded-lg space-y-1.5 text-xs">
+                    <div class="flex justify-between"><input type="text" value="${proj.title}" oninput="resumeData.projects[${idx}].title=this.value; updateResume();" class="font-bold bg-transparent w-2/3 border-b"><button onclick="resumeData.projects.splice(${idx},1); renderDynamicLists(); updateResume();" class="text-red-500"><i class="fa-solid fa-trash"></i></button></div>
+                    <textarea rows="2" oninput="resumeData.projects[${idx}].desc=this.value; updateResume();" class="w-full p-1 border rounded bg-white">${proj.desc}</textarea>
+                </div>
+            `).join('');
+        }
+
+        function addExperience() { resumeData.experiences.push({ role: 'New Role', company: 'Company', duration: 'Year', details: 'Responsibilities.' }); renderDynamicLists(); updateResume(); }
+        function addEducation() { resumeData.education.push({ degree: 'Degree', school: 'School/College', duration: 'Year' }); renderDynamicLists(); updateResume(); }
+        function addProject() { resumeData.projects.push({ title: 'Project Title', desc: 'Description.' }); renderDynamicLists(); updateResume(); }
+
+        function handlePhotoUpload(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    resumeData.photo = evt.target.result;
+                    document.getElementById('photo-preview').src = resumeData.photo;
+                    document.getElementById('photo-preview').classList.remove('hidden');
+                    document.getElementById('photo-placeholder').classList.add('hidden');
+                    updateResume();
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function removePhoto() {
+            resumeData.photo = '';
+            document.getElementById('photo-preview').src = '';
+            document.getElementById('photo-preview').classList.add('hidden');
+            document.getElementById('photo-placeholder').classList.remove('hidden');
+            updateResume();
+        }
+
         function changeLanguage(lang) {
             currentLang = lang;
             ['en', 'mr', 'hi', 'kn'].forEach(l => {
                 const btn = document.getElementById(`lang-${l}`);
-                btn.className = (l === lang) ? "px-1.5 py-1 text-[10px] rounded font-semibold bg-green-600 text-white" : "px-1.5 py-1 text-[10px] rounded font-semibold text-slate-300";
+                if (btn) btn.className = l === lang ? "px-1.5 py-1 text-[10px] rounded font-semibold bg-green-600 text-white" : "px-1.5 py-1 text-[10px] rounded font-semibold text-slate-300";
             });
 
             const t = i18n[lang];
@@ -465,6 +555,7 @@
             document.getElementById('t-tab-edu').innerText = t.tabEdu;
             document.getElementById('t-tab-skills').innerText = t.tabSkills;
             document.getElementById('t-tab-proj').innerText = t.tabProj;
+            
             document.getElementById('lbl-photo').innerText = t.lblPhoto;
             document.getElementById('btn-upload').innerText = t.btnUpload;
             document.getElementById('btn-remove').innerText = t.btnRemove;
@@ -483,59 +574,7 @@
             document.getElementById('lbl-live-preview').innerText = t.livePreview;
             document.getElementById('lbl-click-hint').innerHTML = `<i class="fa-solid fa-pen-to-square"></i> ${t.clickHint}`;
 
-            renderResumePreview();
-        }
-
-        function renderLayoutThumbnails() {
-            const container = document.getElementById('template-gallery-container');
-            container.innerHTML = '';
-            proLayouts.forEach(layout => {
-                let btn = document.createElement('button');
-                const isSelected = activeLayoutId === layout.id;
-                btn.className = `shrink-0 w-16 p-1 rounded border text-[9px] font-bold transition flex flex-col items-center gap-0.5 ${isSelected ? 'bg-slate-900 text-white border-slate-900 ring-1 ring-green-500' : 'bg-slate-50 hover:bg-slate-100 text-slate-700'}`;
-                btn.innerHTML = `<div class="w-full h-5 rounded-xs border flex flex-col overflow-hidden" style="background:${layout.light}"><div class="h-1.5 w-full" style="background:${layout.primary}"></div><div class="flex-grow bg-white"></div></div><span class="truncate w-full">${layout.name}</span>`;
-                btn.onclick = () => {
-                    activeLayoutId = layout.id;
-                    document.getElementById('active-template-badge').innerText = layout.name;
-                    renderLayoutThumbnails();
-                    renderResumePreview();
-                };
-                container.appendChild(btn);
-            });
-        }
-
-        function loadSelectedSample() {
-            const key = document.getElementById('sample-profile-select').value;
-            const sample = i18n[currentLang].samples[key];
-            if (sample) {
-                resumeData.fullname = sample.fullname;
-                resumeData.jobtitle = sample.jobtitle;
-                resumeData.location = sample.location;
-                resumeData.summary = sample.summary;
-                syncFormFields();
-                renderResumePreview();
-            }
-        }
-
-        function syncFormFields() {
-            document.getElementById('inp-fullname').value = resumeData.fullname;
-            document.getElementById('inp-jobtitle').value = resumeData.jobtitle;
-            document.getElementById('inp-email').value = resumeData.email;
-            document.getElementById('inp-phone').value = resumeData.phone;
-            document.getElementById('inp-location').value = resumeData.location;
-            document.getElementById('inp-linkedin').value = resumeData.linkedin;
-            document.getElementById('inp-summary').value = resumeData.summary;
-            document.getElementById('inp-skills').value = resumeData.skills.join(', ');
-            document.getElementById('inp-interests').value = resumeData.interests.join(', ');
-        }
-
-        function switchFormTab(tab) {
-            ['personal', 'experience', 'education', 'skills', 'more'].forEach(t => {
-                document.getElementById(`form-tab-${t}`).classList.add('hidden');
-                document.getElementById(`tab-btn-${t}`).className = "px-2.5 py-2.5 font-semibold text-slate-600 whitespace-nowrap";
-            });
-            document.getElementById(`form-tab-${tab}`).classList.remove('hidden');
-            document.getElementById(`tab-btn-${tab}`).className = "px-2.5 py-2.5 font-semibold border-b-2 border-green-600 text-green-600 whitespace-nowrap";
+            updateResume();
         }
 
         function updateResume() {
@@ -546,212 +585,192 @@
             resumeData.location = document.getElementById('inp-location').value;
             resumeData.linkedin = document.getElementById('inp-linkedin').value;
             resumeData.summary = document.getElementById('inp-summary').value;
-            resumeData.skills = document.getElementById('inp-skills').value.split(',').map(s => s.trim()).filter(Boolean);
-            resumeData.interests = document.getElementById('inp-interests').value.split(',').map(s => s.trim()).filter(Boolean);
+            
+            const rawSkills = document.getElementById('inp-skills').value;
+            if (rawSkills) resumeData.skills = rawSkills.split(',').map(s => s.trim()).filter(Boolean);
 
-            let langCheckboxes = document.querySelectorAll('.lang-chk');
-            resumeData.languages = Array.from(langCheckboxes).filter(c => c.checked).map(c => c.value);
+            const rawInterests = document.getElementById('inp-interests').value;
+            if (rawInterests) resumeData.interests = rawInterests.split(',').map(s => s.trim()).filter(Boolean);
 
-            calculateATS();
-            renderResumePreview();
+            const checkedLangs = [];
+            document.querySelectorAll('.lang-chk').forEach(chk => { if (chk.checked) checkedLangs.push(chk.value); });
+            resumeData.languages = checkedLangs;
+
+            renderRenderTarget();
         }
 
-        function handleInlineEdit(field, value, index = null, subField = null) {
-            const cleanText = value.trim();
-            if (index !== null && subField !== null) {
-                resumeData[field][index][subField] = cleanText;
-                renderFormLists();
-            } else if (field === 'skills' || field === 'interests') {
-                resumeData[field] = cleanText.split(',').map(s => s.trim()).filter(Boolean);
-                document.getElementById(`inp-${field}`).value = resumeData[field].join(', ');
-            } else {
-                resumeData[field] = cleanText;
-                const inputEl = document.getElementById(`inp-${field}`);
-                if (inputEl) inputEl.value = cleanText;
-            }
-            calculateATS();
-        }
-
-        function renderFormLists() {
-            const expContainer = document.getElementById('experience-list');
-            expContainer.innerHTML = '';
-            resumeData.experiences.forEach((exp, idx) => {
-                expContainer.innerHTML += `
-                    <div class="p-2.5 bg-slate-50 border rounded-lg space-y-1.5">
-                        <div class="flex justify-between"><span class="text-[11px] font-bold">#${idx+1}</span><button onclick="removeExperience(${idx})" class="text-red-600 text-[11px]"><i class="fa-solid fa-trash"></i></button></div>
-                        <input type="text" value="${exp.role}" oninput="resumeData.experiences[${idx}].role=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Role">
-                        <div class="grid grid-cols-2 gap-1.5">
-                            <input type="text" value="${exp.company}" oninput="resumeData.experiences[${idx}].company=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Company">
-                            <input type="text" value="${exp.duration}" oninput="resumeData.experiences[${idx}].duration=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Duration">
-                        </div>
-                        <textarea oninput="resumeData.experiences[${idx}].details=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Details">${exp.details}</textarea>
-                    </div>`;
-            });
-
-            const eduContainer = document.getElementById('education-list');
-            eduContainer.innerHTML = '';
-            resumeData.education.forEach((edu, idx) => {
-                eduContainer.innerHTML += `
-                    <div class="p-2.5 bg-slate-50 border rounded-lg space-y-1.5">
-                        <div class="flex justify-between"><span class="text-[11px] font-bold">#${idx+1}</span><button onclick="removeEducation(${idx})" class="text-red-600 text-[11px]"><i class="fa-solid fa-trash"></i></button></div>
-                        <input type="text" value="${edu.degree}" oninput="resumeData.education[${idx}].degree=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Degree">
-                        <div class="grid grid-cols-2 gap-1.5">
-                            <input type="text" value="${edu.school}" oninput="resumeData.education[${idx}].school=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="School">
-                            <input type="text" value="${edu.duration}" oninput="resumeData.education[${idx}].duration=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Year">
-                        </div>
-                    </div>`;
-            });
-
-            const projContainer = document.getElementById('projects-list');
-            projContainer.innerHTML = '';
-            resumeData.projects.forEach((proj, idx) => {
-                projContainer.innerHTML += `
-                    <div class="p-2.5 bg-slate-50 border rounded-lg space-y-1.5">
-                        <div class="flex justify-between"><span class="text-[11px] font-bold">#${idx+1}</span><button onclick="removeProject(${idx})" class="text-red-600 text-[11px]"><i class="fa-solid fa-trash"></i></button></div>
-                        <input type="text" value="${proj.title}" oninput="resumeData.projects[${idx}].title=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Title">
-                        <textarea oninput="resumeData.projects[${idx}].desc=this.value; renderResumePreview();" class="w-full text-xs p-1.5 border rounded" placeholder="Description">${proj.desc}</textarea>
-                    </div>`;
-            });
-        }
-
-        function addExperience() { resumeData.experiences.push({ role: 'Job Role', company: 'Company Name', duration: '2023 - Present', details: 'Key responsibilities...' }); renderFormLists(); renderResumePreview(); }
-        function removeExperience(idx) { resumeData.experiences.splice(idx, 1); renderFormLists(); renderResumePreview(); }
-        function addEducation() { resumeData.education.push({ degree: 'Degree', school: 'University', duration: '2020 - 2023' }); renderFormLists(); renderResumePreview(); }
-        function removeEducation(idx) { resumeData.education.splice(idx, 1); renderFormLists(); renderResumePreview(); }
-        function addProject() { resumeData.projects.push({ title: 'Project Title', desc: 'Brief description...' }); renderFormLists(); renderResumePreview(); }
-        function removeProject(idx) { resumeData.projects.splice(idx, 1); renderFormLists(); renderResumePreview(); }
-
-        function handlePhotoUpload(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(evt) {
-                    resumeData.photo = evt.target.result;
-                    document.getElementById('photo-preview').src = resumeData.photo;
-                    document.getElementById('photo-preview').classList.remove('hidden');
-                    document.getElementById('photo-placeholder').classList.add('hidden');
-                    renderResumePreview();
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function removePhoto() {
-            resumeData.photo = '';
-            document.getElementById('photo-preview').src = '';
-            document.getElementById('photo-preview').classList.add('hidden');
-            document.getElementById('photo-placeholder').classList.remove('hidden');
-            renderResumePreview();
-        }
-
-        function calculateATS() {
-            let score = 40;
-            if (resumeData.fullname) score += 10;
-            if (resumeData.email && resumeData.phone) score += 15;
-            if (resumeData.summary.length > 25) score += 15;
-            if (resumeData.experiences.length > 0) score += 10;
-            if (resumeData.skills.length >= 3) score += 10;
-            document.getElementById('ats-score-badge').innerText = `${score}%`;
-            document.getElementById('ats-progress-bar').style.width = `${score}%`;
-        }
-
-        function renderResumePreview() {
+        function renderRenderTarget() {
             const target = document.getElementById('resume-render-target');
-            const theme = proLayouts.find(l => l.id === activeLayoutId) || proLayouts[0];
+            const l = proLayouts.find(item => item.id === activeLayoutId) || proLayouts[0];
             const t = i18n[currentLang];
 
-            const initials = resumeData.fullname.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'RK';
-            const circlePhoto = resumeData.photo
-                ? `<img src="${resumeData.photo}" class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md shrink-0" />`
-                : `<div class="w-24 h-24 rounded-full bg-slate-200 border-4 border-white shadow-md flex items-center justify-center text-slate-700 font-black text-2xl shrink-0">${initials}</div>`;
+            const photoHTML = resumeData.photo 
+                ? `<div class="w-20 h-20 rounded-full border-2 border-white shadow-md overflow-hidden shrink-0"><img src="${resumeData.photo}" class="w-full h-full object-cover"></div>` 
+                : '';
 
-            const expHtml = (accentColor = theme.accent) => resumeData.experiences.map((e, i) => `
-                <div class="mb-4">
-                    <div class="font-extrabold text-sm text-slate-900" contenteditable="true" onblur="handleInlineEdit('experiences', this.innerText, ${i}, 'role')">${e.role}</div>
-                    <div class="text-xs font-semibold text-slate-700" contenteditable="true" onblur="handleInlineEdit('experiences', this.innerText, ${i}, 'company')">${e.company}</div>
-                    <div class="text-[11px] italic mb-1" style="color: ${accentColor}" contenteditable="true" onblur="handleInlineEdit('experiences', this.innerText, ${i}, 'duration')">${e.duration}</div>
-                    <p class="text-xs text-slate-700 leading-relaxed flex items-start gap-1.5"><span style="color: ${accentColor}">▸</span><span contenteditable="true" onblur="handleInlineEdit('experiences', this.innerText, ${i}, 'details')">${e.details}</span></p>
-                </div>`).join('');
+            let html = '';
 
-            const eduHtml = (accentColor = theme.accent) => resumeData.education.map((ed, i) => `
-                <div class="mb-3">
-                    <div class="font-extrabold text-xs text-slate-900" contenteditable="true" onblur="handleInlineEdit('education', this.innerText, ${i}, 'degree')">${ed.degree}</div>
-                    <div class="text-xs text-slate-700" contenteditable="true" onblur="handleInlineEdit('education', this.innerText, ${i}, 'school')">${ed.school}</div>
-                    <div class="text-[11px] italic" style="color: ${accentColor}" contenteditable="true" onblur="handleInlineEdit('education', this.innerText, ${i}, 'duration')">${ed.duration}</div>
-                </div>`).join('');
+            if (activeLayoutId === 1 || activeLayoutId === 2 || activeLayoutId === 3) {
+                html = `
+                    <div class="p-8 font-sans text-slate-800 bg-white" style="min-height:297mm; display:flex; flex-direction:column; justify-content:space-between;">
+                        <div>
+                            <div class="flex items-center gap-4 pb-6 border-b-2" style="border-color:${l.primary};">
+                                ${photoHTML}
+                                <div class="flex-grow">
+                                    <h1 contenteditable="true" onblur="resumeData.fullname=this.innerText" class="text-2xl font-black uppercase tracking-wide" style="color:${l.primary};">${resumeData.fullname}</h1>
+                                    <p contenteditable="true" onblur="resumeData.jobtitle=this.innerText" class="text-sm font-bold text-slate-600 mt-0.5">${resumeData.jobtitle}</p>
+                                    <div class="flex flex-wrap gap-3 text-[11px] text-slate-500 mt-2">
+                                        <span><i class="fa-solid fa-envelope mr-1 text-green-600"></i>${resumeData.email}</span>
+                                        <span><i class="fa-solid fa-phone mr-1 text-green-600"></i>${resumeData.phone}</span>
+                                        <span><i class="fa-solid fa-location-dot mr-1 text-green-600"></i>${resumeData.location}</span>
+                                        <span><i class="fa-solid fa-globe mr-1 text-green-600"></i>${resumeData.linkedin}</span>
+                                    </div>
+                                </div>
+                            </div>
 
-            const projHtml = (accentColor = theme.accent) => resumeData.projects.map((p, i) => `
-                <div class="mb-3">
-                    <div class="font-bold text-xs text-slate-900" contenteditable="true" onblur="handleInlineEdit('projects', this.innerText, ${i}, 'title')">${p.title}</div>
-                    <p class="text-xs text-slate-700 leading-relaxed flex items-start gap-1.5"><span style="color: ${accentColor}">▸</span><span contenteditable="true" onblur="handleInlineEdit('projects', this.innerText, ${i}, 'desc')">${p.desc}</span></p>
-                </div>`).join('');
+                            <div class="mt-4">
+                                <h3 class="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded text-white inline-block mb-1.5" style="background:${l.primary};">${t.secExp}</h3>
+                                <p contenteditable="true" onblur="resumeData.summary=this.innerText" class="text-xs text-slate-700 leading-relaxed mb-4 p-2 bg-slate-50 rounded border border-slate-100">${resumeData.summary}</p>
+                                
+                                <div class="space-y-3">
+                                    ${resumeData.experiences.map(e => `
+                                        <div class="border-l-2 pl-3 py-0.5" style="border-color:${l.accent};">
+                                            <div class="flex justify-between font-bold text-xs"><span>${e.role} • ${e.company}</span><span class="text-[11px] text-slate-500">${e.duration}</span></div>
+                                            <p class="text-[11px] text-slate-600 mt-0.5">${e.details}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
 
-            // --- 8 DISTINCT PRO LAYOUTS ---
-            if (activeLayoutId === 1) {
-                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans flex flex-col justify-between"><div><div class="grid grid-cols-12 pt-6 pr-8 items-center"><div class="col-span-7 text-white p-6 rounded-r-2xl relative flex items-center justify-between gap-4" style="background-color: ${theme.dark}"><div class="space-y-1.5 pr-10"><h1 contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)" class="text-2xl font-bold">${resumeData.fullname}</h1><p contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)" class="text-xs font-semibold" style="color: ${theme.accent}">${resumeData.jobtitle}</p><p contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)" class="text-[11px] leading-relaxed opacity-90 pt-1">${resumeData.summary}</p></div><div class="-mr-16 z-10">${circlePhoto}</div></div><div class="col-span-5 pl-16 space-y-2 text-right text-xs text-slate-700"><p><span contenteditable="true" onblur="handleInlineEdit('email', this.innerText)">${resumeData.email}</span> <i class="fa-solid fa-envelope ml-1.5 p-1 rounded text-white text-[10px]" style="background:${theme.dark}"></i></p><p><span contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)">${resumeData.phone}</span> <i class="fa-solid fa-mobile-screen ml-1.5 p-1 rounded text-white text-[10px]" style="background:${theme.dark}"></i></p><p><span contenteditable="true" onblur="handleInlineEdit('location', this.innerText)">${resumeData.location}</span> <i class="fa-solid fa-location-dot ml-1.5 p-1 rounded text-white text-[10px]" style="background:${theme.dark}"></i></p><p><span contenteditable="true" onblur="handleInlineEdit('linkedin', this.innerText)">${resumeData.linkedin}</span> <i class="fa-solid fa-globe ml-1.5 p-1 rounded text-white text-[10px]" style="background:${theme.dark}"></i></p></div></div><div class="grid grid-cols-12 mt-6"><div class="col-span-6 p-8 space-y-6"><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3" style="color: ${theme.dark}">${t.secExp}</h2>${expHtml(theme.accent)}</div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3" style="color: ${theme.dark}">${t.secEdu}</h2>${eduHtml(theme.accent)}</div></div><div class="col-span-6 bg-slate-100 p-8 space-y-6"><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3" style="color: ${theme.dark}">${t.secSkills}</h2><div contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)" class="grid grid-cols-2 gap-1.5 text-xs text-slate-800">${resumeData.skills.map(s => `<div>• ${s}</div>`).join('')}</div></div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3" style="color: ${theme.dark}">${t.secProj}</h2>${projHtml(theme.accent)}</div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-2" style="color: ${theme.dark}">${t.secLang}</h2><p class="text-xs text-slate-800">${resumeData.languages.join('  •  ')}</p></div></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 1. Combined Layout</div></div>`;
-            } else if (activeLayoutId === 2) {
-                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans p-8 flex flex-col justify-between"><div><div class="text-center pb-6 border-b-2 space-y-2" style="border-color:${theme.primary}"><div class="flex justify-center mb-2">${circlePhoto}</div><h1 class="text-3xl font-black text-slate-900" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-xs font-bold uppercase tracking-widest" style="color:${theme.accent}" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">${resumeData.jobtitle}</p><p class="text-xs text-slate-600 max-w-lg mx-auto" contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p><div class="flex justify-center gap-4 text-[11px] text-slate-700 pt-1"><span contenteditable="true" onblur="handleInlineEdit('email', this.innerText)"><i class="fa-solid fa-envelope mr-1"></i>${resumeData.email}</span><span contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)"><i class="fa-solid fa-phone mr-1"></i>${resumeData.phone}</span><span contenteditable="true" onblur="handleInlineEdit('location', this.innerText)"><i class="fa-solid fa-location-dot mr-1"></i>${resumeData.location}</span></div></div><div class="grid grid-cols-12 gap-8 mt-6"><div class="col-span-7 space-y-6"><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 text-slate-900 border-b pb-1" style="color:${theme.primary}">${t.secExp}</h2>${expHtml(theme.accent)}</div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 text-slate-900 border-b pb-1" style="color:${theme.primary}">${t.secEdu}</h2>${eduHtml(theme.accent)}</div></div><div class="col-span-5 space-y-6 bg-slate-50 p-4 rounded-xl"><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 text-slate-900" style="color:${theme.primary}">${t.secSkills}</h2><div class="flex flex-wrap gap-1" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.map(s => `<span class="bg-white border px-2 py-0.5 rounded text-[10px] font-medium">${s}</span>`).join('')}</div></div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 text-slate-900" style="color:${theme.primary}">${t.secProj}</h2>${projHtml(theme.accent)}</div></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 2. General Corporate</div></div>`;
-            } else if (activeLayoutId === 3) {
-                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans p-8 flex flex-col justify-between"><div><div class="p-6 rounded-2xl text-white shadow-lg space-y-2" style="background: linear-gradient(135deg, ${theme.primary}, ${theme.dark})"><h1 class="text-2xl font-black" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-xs font-semibold" style="color:${theme.accent}" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">${resumeData.jobtitle}</p><p class="text-[11px] opacity-90 leading-relaxed" contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p></div><div class="grid grid-cols-12 gap-6 mt-6"><div class="col-span-4 space-y-6"><div class="p-4 rounded-xl border bg-slate-50"><h2 class="text-xs font-bold uppercase mb-2" style="color:${theme.primary}">${t.secSkills}</h2><div class="text-xs space-y-1" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.map(s => `<div>• ${s}</div>`).join('')}</div></div><div class="p-4 rounded-xl border bg-slate-50"><h2 class="text-xs font-bold uppercase mb-2" style="color:${theme.primary}">${t.secLang}</h2><p class="text-xs">${resumeData.languages.join(', ')}</p></div></div><div class="col-span-8 space-y-6"><div><h2 class="text-xs font-bold uppercase mb-3 border-b pb-1" style="color:${theme.primary}">${t.secExp}</h2>${expHtml(theme.accent)}</div><div><h2 class="text-xs font-bold uppercase mb-3 border-b pb-1" style="color:${theme.primary}">${t.secEdu}</h2>${eduHtml(theme.accent)}</div></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 3. Hybrid Layout</div></div>`;
-            } else if (activeLayoutId === 4) {
-                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans p-8 flex flex-col justify-between"><div><div class="p-5 rounded-lg text-white font-mono space-y-2 shadow" style="background:#0f172a"><div class="flex items-center gap-2 text-xs text-green-400"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span><span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span><span class="w-2.5 h-2.5 rounded-full bg-green-500"></span> root@resumerk:~# profile.sh</div><h1 class="text-2xl font-bold text-white" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-xs text-cyan-400 font-semibold" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">// ${resumeData.jobtitle}</p></div><div class="grid grid-cols-12 gap-6 mt-6"><div class="col-span-8 space-y-6"><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 text-slate-900 border-l-4 pl-2" style="border-color:${theme.primary}">${t.secExp}</h2>${expHtml(theme.accent)}</div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 text-slate-900 border-l-4 pl-2" style="border-color:${theme.primary}">${t.secProj}</h2>${projHtml(theme.accent)}</div></div><div class="col-span-4 space-y-6"><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 text-slate-900">${t.secSkills}</h2><div class="flex flex-wrap gap-1" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.map(s => `<span class="bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded">${s}</span>`).join('')}</div></div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-2 text-slate-900">${t.secEdu}</h2>${eduHtml(theme.accent)}</div></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 4. IT/DevOps Layout</div></div>`;
-            } else if (activeLayoutId === 5) {
-                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans p-10 flex flex-col justify-between"><div class="space-y-6"><div class="space-y-1"><h1 class="text-4xl font-extrabold tracking-tight text-slate-900" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-sm font-medium uppercase tracking-widest text-slate-500" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">${resumeData.jobtitle}</p><p class="text-xs text-slate-600 pt-2" contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p></div><div class="grid grid-cols-3 gap-4 py-3 border-y text-xs text-slate-700"><div><strong class="text-slate-900">Email:</strong> <span contenteditable="true" onblur="handleInlineEdit('email', this.innerText)">${resumeData.email}</span></div><div><strong class="text-slate-900">Phone:</strong> <span contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)">${resumeData.phone}</span></div><div><strong class="text-slate-900">Location:</strong> <span contenteditable="true" onblur="handleInlineEdit('location', this.innerText)">${resumeData.location}</span></div></div><div class="space-y-6"><div><h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">${t.secExp}</h2>${expHtml(theme.primary)}</div><div><h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">${t.secEdu}</h2>${eduHtml(theme.primary)}</div><div><h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">${t.secSkills}</h2><p class="text-xs text-slate-800" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.join(' • ')}</p></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 5. Minimalist Clean</div></div>`;
-            } else if (activeLayoutId === 6) {
-                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans flex flex-col justify-between"><div class="grid grid-cols-12 min-h-[297mm]"><div class="col-span-4 p-6 text-white space-y-6 flex flex-col justify-between" style="background-color: ${theme.dark}"><div class="space-y-6"><div class="text-center">${circlePhoto}</div><div><h2 class="text-xs font-extrabold uppercase tracking-wider pb-1 mb-2 border-b border-white/20" style="color:${theme.accent}">Contact</h2><div class="space-y-2 text-[11px] opacity-90"><p><i class="fa-solid fa-envelope mr-1.5"></i><span contenteditable="true" onblur="handleInlineEdit('email', this.innerText)">${resumeData.email}</span></p><p><i class="fa-solid fa-phone mr-1.5"></i><span contenteditable="true" onblur="handleInlineEdit('phone', this.innerText)">${resumeData.phone}</span></p><p><i class="fa-solid fa-location-dot mr-1.5"></i><span contenteditable="true" onblur="handleInlineEdit('location', this.innerText)">${resumeData.location}</span></p></div></div><div><h2 class="text-xs font-extrabold uppercase tracking-wider pb-1 mb-2 border-b border-white/20" style="color:${theme.accent}">${t.secSkills}</h2><div class="text-[11px] space-y-1" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.map(s => `<div>• ${s}</div>`).join('')}</div></div></div><div class="text-[9px] opacity-60 text-center">Resume.RK Sidebar Pro</div></div><div class="col-span-8 p-8 space-y-6"><div><h1 class="text-3xl font-black text-slate-900" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-sm font-bold mt-1" style="color:${theme.primary}" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">${resumeData.jobtitle}</p><p class="text-xs text-slate-600 mt-2 leading-relaxed" contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p></div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 pb-1 border-b" style="color:${theme.primary}">${t.secExp}</h2>${expHtml(theme.accent)}</div><div><h2 class="text-xs font-extrabold uppercase tracking-wider mb-3 pb-1 border-b" style="color:${theme.primary}">${t.secEdu}</h2>${eduHtml(theme.accent)}</div></div></div></div>`;
-            } else if (activeLayoutId === 7) {
-                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans p-8 flex flex-col justify-between" style="background:#fff7ed"><div class="space-y-6"><div class="p-6 bg-white rounded-2xl border border-orange-200 shadow-sm flex items-center gap-6"><div>${circlePhoto}</div><div class="space-y-1"><h1 class="text-2xl font-extrabold text-slate-900" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-xs font-bold text-orange-600" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">${resumeData.jobtitle}</p><p class="text-xs text-slate-600" contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p></div></div><div class="grid grid-cols-12 gap-6"><div class="col-span-7 space-y-4"><div class="p-5 bg-white rounded-xl border border-orange-100 shadow-sm"><h2 class="text-xs font-bold uppercase text-orange-800 mb-3 border-b pb-1">${t.secExp}</h2>${expHtml('#ea580c')}</div></div><div class="col-span-5 space-y-4"><div class="p-5 bg-white rounded-xl border border-orange-100 shadow-sm"><h2 class="text-xs font-bold uppercase text-orange-800 mb-2">${t.secSkills}</h2><div class="flex flex-wrap gap-1" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.map(s => `<span class="bg-orange-50 text-orange-900 border border-orange-200 text-[10px] px-2 py-0.5 rounded font-semibold">${s}</span>`).join('')}</div></div><div class="p-5 bg-white rounded-xl border border-orange-100 shadow-sm"><h2 class="text-xs font-bold uppercase text-orange-800 mb-2">${t.secEdu}</h2>${eduHtml('#ea580c')}</div></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 7. Tech Bars Cards</div></div>`;
+                            <div class="mt-5">
+                                <h3 class="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded text-white inline-block mb-2" style="background:${l.primary};">${t.secEdu}</h3>
+                                <div class="space-y-2">
+                                    ${resumeData.education.map(ed => `
+                                        <div class="flex justify-between text-xs border-b pb-1 border-slate-100">
+                                            <div><span class="font-bold">${ed.degree}</span> - <span class="text-slate-600">${ed.school}</span></div>
+                                            <span class="text-[11px] text-slate-500">${ed.duration}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+
+                            <div class="mt-5">
+                                <h3 class="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded text-white inline-block mb-2" style="background:${l.primary};">${t.secProj}</h3>
+                                <div class="space-y-2">
+                                    ${resumeData.projects.map(p => `
+                                        <div class="text-xs"><span class="font-bold">${p.title}:</span> <span class="text-slate-600">${p.desc}</span></div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-4 border-t border-slate-200 grid grid-cols-2 gap-4 text-xs">
+                            <div>
+                                <h4 class="font-bold uppercase tracking-wider text-[11px] mb-1" style="color:${l.primary};">${t.secSkills}</h4>
+                                <div class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-100 px-2 py-0.5 rounded text-[10px] font-medium">${s}</span>`).join('')}</div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold uppercase tracking-wider text-[11px] mb-1" style="color:${l.primary};">${t.secLang}</h4>
+                                <p class="text-[11px] text-slate-600">${resumeData.languages.join(', ')}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
             } else {
-                target.innerHTML = `<div class="min-h-[297mm] bg-white font-sans p-8 flex flex-col justify-between" style="background:#faf5ff"><div class="space-y-6"><div class="p-8 rounded-2xl text-white text-center space-y-3 shadow-xl" style="background: linear-gradient(135deg, #581c87, #3b0764)"><h1 class="text-3xl font-black tracking-wide" contenteditable="true" onblur="handleInlineEdit('fullname', this.innerText)">${resumeData.fullname}</h1><p class="text-xs font-semibold tracking-widest uppercase text-purple-300" contenteditable="true" onblur="handleInlineEdit('jobtitle', this.innerText)">${resumeData.jobtitle}</p><p class="text-xs text-purple-100 max-w-xl mx-auto leading-relaxed" contenteditable="true" onblur="handleInlineEdit('summary', this.innerText)">${resumeData.summary}</p></div><div class="grid grid-cols-12 gap-6"><div class="col-span-8 space-y-5"><div class="p-6 bg-white rounded-xl border border-purple-100 shadow-xs"><h2 class="text-xs font-bold uppercase text-purple-900 mb-3 border-b pb-1">${t.secExp}</h2>${expHtml('#9333ea')}</div></div><div class="col-span-4 space-y-5"><div class="p-6 bg-white rounded-xl border border-purple-100 shadow-xs"><h2 class="text-xs font-bold uppercase text-purple-900 mb-2">${t.secSkills}</h2><div class="text-xs space-y-1" contenteditable="true" onblur="handleInlineEdit('skills', this.innerText)">${resumeData.skills.map(s => `<div>• ${s}</div>`).join('')}</div></div><div class="p-6 bg-white rounded-xl border border-purple-100 shadow-xs"><h2 class="text-xs font-bold uppercase text-purple-900 mb-2">${t.secEdu}</h2>${eduHtml('#9333ea')}</div></div></div></div><div class="text-[9px] text-center text-slate-400 py-4 border-t">Resume.RK • 8. Executive Banner</div></div>`;
+                html = `
+                    <div class="p-8 font-sans text-slate-800 bg-white grid grid-cols-12 gap-6" style="min-height:297mm;">
+                        <div class="col-span-4 p-4 rounded-xl text-white space-y-6" style="background:${l.dark};">
+                            ${photoHTML}
+                            <div>
+                                <h1 class="text-xl font-black">${resumeData.fullname}</h1>
+                                <p class="text-xs text-green-400 mt-0.5">${resumeData.jobtitle}</p>
+                            </div>
+                            <div class="space-y-2 text-[11px] opacity-90">
+                                <div><i class="fa-solid fa-envelope mr-1"></i>${resumeData.email}</div>
+                                <div><i class="fa-solid fa-phone mr-1"></i>${resumeData.phone}</div>
+                                <div><i class="fa-solid fa-location-dot mr-1"></i>${resumeData.location}</div>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider border-b border-slate-700 pb-1 mb-2 text-green-400">${t.secSkills}</h3>
+                                <div class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-800 px-2 py-0.5 rounded text-[10px]">${s}</span>`).join('')}</div>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider border-b border-slate-700 pb-1 mb-2 text-green-400">${t.secLang}</h3>
+                                <p class="text-[11px]">${resumeData.languages.join(', ')}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-span-8 space-y-6">
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1 mb-2" style="border-color:${l.primary};">${t.secExp}</h3>
+                                <p class="text-xs text-slate-700 mb-4">${resumeData.summary}</p>
+                                <div class="space-y-3">
+                                    ${resumeData.experiences.map(e => `
+                                        <div>
+                                            <div class="flex justify-between font-bold text-xs"><span>${e.role} (${e.company})</span><span class="text-[11px] text-slate-500">${e.duration}</span></div>
+                                            <p class="text-[11px] text-slate-600 mt-0.5">${e.details}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1 mb-2" style="border-color:${l.primary};">${t.secEdu}</h3>
+                                <div class="space-y-2">
+                                    ${resumeData.education.map(ed => `
+                                        <div class="flex justify-between text-xs">
+                                            <div><span class="font-bold">${ed.degree}</span> - ${ed.school}</div>
+                                            <span class="text-[11px] text-slate-500">${ed.duration}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
             }
+
+            target.innerHTML = html;
         }
 
         function zoomResume(dir) {
-            zoomLevel += dir * 0.1;
-            if (zoomLevel < 0.35) zoomLevel = 0.35;
-            if (zoomLevel > 1.3) zoomLevel = 1.3;
-            const previewEl = document.getElementById('resume-preview-container');
-            const wrapper = document.getElementById('preview-wrapper');
-            previewEl.style.transform = `scale(${zoomLevel})`;
-            wrapper.style.height = `${1123 * zoomLevel + 24}px`;
+            zoomLevel = Math.max(0.4, Math.min(1.4, zoomLevel + (dir * 0.1)));
+            document.getElementById('resume-preview-container').style.transform = `scale(${zoomLevel})`;
         }
 
-        function resetZoom() { calculateAutoScale(); }
+        function resetZoom() {
+            zoomLevel = 1;
+            document.getElementById('resume-preview-container').style.transform = `scale(1)`;
+        }
 
-        // 10 SECONDS DOWNLOAD TIMER & MONETAG VIGNETTE AD INTEGRATION
+        // Montag Ad Timer & PDF Download Trigger
         function triggerExportWithAdTimer() {
-            let modal = document.getElementById('ad-timer-modal');
+            const modal = document.getElementById('ad-timer-modal');
             modal.classList.remove('hidden');
-            
-            // Monetag Vignette Ad script execution on download trigger
-            try {
-                (function(s){s.dataset.zone='12266419',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
-            } catch(e) {
-                console.log("Ad load error", e);
-            }
+            let timeLeft = 5;
+            document.getElementById('timer-countdown').innerText = `Downloading in ${timeLeft}s...`;
 
-            let count = 10; // १० सेकंदाचा टायमर सेट केला आहे
-            let counterEl = document.getElementById('timer-countdown');
-            counterEl.innerText = `Downloading in ${count}s...`;
-            
-            let interval = setInterval(() => {
-                count--;
-                if (count > 0) {
-                    counterEl.innerText = `Downloading in ${count}s...`;
+            if (adCountdownInterval) clearInterval(adCountdownInterval);
+
+            adCountdownInterval = setInterval(() => {
+                timeLeft--;
+                if (timeLeft > 0) {
+                    document.getElementById('timer-countdown').innerText = `Downloading in ${timeLeft}s...`;
                 } else {
-                    clearInterval(interval);
-                    modal.classList.add('hidden');
-                    
-                    // ॲड पूर्ण लोड होण्यासाठी आणि दिसाण्यासाठी अर्धा सेकंद थांबून प्रिंट विंडो उघडेल
-                    setTimeout(() => {
-                        window.print();
-                    }, 500);
+                    clearInterval(adCountdownInterval);
+                    closeAdModal();
+                    window.print(); // Triggers browser native PDF print/save
                 }
             }, 1000);
         }
 
         function closeAdModal() {
+            if (adCountdownInterval) clearInterval(adCountdownInterval);
             document.getElementById('ad-timer-modal').classList.add('hidden');
+        }
+
+        // Initial Load
+        window.onload = function() {
+            loadSampleData('all');
         }
     </script>
 </body>
