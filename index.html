@@ -282,9 +282,9 @@
             <h3 class="text-base font-bold">Preparing Your PDF</h3>
             <p class="text-xs text-slate-600">Please watch this quick sponsored content while we generate your A4 PDF...</p>
 
-            <!-- Monetag Ad Container & Script Injector -->
+            <!-- Monetag Ad Container & Dynamic Script Injector -->
             <div id="montag-ad-container" class="my-2 min-h-[70px] flex items-center justify-center bg-slate-50 border rounded text-[11px] text-slate-400 p-2 overflow-hidden">
-                <!-- तुमची मोनोटॅग जाहिरात स्क्रिप्ट येथे ॲक्टिव्ह होईल -->
+                <span class="text-slate-400 text-[10px]">Sponsored Ad</span>
             </div>
 
             <div class="text-sm font-black text-green-600 py-2" id="timer-countdown">Downloading in 10s...</div>
@@ -424,7 +424,6 @@
             }
         };
 
-        // लहान आकाराचे टेम्पलेट थंबनेल
         function getLayoutThumbnailHTML(l) {
             return `
                 <div class="h-10 rounded bg-white border border-slate-200 p-1 mb-1 flex flex-col justify-between overflow-hidden shadow-inner" style="border-top: 2px solid ${l.primary};">
@@ -651,6 +650,7 @@
             applyPreviewScale();
         }
 
+        // सर्व ८ लेआउट्समध्ये प्रत्यक्ष लाइव्ह एडिट सक्षम करणारी रेंडर प्रणाली
         function renderRenderTarget() {
             const target = document.getElementById('resume-render-target');
             const l = proLayouts.find(item => item.id === activeLayoutId) || proLayouts[0];
@@ -669,24 +669,24 @@
                             <div class="flex items-center gap-4 pb-6 border-b-2" style="border-color:${l.primary};">
                                 ${photoHTML}
                                 <div class="flex-grow">
-                                    <h1 contenteditable="true" onblur="resumeData.fullname=this.innerText" class="text-2xl font-black uppercase tracking-wide" style="color:${l.primary};">${resumeData.fullname}</h1>
-                                    <p contenteditable="true" onblur="resumeData.jobtitle=this.innerText" class="text-sm font-bold text-slate-600 mt-0.5">${resumeData.jobtitle}</p>
+                                    <h1 contenteditable="true" onblur="resumeData.fullname=this.innerText; document.getElementById('inp-fullname').value=this.innerText;" class="text-2xl font-black uppercase tracking-wide" style="color:${l.primary};">${resumeData.fullname}</h1>
+                                    <p contenteditable="true" onblur="resumeData.jobtitle=this.innerText; document.getElementById('inp-jobtitle').value=this.innerText;" class="text-sm font-bold text-slate-600 mt-0.5">${resumeData.jobtitle}</p>
                                     <div class="flex flex-wrap gap-3 text-[11px] text-slate-500 mt-2">
-                                        <span><i class="fa-solid fa-envelope mr-1 text-green-600"></i>${resumeData.email}</span>
-                                        <span><i class="fa-solid fa-phone mr-1 text-green-600"></i>${resumeData.phone}</span>
-                                        <span><i class="fa-solid fa-location-dot mr-1 text-green-600"></i>${resumeData.location}</span>
-                                        <span><i class="fa-solid fa-globe mr-1 text-green-600"></i>${resumeData.linkedin}</span>
+                                        <span contenteditable="true" onblur="resumeData.email=this.innerText"><i class="fa-solid fa-envelope mr-1 text-green-600"></i>${resumeData.email}</span>
+                                        <span contenteditable="true" onblur="resumeData.phone=this.innerText"><i class="fa-solid fa-phone mr-1 text-green-600"></i>${resumeData.phone}</span>
+                                        <span contenteditable="true" onblur="resumeData.location=this.innerText"><i class="fa-solid fa-location-dot mr-1 text-green-600"></i>${resumeData.location}</span>
+                                        <span contenteditable="true" onblur="resumeData.linkedin=this.innerText"><i class="fa-solid fa-globe mr-1 text-green-600"></i>${resumeData.linkedin}</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-4">
                                 <h3 class="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded text-white inline-block mb-1.5" style="background:${l.primary};">${t.secExp}</h3>
-                                <p contenteditable="true" onblur="resumeData.summary=this.innerText" class="text-xs text-slate-700 leading-relaxed mb-4 p-2 bg-slate-50 rounded border border-slate-100">${resumeData.summary}</p>
+                                <p contenteditable="true" onblur="resumeData.summary=this.innerText; document.getElementById('inp-summary').value=this.innerText;" class="text-xs text-slate-700 leading-relaxed mb-4 p-2 bg-slate-50 rounded border border-slate-100">${resumeData.summary}</p>
                                 <div class="space-y-3">
-                                    ${resumeData.experiences.map(e => `
+                                    ${resumeData.experiences.map((e, idx) => `
                                         <div class="border-l-2 pl-3 py-0.5" style="border-color:${l.accent};">
-                                            <div class="flex justify-between font-bold text-xs"><span>${e.role} • ${e.company}</span><span class="text-[11px] text-slate-500">${e.duration}</span></div>
-                                            <p class="text-[11px] text-slate-600 mt-0.5">${e.details}</p>
+                                            <div class="flex justify-between font-bold text-xs"><span contenteditable="true" onblur="resumeData.experiences[${idx}].role=this.innerText">${e.role}</span> • <span contenteditable="true" onblur="resumeData.experiences[${idx}].company=this.innerText">${e.company}</span><span contenteditable="true" onblur="resumeData.experiences[${idx}].duration=this.innerText" class="text-[11px] text-slate-500">${e.duration}</span></div>
+                                            <p contenteditable="true" onblur="resumeData.experiences[${idx}].details=this.innerText" class="text-[11px] text-slate-600 mt-0.5">${e.details}</p>
                                         </div>
                                     `).join('')}
                                 </div>
@@ -694,10 +694,10 @@
                             <div class="mt-5">
                                 <h3 class="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded text-white inline-block mb-2" style="background:${l.primary};">${t.secEdu}</h3>
                                 <div class="space-y-2">
-                                    ${resumeData.education.map(ed => `
+                                    ${resumeData.education.map((ed, idx) => `
                                         <div class="flex justify-between text-xs border-b pb-1 border-slate-100">
-                                            <div><span class="font-bold">${ed.degree}</span> - <span class="text-slate-600">${ed.school}</span></div>
-                                            <span class="text-[11px] text-slate-500">${ed.duration}</span>
+                                            <div><span contenteditable="true" onblur="resumeData.education[${idx}].degree=this.innerText" class="font-bold">${ed.degree}</span> - <span contenteditable="true" onblur="resumeData.education[${idx}].school=this.innerText" class="text-slate-600">${ed.school}</span></div>
+                                            <span contenteditable="true" onblur="resumeData.education[${idx}].duration=this.innerText" class="text-[11px] text-slate-500">${ed.duration}</span>
                                         </div>
                                     `).join('')}
                                 </div>
@@ -705,8 +705,8 @@
                             <div class="mt-5">
                                 <h3 class="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded text-white inline-block mb-2" style="background:${l.primary};">${t.secProj}</h3>
                                 <div class="space-y-2">
-                                    ${resumeData.projects.map(p => `
-                                        <div class="text-xs"><span class="font-bold">${p.title}:</span> <span class="text-slate-600">${p.desc}</span></div>
+                                    ${resumeData.projects.map((p, idx) => `
+                                        <div class="text-xs"><span contenteditable="true" onblur="resumeData.projects[${idx}].title=this.innerText" class="font-bold">${p.title}:</span> <span contenteditable="true" onblur="resumeData.projects[${idx}].desc=this.innerText" class="text-slate-600">${p.desc}</span></div>
                                     `).join('')}
                                 </div>
                             </div>
@@ -714,7 +714,7 @@
                         <div class="mt-8 pt-4 border-t border-slate-200 grid grid-cols-2 gap-4 text-xs">
                             <div>
                                 <h4 class="font-bold uppercase tracking-wider text-[11px] mb-1" style="color:${l.primary};">${t.secSkills}</h4>
-                                <div class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-100 px-2 py-0.5 rounded text-[10px] font-medium">${s}</span>`).join('')}</div>
+                                <div contenteditable="true" onblur="resumeData.skills=this.innerText.split(',').map(s=>s.trim()); document.getElementById('inp-skills').value=this.innerText;" class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-100 px-2 py-0.5 rounded text-[10px] font-medium">${s}</span>`).join('')}</div>
                             </div>
                             <div>
                                 <h4 class="font-bold uppercase tracking-wider text-[11px] mb-1" style="color:${l.primary};">${t.secLang}</h4>
@@ -728,34 +728,34 @@
                     <div class="p-8 font-sans text-slate-800 bg-white" style="min-height:297mm;">
                         <div class="text-center pb-6 border-b border-slate-300">
                             ${resumeData.photo ? `<div class="w-20 h-20 rounded-full mx-auto mb-3 border-2 overflow-hidden shadow"><img src="${resumeData.photo}" class="w-full h-full object-cover"></div>` : ''}
-                            <h1 class="text-3xl font-bold tracking-tight" style="color:${l.primary};">${resumeData.fullname}</h1>
-                            <p class="text-sm font-semibold text-slate-600 mt-1">${resumeData.jobtitle}</p>
+                            <h1 contenteditable="true" onblur="resumeData.fullname=this.innerText; document.getElementById('inp-fullname').value=this.innerText;" class="text-3xl font-bold tracking-tight" style="color:${l.primary};">${resumeData.fullname}</h1>
+                            <p contenteditable="true" onblur="resumeData.jobtitle=this.innerText; document.getElementById('inp-jobtitle').value=this.innerText;" class="text-sm font-semibold text-slate-600 mt-1">${resumeData.jobtitle}</p>
                             <div class="flex justify-center flex-wrap gap-4 text-[11px] text-slate-500 mt-2">
-                                <span><i class="fa-solid fa-envelope mr-1"></i>${resumeData.email}</span>
-                                <span><i class="fa-solid fa-phone mr-1"></i>${resumeData.phone}</span>
-                                <span><i class="fa-solid fa-location-dot mr-1"></i>${resumeData.location}</span>
+                                <span contenteditable="true" onblur="resumeData.email=this.innerText"><i class="fa-solid fa-envelope mr-1"></i>${resumeData.email}</span>
+                                <span contenteditable="true" onblur="resumeData.phone=this.innerText"><i class="fa-solid fa-phone mr-1"></i>${resumeData.phone}</span>
+                                <span contenteditable="true" onblur="resumeData.location=this.innerText"><i class="fa-solid fa-location-dot mr-1"></i>${resumeData.location}</span>
                             </div>
                         </div>
                         <div class="mt-6 space-y-5">
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secExp}</h3>
-                                <p class="text-xs text-slate-700 mb-3">${resumeData.summary}</p>
+                                <p contenteditable="true" onblur="resumeData.summary=this.innerText; document.getElementById('inp-summary').value=this.innerText;" class="text-xs text-slate-700 mb-3">${resumeData.summary}</p>
                                 <div class="space-y-3">
-                                    ${resumeData.experiences.map(e => `
+                                    ${resumeData.experiences.map((e, idx) => `
                                         <div>
-                                            <div class="flex justify-between font-bold text-xs"><span>${e.role} at ${e.company}</span><span class="text-slate-500">${e.duration}</span></div>
-                                            <p class="text-[11px] text-slate-600">${e.details}</p>
+                                            <div class="flex justify-between font-bold text-xs"><span contenteditable="true" onblur="resumeData.experiences[${idx}].role=this.innerText">${e.role}</span> at <span contenteditable="true" onblur="resumeData.experiences[${idx}].company=this.innerText">${e.company}</span><span contenteditable="true" onblur="resumeData.experiences[${idx}].duration=this.innerText" class="text-slate-500">${e.duration}</span></div>
+                                            <p contenteditable="true" onblur="resumeData.experiences[${idx}].details=this.innerText" class="text-[11px] text-slate-600">${e.details}</p>
                                         </div>
                                     `).join('')}
                                 </div>
                             </div>
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secEdu}</h3>
-                                ${resumeData.education.map(ed => `<div class="flex justify-between text-xs mb-1"><div><span class="font-bold">${ed.degree}</span> - ${ed.school}</div><span class="text-slate-500">${ed.duration}</span></div>`).join('')}
+                                ${resumeData.education.map((ed, idx) => `<div class="flex justify-between text-xs mb-1"><div><span contenteditable="true" onblur="resumeData.education[${idx}].degree=this.innerText" class="font-bold">${ed.degree}</span> - <span contenteditable="true" onblur="resumeData.education[${idx}].school=this.innerText">${ed.school}</span></div><span contenteditable="true" onblur="resumeData.education[${idx}].duration=this.innerText" class="text-slate-500">${ed.duration}</span></div>`).join('')}
                             </div>
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secSkills}</h3>
-                                <div class="flex flex-wrap gap-1.5">${resumeData.skills.map(s => `<span class="bg-slate-100 px-2 py-0.5 rounded text-[11px] font-medium">${s}</span>`).join('')}</div>
+                                <div contenteditable="true" onblur="resumeData.skills=this.innerText.split(',').map(s=>s.trim()); document.getElementById('inp-skills').value=this.innerText;" class="flex flex-wrap gap-1.5">${resumeData.skills.map(s => `<span class="bg-slate-100 px-2 py-0.5 rounded text-[11px] font-medium">${s}</span>`).join('')}</div>
                             </div>
                         </div>
                     </div>
@@ -766,34 +766,34 @@
                         <div class="space-y-6">
                             <div>
                                 ${resumeData.photo ? `<div class="w-16 h-16 rounded-lg mb-3 overflow-hidden shadow"><img src="${resumeData.photo}" class="w-full h-full object-cover"></div>` : ''}
-                                <h1 class="text-xl font-black" style="color:${l.primary};">${resumeData.fullname}</h1>
-                                <p class="text-xs font-bold text-slate-600">${resumeData.jobtitle}</p>
+                                <h1 contenteditable="true" onblur="resumeData.fullname=this.innerText" class="text-xl font-black" style="color:${l.primary};">${resumeData.fullname}</h1>
+                                <p contenteditable="true" onblur="resumeData.jobtitle=this.innerText" class="text-xs font-bold text-slate-600">${resumeData.jobtitle}</p>
                                 <div class="text-[11px] text-slate-500 mt-2 space-y-1">
-                                    <div><i class="fa-solid fa-envelope mr-1"></i>${resumeData.email}</div>
-                                    <div><i class="fa-solid fa-phone mr-1"></i>${resumeData.phone}</div>
-                                    <div><i class="fa-solid fa-location-dot mr-1"></i>${resumeData.location}</div>
+                                    <div contenteditable="true" onblur="resumeData.email=this.innerText"><i class="fa-solid fa-envelope mr-1"></i>${resumeData.email}</div>
+                                    <div contenteditable="true" onblur="resumeData.phone=this.innerText"><i class="fa-solid fa-phone mr-1"></i>${resumeData.phone}</div>
+                                    <div contenteditable="true" onblur="resumeData.location=this.innerText"><i class="fa-solid fa-location-dot mr-1"></i>${resumeData.location}</div>
                                 </div>
                             </div>
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secSkills}</h3>
-                                <div class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-100 px-2 py-0.5 rounded text-[10px] font-semibold">${s}</span>`).join('')}</div>
+                                <div contenteditable="true" onblur="resumeData.skills=this.innerText.split(',').map(s=>s.trim())" class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-100 px-2 py-0.5 rounded text-[10px] font-semibold">${s}</span>`).join('')}</div>
                             </div>
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secLang}</h3>
-                                <p class="text-[11px] text-slate-600">${resumeData.languages.join(', ')}</p>
+                                <p contenteditable="true" onblur="resumeData.languages=this.innerText.split(',').map(s=>s.trim())" class="text-[11px] text-slate-600">${resumeData.languages.join(', ')}</p>
                             </div>
                         </div>
                         <div class="space-y-6 border-l pl-6 border-slate-200">
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secExp}</h3>
-                                <p class="text-xs text-slate-700 mb-3">${resumeData.summary}</p>
+                                <p contenteditable="true" onblur="resumeData.summary=this.innerText" class="text-xs text-slate-700 mb-3">${resumeData.summary}</p>
                                 <div class="space-y-3">
-                                    ${resumeData.experiences.map(e => `<div><div class="font-bold text-xs">${e.role}</div><div class="text-[11px] text-slate-500">${e.company} | ${e.duration}</div><p class="text-[11px] text-slate-600 mt-0.5">${e.details}</p></div>`).join('')}
+                                    ${resumeData.experiences.map((e, idx) => `<div><div contenteditable="true" onblur="resumeData.experiences[${idx}].role=this.innerText" class="font-bold text-xs">${e.role}</div><div class="text-[11px] text-slate-500"><span contenteditable="true" onblur="resumeData.experiences[${idx}].company=this.innerText">${e.company}</span> | <span contenteditable="true" onblur="resumeData.experiences[${idx}].duration=this.innerText">${e.duration}</span></div><p contenteditable="true" onblur="resumeData.experiences[${idx}].details=this.innerText" class="text-[11px] text-slate-600 mt-0.5">${e.details}</p></div>`).join('')}
                                 </div>
                             </div>
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b pb-1 mb-2" style="border-color:${l.accent};">${t.secEdu}</h3>
-                                ${resumeData.education.map(ed => `<div class="text-xs mb-2"><div class="font-bold">${ed.degree}</div><div class="text-[11px] text-slate-500">${ed.school} (${ed.duration})</div></div>`).join('')}
+                                ${resumeData.education.map((ed, idx) => `<div class="text-xs mb-2"><div contenteditable="true" onblur="resumeData.education[${idx}].degree=this.innerText" class="font-bold">${ed.degree}</div><div class="text-[11px] text-slate-500"><span contenteditable="true" onblur="resumeData.education[${idx}].school=this.innerText">${ed.school}</span> (<span contenteditable="true" onblur="resumeData.education[${idx}].duration=this.innerText">${ed.duration}</span>)</div></div>`).join('')}
                             </div>
                         </div>
                     </div>
@@ -804,34 +804,34 @@
                         <div class="bg-slate-900 text-white p-6 rounded-xl flex items-center gap-5">
                             ${photoHTML}
                             <div>
-                                <h1 class="text-2xl font-black">${resumeData.fullname}</h1>
-                                <p class="text-xs text-green-400 font-bold mt-0.5">${resumeData.jobtitle}</p>
+                                <h1 contenteditable="true" onblur="resumeData.fullname=this.innerText" class="text-2xl font-black">${resumeData.fullname}</h1>
+                                <p contenteditable="true" onblur="resumeData.jobtitle=this.innerText" class="text-xs text-green-400 font-bold mt-0.5">${resumeData.jobtitle}</p>
                                 <div class="flex flex-wrap gap-3 text-[11px] text-slate-300 mt-2">
-                                    <span><i class="fa-solid fa-envelope mr-1 text-green-400"></i>${resumeData.email}</span>
-                                    <span><i class="fa-solid fa-phone mr-1 text-green-400"></i>${resumeData.phone}</span>
-                                    <span><i class="fa-solid fa-location-dot mr-1 text-green-400"></i>${resumeData.location}</span>
+                                    <span contenteditable="true" onblur="resumeData.email=this.innerText"><i class="fa-solid fa-envelope mr-1 text-green-400"></i>${resumeData.email}</span>
+                                    <span contenteditable="true" onblur="resumeData.phone=this.innerText"><i class="fa-solid fa-phone mr-1 text-green-400"></i>${resumeData.phone}</span>
+                                    <span contenteditable="true" onblur="resumeData.location=this.innerText"><i class="fa-solid fa-location-dot mr-1 text-green-400"></i>${resumeData.location}</span>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1 mb-2" style="border-color:${l.primary};">TECHNICAL SUMMARY</h3>
-                            <p class="text-xs text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-200">${resumeData.summary}</p>
+                            <p contenteditable="true" onblur="resumeData.summary=this.innerText" class="text-xs text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-200">${resumeData.summary}</p>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1 mb-2" style="border-color:${l.primary};">${t.secExp}</h3>
                                 <div class="space-y-3">
-                                    ${resumeData.experiences.map(e => `<div><div class="font-bold text-xs">${e.role}</div><div class="text-[11px] text-slate-500">${e.company} (${e.duration})</div><p class="text-[11px] text-slate-600">${e.details}</p></div>`).join('')}
+                                    ${resumeData.experiences.map((e, idx) => `<div><div contenteditable="true" onblur="resumeData.experiences[${idx}].role=this.innerText" class="font-bold text-xs">${e.role}</div><div class="text-[11px] text-slate-500"><span contenteditable="true" onblur="resumeData.experiences[${idx}].company=this.innerText">${e.company}</span> (<span contenteditable="true" onblur="resumeData.experiences[${idx}].duration=this.innerText">${e.duration}</span>)</div><p contenteditable="true" onblur="resumeData.experiences[${idx}].details=this.innerText" class="text-[11px] text-slate-600">${e.details}</p></div>`).join('')}
                                 </div>
                             </div>
                             <div class="space-y-4">
                                 <div>
                                     <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1 mb-2" style="border-color:${l.primary};">${t.secEdu}</h3>
-                                    ${resumeData.education.map(ed => `<div class="text-xs"><span class="font-bold">${ed.degree}</span><div class="text-[11px] text-slate-500">${ed.school} (${ed.duration})</div></div>`).join('')}
+                                    ${resumeData.education.map((ed, idx) => `<div class="text-xs"><span contenteditable="true" onblur="resumeData.education[${idx}].degree=this.innerText" class="font-bold">${ed.degree}</span><div class="text-[11px] text-slate-500"><span contenteditable="true" onblur="resumeData.education[${idx}].school=this.innerText">${ed.school}</span> (<span contenteditable="true" onblur="resumeData.education[${idx}].duration=this.innerText">${ed.duration}</span>)</div></div>`).join('')}
                                 </div>
                                 <div>
                                     <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1 mb-2" style="border-color:${l.primary};">${t.secSkills}</h3>
-                                    <div class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] font-medium">${s}</span>`).join('')}</div>
+                                    <div contenteditable="true" onblur="resumeData.skills=this.innerText.split(',').map(s=>s.trim())" class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] font-medium">${s}</span>`).join('')}</div>
                                 </div>
                             </div>
                         </div>
@@ -842,29 +842,29 @@
                     <div class="p-10 font-sans text-slate-800 bg-white space-y-6" style="min-height:297mm;">
                         <div class="flex justify-between items-end border-b pb-4 border-slate-200">
                             <div>
-                                <h1 class="text-3xl font-light tracking-wide text-slate-900">${resumeData.fullname}</h1>
-                                <p class="text-xs font-medium text-emerald-700 tracking-widest uppercase mt-1">${resumeData.jobtitle}</p>
+                                <h1 contenteditable="true" onblur="resumeData.fullname=this.innerText" class="text-3xl font-light tracking-wide text-slate-900">${resumeData.fullname}</h1>
+                                <p contenteditable="true" onblur="resumeData.jobtitle=this.innerText" class="text-xs font-medium text-emerald-700 tracking-widest uppercase mt-1">${resumeData.jobtitle}</p>
                             </div>
                             <div class="text-right text-[11px] text-slate-500 space-y-0.5">
-                                <div>${resumeData.email}</div>
-                                <div>${resumeData.phone}</div>
-                                <div>${resumeData.location}</div>
+                                <div contenteditable="true" onblur="resumeData.email=this.innerText">${resumeData.email}</div>
+                                <div contenteditable="true" onblur="resumeData.phone=this.innerText">${resumeData.phone}</div>
+                                <div contenteditable="true" onblur="resumeData.location=this.innerText">${resumeData.location}</div>
                             </div>
                         </div>
                         <div>
-                            <p class="text-xs text-slate-600 leading-relaxed italic">${resumeData.summary}</p>
+                            <p contenteditable="true" onblur="resumeData.summary=this.innerText" class="text-xs text-slate-600 leading-relaxed italic">${resumeData.summary}</p>
                         </div>
                         <div class="space-y-4">
                             <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-800">${t.secExp}</h3>
-                            ${resumeData.experiences.map(e => `<div class="text-xs"><div class="flex justify-between font-bold"><span>${e.role} — ${e.company}</span><span class="text-slate-400 font-normal">${e.duration}</span></div><p class="text-[11px] text-slate-600 mt-1">${e.details}</p></div>`).join('')}
+                            ${resumeData.experiences.map((e, idx) => `<div class="text-xs"><div class="flex justify-between font-bold"><span><span contenteditable="true" onblur="resumeData.experiences[${idx}].role=this.innerText">${e.role}</span> — <span contenteditable="true" onblur="resumeData.experiences[${idx}].company=this.innerText">${e.company}</span></span><span contenteditable="true" onblur="resumeData.experiences[${idx}].duration=this.innerText" class="text-slate-400 font-normal">${e.duration}</span></div><p contenteditable="true" onblur="resumeData.experiences[${idx}].details=this.innerText" class="text-[11px] text-slate-600 mt-1">${e.details}</p></div>`).join('')}
                         </div>
                         <div class="space-y-2">
                             <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-800">${t.secEdu}</h3>
-                            ${resumeData.education.map(ed => `<div class="text-xs flex justify-between"><div><span class="font-bold">${ed.degree}</span>, ${ed.school}</div><span class="text-slate-400">${ed.duration}</span></div>`).join('')}
+                            ${resumeData.education.map((ed, idx) => `<div class="text-xs flex justify-between"><div><span contenteditable="true" onblur="resumeData.education[${idx}].degree=this.innerText" class="font-bold">${ed.degree}</span>, <span contenteditable="true" onblur="resumeData.education[${idx}].school=this.innerText">${ed.school}</span></div><span contenteditable="true" onblur="resumeData.education[${idx}].duration=this.innerText" class="text-slate-400">${ed.duration}</span></div>`).join('')}
                         </div>
                         <div class="space-y-2">
                             <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-800">${t.secSkills}</h3>
-                            <p class="text-xs text-slate-700">${resumeData.skills.join(' • ')}</p>
+                            <p contenteditable="true" onblur="resumeData.skills=this.innerText.split('•').map(s=>s.trim())" class="text-xs text-slate-700">${resumeData.skills.join(' • ')}</p>
                         </div>
                     </div>
                 `;
@@ -874,32 +874,32 @@
                         <div class="col-span-4 p-5 rounded-xl text-white space-y-6 shadow-md" style="background:${l.dark};">
                             ${photoHTML}
                             <div>
-                                <h1 class="text-xl font-black">${resumeData.fullname}</h1>
-                                <p class="text-xs text-green-400 font-semibold mt-1">${resumeData.jobtitle}</p>
+                                <h1 contenteditable="true" onblur="resumeData.fullname=this.innerText" class="text-xl font-black">${resumeData.fullname}</h1>
+                                <p contenteditable="true" onblur="resumeData.jobtitle=this.innerText" class="text-xs text-green-400 font-semibold mt-1">${resumeData.jobtitle}</p>
                             </div>
                             <div class="space-y-2 text-[11px] text-slate-300">
-                                <div><i class="fa-solid fa-envelope mr-1.5 text-green-400"></i>${resumeData.email}</div>
-                                <div><i class="fa-solid fa-phone mr-1.5 text-green-400"></i>${resumeData.phone}</div>
-                                <div><i class="fa-solid fa-location-dot mr-1.5 text-green-400"></i>${resumeData.location}</div>
+                                <div contenteditable="true" onblur="resumeData.email=this.innerText"><i class="fa-solid fa-envelope mr-1.5 text-green-400"></i>${resumeData.email}</div>
+                                <div contenteditable="true" onblur="resumeData.phone=this.innerText"><i class="fa-solid fa-phone mr-1.5 text-green-400"></i>${resumeData.phone}</div>
+                                <div contenteditable="true" onblur="resumeData.location=this.innerText"><i class="fa-solid fa-location-dot mr-1.5 text-green-400"></i>${resumeData.location}</div>
                             </div>
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-wider border-b border-slate-700 pb-1 mb-2.5 text-green-400">${t.secSkills}</h3>
-                                <div class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-800 px-2 py-0.5 rounded text-[10px] font-medium">${s}</span>`).join('')}</div>
+                                <div contenteditable="true" onblur="resumeData.skills=this.innerText.split(',').map(s=>s.trim())" class="flex flex-wrap gap-1">${resumeData.skills.map(s => `<span class="bg-slate-800 px-2 py-0.5 rounded text-[10px] font-medium">${s}</span>`).join('')}</div>
                             </div>
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-wider border-b border-slate-700 pb-1 mb-2.5 text-green-400">${t.secLang}</h3>
-                                <p class="text-[11px] text-slate-300">${resumeData.languages.join(', ')}</p>
+                                <p contenteditable="true" onblur="resumeData.languages=this.innerText.split(',').map(s=>s.trim())" class="text-[11px] text-slate-300">${resumeData.languages.join(', ')}</p>
                             </div>
                         </div>
                         <div class="col-span-8 space-y-6">
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1.5 mb-2.5" style="border-color:${l.primary};">${t.secExp}</h3>
-                                <p class="text-xs text-slate-700 leading-relaxed mb-4">${resumeData.summary}</p>
+                                <p contenteditable="true" onblur="resumeData.summary=this.innerText" class="text-xs text-slate-700 leading-relaxed mb-4">${resumeData.summary}</p>
                                 <div class="space-y-3">
-                                    ${resumeData.experiences.map(e => `
+                                    ${resumeData.experiences.map((e, idx) => `
                                         <div>
-                                            <div class="flex justify-between font-bold text-xs"><span>${e.role} (${e.company})</span><span class="text-[11px] text-slate-500">${e.duration}</span></div>
-                                            <p class="text-[11px] text-slate-600 mt-0.5">${e.details}</p>
+                                            <div class="flex justify-between font-bold text-xs"><span><span contenteditable="true" onblur="resumeData.experiences[${idx}].role=this.innerText">${e.role}</span> (<span contenteditable="true" onblur="resumeData.experiences[${idx}].company=this.innerText">${e.company}</span>)</span><span contenteditable="true" onblur="resumeData.experiences[${idx}].duration=this.innerText" class="text-[11px] text-slate-500">${e.duration}</span></div>
+                                            <p contenteditable="true" onblur="resumeData.experiences[${idx}].details=this.innerText" class="text-[11px] text-slate-600 mt-0.5">${e.details}</p>
                                         </div>
                                     `).join('')}
                                 </div>
@@ -907,10 +907,10 @@
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1.5 mb-2.5" style="border-color:${l.primary};">${t.secEdu}</h3>
                                 <div class="space-y-2">
-                                    ${resumeData.education.map(ed => `
+                                    ${resumeData.education.map((ed, idx) => `
                                         <div class="flex justify-between text-xs">
-                                            <div><span class="font-bold">${ed.degree}</span> - ${ed.school}</div>
-                                            <span class="text-[11px] text-slate-500">${ed.duration}</span>
+                                            <div><span contenteditable="true" onblur="resumeData.education[${idx}].degree=this.innerText" class="font-bold">${ed.degree}</span> - <span contenteditable="true" onblur="resumeData.education[${idx}].school=this.innerText">${ed.school}</span></div>
+                                            <span contenteditable="true" onblur="resumeData.education[${idx}].duration=this.innerText" class="text-[11px] text-slate-500">${ed.duration}</span>
                                         </div>
                                     `).join('')}
                                 </div>
@@ -918,8 +918,8 @@
                             <div>
                                 <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 pb-1.5 mb-2.5" style="border-color:${l.primary};">${t.secProj}</h3>
                                 <div class="space-y-2">
-                                    ${resumeData.projects.map(p => `
-                                        <div class="text-xs"><span class="font-bold">${p.title}:</span> <span class="text-slate-600">${p.desc}</span></div>
+                                    ${resumeData.projects.map((p, idx) => `
+                                        <div class="text-xs"><span contenteditable="true" onblur="resumeData.projects[${idx}].title=this.innerText" class="font-bold">${p.title}:</span> <span contenteditable="true" onblur="resumeData.projects[${idx}].desc=this.innerText" class="text-slate-600">${p.desc}</span></div>
                                     `).join('')}
                                 </div>
                             </div>
@@ -944,6 +944,17 @@
             const modal = document.getElementById('ad-timer-modal');
             modal.classList.remove('hidden');
             
+            // मोनोटॅग जाहिरात स्क्रिप्ट इंजेक्ट करण्यासाठीची योग्य जागा
+            const adContainer = document.getElementById('montag-ad-container');
+            if (adContainer && !adContainer.querySelector('script')) {
+                adContainer.innerHTML = '';
+                // तुमची मोनोटॅग जाहिरात स्क्रिप्ट खालीलप्रमाणे ॲक्टिव्ह होईल:
+                const scriptTag = document.createElement('script');
+                scriptTag.type = 'text/javascript';
+                // scriptTag.src = 'https://your-monetag-ad-script-url.com/tag.min.js'; // तुमची लिंक येथे टाका
+                // adContainer.appendChild(scriptTag);
+            }
+
             let timeLeft = 10;
             document.getElementById('timer-countdown').innerText = `Downloading in ${timeLeft}s...`;
 
