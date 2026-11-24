@@ -940,41 +940,100 @@
             autoScalePreview();
         }
 
-        function triggerExportWithAdTimer() {
-            const modal = document.getElementById('ad-timer-modal');
-            modal.classList.remove('hidden');
-            
-            // मोनोटॅग जाहिरात स्क्रिप्ट इंजेक्ट करण्यासाठीची योग्य जागा
-            const adContainer = document.getElementById('montag-ad-container');
-            if (adContainer && !adContainer.querySelector('script')) {
-                adContainer.innerHTML = '';
-                // तुमची मोनोटॅग जाहिरात स्क्रिप्ट खालीलप्रमाणे ॲक्टिव्ह होईल:
-                const scriptTag = document.createElement('script');
-                scriptTag.type = 'text/javascript';
-                // scriptTag.src = 'https://your-monetag-ad-script-url.com/tag.min.js'; // तुमची लिंक येथे टाका
-                // adContainer.appendChild(scriptTag);
-            }
+        const BACKEND_URL = "https://resume-rk-backend.onrender.com";
+        let isPaymentVerifiedForDownload = false;
 
-            let timeLeft = 10;
-            document.getElementById('timer-countdown').innerText = `Downloading in ${timeLeft}s...`;
+        async function triggerExportWithAdTimer() {
+            try {
+                const orderRes = await fetch(`${BACKEND_URL}/api/create-order`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" }
+                });
+                const orderData = await orderRes.json();
+
+                if (!orderData.ok || !orderData.order) {
+                    alert("ऑर्डर तयार करताना अडचण आली. कृपया पुन्हा प्रयत्न करा.");
+                    return;
+                }
+
+                const options = {
+                    key: orderData.key_id,
+                    amount: orderData.order.amount,
+                    currency: orderData.order.currency,
+                    name: "Resume.RK",
+                    description: "Resume PDF Download (INR 49)",
+                    order_id: orderData.order.id,
+                    handler: async function (response) {
+                        const verifyRes = await fetch(`${BACKEND_URL}/api/verify-payment`, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                razorpay_order_id: response.razorpay_order_id,
+                                razorpay_payment_id: response.razorpay_payment_id,
+                                razorpay_signature: response.razorpay_signature
+                            })
+                        });
+                        const verifyData = await verifyRes.json();
+
+                        if (verifyData.paid) {
+                            isPaymentVerifiedForDownload = true;
+                            openVerifiedDownloadModal();
+                        } else {
+                            alert("पेमेंट व्हेरिफिकेशन पूर्ण होऊ शकले नाही.");
+                        }
+                    },
+                    theme: {
+                        color: "#16a34a"
+                    }
+                };
+
+                const rzp = new Razorpay(options);
+                rzp.on("payment.failed", function () {
+                    alert("पेमेंट पूर्ण झाले नाही. कृपया पुन्हा प्रयत्न करा.");
+                });
+                rzp.open();
+            } catch (err) {
+                console.error(err);
+                alert("सर्व्हरशी संपर्क होऊ शकला नाही. थोड्या वेळाने पुन्हा प्रयत्न करा.");
+            }
+        }
+
+        function openVerifiedDownloadModal() {
+            const modal = document.getElementById('ad-timer-modal');
+            const countdownEl = document.getElementById('timer-countdown');
+            if (!modal || !countdownEl) {
+                if (isPaymentVerifiedForDownload) {
+                    isPaymentVerifiedForDownload = false;
+                    window.print();
+                }
+                return;
+            }
+            modal.classList.remove('hidden');
+
+            let secondsLeft = 3;
+            countdownEl.innerText = `Payment verified! Downloading in ${secondsLeft}s...`;
 
             if (adCountdownInterval) clearInterval(adCountdownInterval);
-
             adCountdownInterval = setInterval(() => {
-                timeLeft--;
-                if (timeLeft > 0) {
-                    document.getElementById('timer-countdown').innerText = `Downloading in ${timeLeft}s...`;
+                secondsLeft -= 1;
+                if (secondsLeft > 0) {
+                    countdownEl.innerText = `Payment verified! Downloading in ${secondsLeft}s...`;
                 } else {
                     clearInterval(adCountdownInterval);
-                    closeAdModal();
-                    window.print();
+                    modal.classList.add('hidden');
+                    if (isPaymentVerifiedForDownload) {
+                        isPaymentVerifiedForDownload = false;
+                        window.print();
+                    }
                 }
             }, 1000);
         }
 
         function closeAdModal() {
             if (adCountdownInterval) clearInterval(adCountdownInterval);
-            document.getElementById('ad-timer-modal').classList.add('hidden');
+            isPaymentVerifiedForDownload = false;
+            const modal = document.getElementById('ad-timer-modal');
+            if (modal) modal.classList.add('hidden');
         }
 
         window.addEventListener('resize', autoScalePreview);
